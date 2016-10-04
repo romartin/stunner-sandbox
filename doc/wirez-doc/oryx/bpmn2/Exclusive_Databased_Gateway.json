@@ -1,0 +1,153 @@
+{
+  "type" : 			"node",
+  "id" :				"Exclusive_Databased_Gateway",
+  "title" :			"Data-based Exclusive (XOR) Gateway",
+  "description" :		"When splitting, it routes the sequence flow to exactly one of the outgoing branches based on conditions. When merging, it awaits one incoming branch to complete before triggering the outgoing flow.",
+  "description_ja" :"分岐する際は、条件に基づいて必ず出力分岐の1つにシーケンスフローの経路を取ります。合流する際は、入力分岐の1つが完了するまで待ってから出力フローをトリガーします。",
+  "groups" : 			["Gateways"],
+  "view" : 			"gateway/exclusive.databased.svg",
+  "icon" : 			"gateway/exclusive.databased.png",
+  "propertyPackages" :[
+    "baseAttributes",
+    "flowElement",
+    "gateway",
+    "bgColor"
+  ],
+  "properties" :		[
+    {
+      "id":"bgcolor",
+      "type":"Color",
+      "title":"BackgroundColor",
+      "value":"#f0e68c",
+      "description":"",
+      "readonly":false,
+      "optional":false,
+      "refToView": "fill_el",
+      "fill":true,
+      "stroke":false
+    },
+    {
+      "id":"origbgcolor",
+      "type":"Color",
+      "title":"Original Background Color",
+      "value":"#f0e68c",
+      "description":"",
+      "readonly":false,
+      "optional":true,
+      "hidden":true,
+      "visible":false
+    },
+    {
+      "id":"bordercolor",
+      "type":"Color",
+      "title":"BorderColor",
+      "value":"#a67f00",
+      "description":"",
+      "readonly":false,
+      "optional":false,
+      "refToView": ["edge", "fill_border", "bg_frame", "frame", "frame2", "frame3", "frame4", "frame5", "frame6", "frame7", "frame8", "frame9", "frame10", "frame11", "frame12", "frame13", "frame14", "frame15", "frame16", "frame17", "frame18", "frame19", "frame20", "frame21", "frame22", "frame23", "frame24", "frame25", "frame26", "border"],
+      "fill":false,
+      "stroke":true
+    },
+    {
+      "id":"origbordercolor",
+      "type":"Color",
+      "title":"Original Border Color",
+      "value":"#a67f00",
+      "description":"",
+      "readonly":false,
+      "optional":true,
+      "hidden":true,
+      "visible":false
+    },
+    {
+      "id":"fontcolor",
+      "type":"Color",
+      "title":"Font Color",
+      "value":"#000000",
+      "description":"Font color",
+      "description_ja":"フォントの色",
+      "readonly":false,
+      "optional":false,
+      "refToView": ["text_name"],
+      "fill":true,
+      "stroke":false
+    },
+    {
+      "id":"gatewaytype",
+      "type":"String",
+      "title":"Gateway type",
+      "title":"Gateway-Type",
+      "value":"XOR",
+      "description":"",
+      "readonly":true,
+      "optional":false,
+      "length":""
+    },
+    {
+      "id":"xortype",
+      "type":"String",
+      "title":"XOR type",
+      "value":"Data",
+      "description":"",
+      "readonly":true,
+      "optional":false,
+      "length":""
+    },
+    {
+      "id":"markervisible",
+      "type":"Boolean",
+      "title":"X-Marker visible",
+      "value":"true",
+      "description":"",
+      "readonly":false,
+      "optional":false,
+      "refToView":"cross"
+    },
+    {
+      "id":"defaultgate",
+      "type":"String",
+      "title":"Default gate",
+      "value":"",
+      "description":"",
+      "readonly":false,
+      "optional":true,
+      "refToView":"",
+      "length":"50",
+      "wrapLines":true
+    }
+    //,
+    /**{
+        "id":"gate_outgoingsequenceflow",
+        "type":"String",
+        "title":"[Gate] OutgoingSequenceFlow",
+        "value":"",
+        "description":"",
+        "readonly":false,
+        "optional":true,
+        "refToView":"",
+        "length":"50"
+    },**/
+    /**{
+        "id":"gate_assignments",
+        "type":"String",
+        "title":"[Gate] Assignments",
+        "value":"",
+        "description":"",
+        "readonly":false,
+        "optional":true,
+        "refToView":"",
+        "length":"50",
+        "wrapLines":true
+    }**/
+  ],
+  "roles": 			[
+    "all",
+    "sequence_start",
+    "sequence_end",
+    "choreography_sequence_start",
+    "choreography_sequence_end",
+    "fromtoall",
+    "GatewaysMorph"
+  ]
+}

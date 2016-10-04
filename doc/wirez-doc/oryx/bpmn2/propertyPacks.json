@@ -1,0 +1,3291 @@
+{
+  "propertyPackages": [
+    {
+      "name": "baseAttributes",
+      "properties": [
+        {
+          "id": "name",
+          "type": "String",
+          "title": "Name",
+          "value": "",
+          "description": "The descriptive name of the BPMN element.",
+          "description_ja": "BPMN要素のわかりやすい名前。",
+          "readonly": false,
+          "optional": true,
+          "length": "",
+          "wrapLines": true,
+          "refToView": "text_name"
+        },
+        {
+          "id": "documentation",
+          "type": "Text",
+          "title": "Documentation",
+          "value": "",
+          "description": "This attribute is used to annotate the BPMN element, such as descriptions and other documentation.",
+          "description_ja": "この属性は、説明やドキュメントなど、BPMN要素の注釈に使用されます。",
+          "readonly": false,
+          "optional": true,
+          "length": "",
+          "wrapLines": true,
+          "popular": true
+        },
+        {
+          "id": "isselectable",
+          "type": "Choice",
+          "title": "Selectable",
+          "value": "true",
+          "default": "true",
+          "description": "This attribute is used to set selectable properties for every node and edges.",
+          "readonly": false,
+          "optional": true,
+          "hidden": true,
+          "popular": true,
+          "items": [
+            {
+              "id": "c1",
+              "title": "true",
+              "value": "true"
+            },
+            {
+              "id": "c2",
+              "title": "false",
+              "value": "false"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "baseAttributesNoName",
+      "properties": [
+        {
+          "id": "documentation",
+          "type": "Text",
+          "title": "Documentation",
+          "value": "",
+          "description": "This attribute is used to annotate the BPMN element, such as descriptions and other documentation.",
+          "description_ja": "この属性は、説明やドキュメントなど、BPMN要素の注釈に使用されます。",
+          "readonly": false,
+          "optional": true,
+          "length": "",
+          "wrapLines": true,
+          "popular": true
+        },
+        {
+          "id": "isselectable",
+          "type": "Choice",
+          "title": "Selectable",
+          "value": "true",
+          "default": "true",
+          "description": "This attribute is used to set selectable properties for every node and edges.",
+          "readonly": false,
+          "optional": true,
+          "hidden": true,
+          "popular": true,
+          "items": [
+            {
+              "id": "c1",
+              "title": "true",
+              "value": "true"
+            },
+            {
+              "id": "c2",
+              "title": "false",
+              "value": "false"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "bgColor",
+      "properties": [
+        {
+          "id": "bgcolor",
+          "type": "Color",
+          "title": "BackgroundColor",
+          "value": "#ffffff",
+          "description": "",
+          "readonly": false,
+          "optional": false,
+          "refToView": "fill_el",
+          "fill": true,
+          "stroke": false
+        },
+        {
+          "id": "bordercolor",
+          "type": "Color",
+          "title": "BorderColor",
+          "value": "#000000",
+          "description": "",
+          "readonly": false,
+          "optional": false,
+          "refToView": [
+            "edge",
+            "fill_border",
+            "bg_frame",
+            "frame",
+            "frame2",
+            "frame3",
+            "frame4",
+            "frame5",
+            "frame6",
+            "frame7",
+            "frame8",
+            "frame9",
+            "frame10",
+            "frame11",
+            "frame12",
+            "frame13",
+            "frame14",
+            "frame15",
+            "frame16",
+            "frame17",
+            "frame18",
+            "frame19",
+            "frame20",
+            "frame21",
+            "frame22",
+            "frame23",
+            "frame24",
+            "frame25",
+            "frame26",
+            "border"
+          ],
+          "fill": false,
+          "stroke": true
+        },
+        {
+          "id": "fontcolor",
+          "type": "Color",
+          "title": "Font Color",
+          "value": "#000000",
+          "description": "Font color",
+          "description_ja": "フォントの色",
+          "readonly": false,
+          "optional": false,
+          "refToView": [
+            "text_name"
+          ],
+          "fill": true,
+          "stroke": false
+        },
+        {
+          "id": "fontsize",
+          "type": "Choice",
+          "title": "Font Size",
+          "value": "",
+          "description": "The Font Size",
+          "description_ja": "フォントのサイズ",
+          "readonly": false,
+          "optional": false,
+          "refToView": "text_name",
+          "items": [
+            {
+              "id": "c1",
+              "title": "8",
+              "value": "8"
+            },
+            {
+              "id": "c2",
+              "title": "9",
+              "value": "9"
+            },
+            {
+              "id": "c3",
+              "title": "10",
+              "value": "10"
+            },
+            {
+              "id": "c4",
+              "title": "11",
+              "value": "11"
+            },
+            {
+              "id": "c5",
+              "title": "12",
+              "value": "12"
+            },
+            {
+              "id": "c6",
+              "title": "14",
+              "value": "14"
+            },
+            {
+              "id": "c7",
+              "title": "18",
+              "value": "18"
+            },
+            {
+              "id": "c8",
+              "title": "20",
+              "value": "20"
+            },
+            {
+              "id": "c9",
+              "title": "24",
+              "value": "24"
+            },
+            {
+              "id": "c10",
+              "title": "36",
+              "value": "36"
+            },
+            {
+              "id": "c11",
+              "title": "48",
+              "value": "48"
+            },
+            {
+              "id": "c12",
+              "title": "72",
+              "value": "72"
+            }
+          ]
+        }
+      ]
+    },
+    /**{
+      "name" : "condition",
+      "properties" : [
+          {
+              "id":"condition",
+              "type":"String",
+              "title":"Condition",
+              "value":"",
+              "description":"",
+              "readonly":false,
+              "optional":false,
+              "popular":true
+          }
+      ]
+  },**/
+    {
+      "name": "boundaryevent",
+      "properties": [
+        {
+          "id": "boundarycancelactivity",
+          "type": "Choice",
+          "title": "CancelActivity",
+          "value": "false",
+          "description": "Denotes whether the activity should be cancelled or not, i.e., whether the boundary catch event acts as an error or an escalation. If the activity is not cancelled, multiple instances of that handler can run concurrently.",
+          "description_ja": "アクティビティをキャンセルするかどうか、つまり、Boundaryキャッチイベントがエラーになるかエスカレーションになるかを示します。 アクティビティがキャンセルされない場合、そのハンドラの複数のインスタンスを同時に実行できます。",
+          "readonly": false,
+          "optional": true,
+          "items": [
+            {
+              "id": "c1",
+              "title": "true",
+              "value": "true"
+            },
+            {
+              "id": "c2",
+              "title": "false",
+              "value": "false"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "catchEventAttributes",
+      "properties": [
+        /**{
+         "id":"eventdefinitionref",
+         "type":"String",
+         "title":"EventDefinitionRef",
+         "value":"",
+         "description":"EventDefinitionRefs (EventDefinition) is an attribute that defines the type of reusable triggers expected for a catch Event.",
+         "description_ja":"EventDefinitionRefs（EventDefinition）は、キャッチイベントとして想定される再利用可能なトリガーのタイプを定義する属性です。",
+         "readonly":false,
+         "optional":true,
+         "length":"",
+         "wrapLines":true
+     },**/
+        /**{
+          "id":"eventdefinition",
+          "type":"String",
+          "title":"EventDefinition",
+          "value":"",
+          "description":"EventDefinition is an attribute that defines the type of contained triggers expected for a catch Event.",
+          "description_ja":"EventDefinitionは、キャッチイベントとして想定される、中に含まれるトリガーのタイプを定義する属性です。",
+          "readonly":false,
+          "optional":true,
+          "length":"",
+          "wrapLines":true
+      },**/
+        {
+          "id": "dataoutputassociations",
+          "type": "Dataassignment",
+          "title": "DataOutputAssociations",
+          "value": "",
+          "description": "The Data Associations of the catch Event.",
+          "description_ja": "キャッチイベントのデータ関連。",
+          "readonly": false,
+          "optional": true,
+          "length": "",
+          "wrapLines": true
+        },
+        {
+          "id": "dataoutput",
+          "type": "Dataoutputsingle",
+          "title": "DataOutput",
+          "value": "",
+          "description": "The Data Associations of the catch Event.",
+          "description_ja": "キャッチイベントのデータ関連。",
+          "readonly": false,
+          "optional": true,
+          "length": "",
+          "wrapLines": true
+        },
+        {
+          "id": "min",
+          "type": "Float",
+          "title": "Processing time (min)",
+          "value": "0",
+          "description": "",
+          "description_ja": "",
+          "readonly": false,
+          "optional": true,
+          "simulation": true,
+          "fordistribution": "uniform|random",
+          "min": "0"
+        },
+        {
+          "id": "max",
+          "type": "Float",
+          "title": "Processing time (max)",
+          "value": "0",
+          "description": "",
+          "description_ja": "",
+          "readonly": false,
+          "optional": true,
+          "simulation": true,
+          "fordistribution": "uniform|random",
+          "min": "0"
+        },
+        {
+          "id": "standarddeviation",
+          "type": "Float",
+          "title": "Standard Deviation",
+          "value": "0",
+          "description": "",
+          "description_ja": "",
+          "readonly": false,
+          "optional": true,
+          "simulation": true,
+          "fordistribution": "normal"
+        },
+        {
+          "id": "mean",
+          "type": "Float",
+          "title": "Processing time (mean)",
+          "value": "0",
+          "description": "",
+          "description_ja": "",
+          "readonly": false,
+          "optional": true,
+          "simulation": true,
+          "fordistribution": "normal|poisson",
+          "min": "0"
+        },
+        {
+          "id": "distributiontype",
+          "type": "Choice",
+          "title": "Distribution Type",
+          "value": "random",
+          "description": "",
+          "description_ja": "",
+          "readonly": false,
+          "optional": true,
+          "simulation": true,
+          "items": [
+            {
+              "id": "c1",
+              "title": "normal",
+              "value": "normal"
+            },
+            {
+              "id": "c2",
+              "title": "uniform",
+              "value": "uniform"
+            },
+            {
+              "id": "c3",
+              "title": "random",
+              "value": "random"
+            },
+            {
+              "id": "c4",
+              "title": "poisson",
+              "value": "poisson"
+            }
+          ]
+        },
+        {
+          "id": "timeunit",
+          "type": "Choice",
+          "title": "Time Unit",
+          "value": "",
+          "description": "Time unit options (seconds, minutes, hours)",
+          "description_ja": "Time unit options (seconds, minutes, hours)",
+          "readonly": false,
+          "optional": true,
+          "simulation": true,
+          "items": [
+            {
+              "id": "c1",
+              "title": "milliseconds",
+              "value": "ms"
+            },
+            {
+              "id": "c2",
+              "title": "seconds",
+              "value": "s"
+            },
+            {
+              "id": "c3",
+              "title": "minutes",
+              "value": "min"
+            },
+            {
+              "id": "c4",
+              "title": "hours",
+              "value": "hour"
+            },
+            {
+              "id": "c5",
+              "title": "days",
+              "value": "day"
+            },
+            {
+              "id": "c6",
+              "title": "years",
+              "value": "year"
+            }
+          ]
+        }
+        /**,
+      {
+          "id":"outputset",
+          "type":"Text",
+          "title":"OutputSet",
+          "value":"",
+          "description":"The OutputSet for the catch Event.",
+          "description_ja":"キャッチイベントのOutputSet。",
+          "readonly":false,
+          "optional":true,
+          "length":"",
+          "wrapLines":true
+      }**/
+      ]
+    },
+    {
+      "name": "throwEventAttributes",
+      "properties": [
+        /**{
+         "id":"eventdefinitionref",
+         "type":"String",
+         "title":"EventDefinitionRef",
+         "value":"",
+         "description":"EventDefinitionRefs (EventDefinition) is an attribute that defines the type of reusable triggers expected for a catch Event.",
+         "description_ja":"EventDefinitionRefs（EventDefinition）は、キャッチイベントとして想定される再利用可能なトリガーのタイプを定義する属性です。",
+         "readonly":false,
+         "optional":true,
+         "length":"",
+         "wrapLines":true
+     },**/
+        {
+          "id": "eventdefinitions",
+          "type": "String",
+          "title": "EventDefinitions",
+          "value": "",
+          "description": "EventDefinitions (EventDefinition) is an attribute that defines the type of contained triggers expected for a catch Event.",
+          "description_ja": "EventDefinitions（EventDefinition） は、キャッチイベントとして想定される、中に含まれるトリガーのタイプを定義する属性です。",
+          "readonly": false,
+          "optional": true,
+          "length": "",
+          "wrapLines": true
+        },
+        {
+          "id": "datainputassociations",
+          "type": "Dataassignment",
+          "title": "DataInputAssociations",
+          "value": "",
+          "description": "The Data Associations of the throw Event.",
+          "description_ja": "スローイベントのデータ関連。",
+          "readonly": false,
+          "optional": true,
+          "length": "",
+          "wrapLines": true
+        },
+        {
+          "id": "datainput",
+          "type": "Datainputsingle",
+          "title": "Data Input",
+          "value": "",
+          "description": "The Data Associations of the throw Event.",
+          "description_ja": "スローイベントのデータ関連。",
+          "readonly": false,
+          "optional": true,
+          "length": "",
+          "wrapLines": true
+        },
+        /**,
+      {
+          "id":"inputset",
+          "type":"String",
+          "title":"InputSet",
+          "value":"",
+          "description":"The InputSet for the throw Event.",
+          "description_ja":"スローイベントのInputSet。",
+          "readonly":false,
+          "optional":true,
+          "length":"",
+          "wrapLines":true
+      }**/
+        {
+          "id": "min",
+          "type": "Float",
+          "title": "Processing time (min)",
+          "value": "0",
+          "description": "",
+          "description_ja": "",
+          "readonly": false,
+          "optional": true,
+          "simulation": true,
+          "fordistribution": "uniform|random",
+          "min": "0"
+        },
+        {
+          "id": "max",
+          "type": "Float",
+          "title": "Processing time (max)",
+          "value": "0",
+          "description": "",
+          "description_ja": "",
+          "readonly": false,
+          "optional": true,
+          "simulation": true,
+          "fordistribution": "uniform|random",
+          "min": "0"
+        },
+        {
+          "id": "standarddeviation",
+          "type": "Float",
+          "title": "Standard Deviation",
+          "value": "0",
+          "description": "",
+          "description_ja": "",
+          "readonly": false,
+          "optional": true,
+          "simulation": true,
+          "fordistribution": "normal"
+        },
+        {
+          "id": "mean",
+          "type": "Float",
+          "title": "Processing time (mean)",
+          "value": "0",
+          "description": "",
+          "description_ja": "",
+          "readonly": false,
+          "optional": true,
+          "simulation": true,
+          "fordistribution": "normal|poisson",
+          "min": "0"
+        },
+        {
+          "id": "distributiontype",
+          "type": "Choice",
+          "title": "Distribution Type",
+          "value": "random",
+          "description": "",
+          "description_ja": "",
+          "readonly": false,
+          "optional": true,
+          "simulation": true,
+          "items": [
+            {
+              "id": "c1",
+              "title": "normal",
+              "value": "normal"
+            },
+            {
+              "id": "c2",
+              "title": "uniform",
+              "value": "uniform"
+            },
+            {
+              "id": "c3",
+              "title": "random",
+              "value": "random"
+            },
+            {
+              "id": "c4",
+              "title": "poisson",
+              "value": "poisson"
+            }
+          ]
+        },
+        {
+          "id": "timeunit",
+          "type": "Choice",
+          "title": "Time Unit",
+          "value": "",
+          "description": "Time unit options (seconds, minutes, hours)",
+          "description_ja": "Time unit options (seconds, minutes, hours)",
+          "readonly": false,
+          "optional": true,
+          "simulation": true,
+          "items": [
+            {
+              "id": "c1",
+              "title": "milliseconds",
+              "value": "ms"
+            },
+            {
+              "id": "c2",
+              "title": "seconds",
+              "value": "s"
+            },
+            {
+              "id": "c3",
+              "title": "minutes",
+              "value": "min"
+            },
+            {
+              "id": "c4",
+              "title": "hours",
+              "value": "hour"
+            },
+            {
+              "id": "c5",
+              "title": "days",
+              "value": "day"
+            },
+            {
+              "id": "c6",
+              "title": "years",
+              "value": "year"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "compensationThrowing",
+      "properties": [
+        {
+          "id": "waitforcompletion",
+          "type": "Boolean",
+          "title": "Wait for completion",
+          "value": true,
+          "popular": true,
+          "description": "Determine whether a throw compensation is performed synchronously or asynchronously.",
+          "description_ja": "スローCompensationが同期して実行されるか、非同期に実行されるかを決定します。",
+          "readonly": false,
+          "optional": true
+        }
+      ]
+    },
+    {
+      "name": "compensation",
+      "properties": [
+        {
+          "id": "activityref",
+          "type": "String",
+          "title": "Activity reference",
+          "value": "",
+          "popular": true,
+          "description": "The activity related to the compensation event",
+          "description_ja": "Compensationイベントに関連するアクティビティ",
+          "readonly": false,
+          "optional": true
+        }
+      ]
+    },
+    {
+      "name": "interrupting",
+      "properties": [
+        {
+          "id": "isinterrupting",
+          "type": "Boolean",
+          "title": "Is Interrupting",
+          "value": true,
+          "description": "This attribute denotes whether the Sub-Process encompassing the Event Sub-Process should be cancelled or not.",
+          "description_ja": "この属性は、イベントサブプロセスを包含するサブプロセスをキャンセルするかどうかを示します。",
+          "inverseBoolean": false,
+          "readonly": false,
+          "optional": true,
+          "refToView": [
+            "frame",
+            "frame2"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "diagram",
+      "properties": [
+        {
+          "id": "executable",
+          "type": "Boolean",
+          "title": "Executable",
+          "value": true,
+          "description": "Executable",
+          "description_ja": "実行可能",
+          "readonly": false,
+          "optional": true
+        },
+        {
+          "id": "package",
+          "type": "String",
+          "title": "Package",
+          "value": "/defaultPackage/defaultPackage",
+          "description": "Package",
+          "description_ja": "パッケージ",
+          "readonly": false,
+          "optional": true
+        },
+        {
+          "id": "vardefs",
+          "type": "Vardef",
+          "title": "Variable Definitions",
+          "value": "",
+          "description": "Variable Definitions",
+          "description_ja": "変数定義",
+          "readonly": false,
+          "optional": true
+        },
+        {
+          "id": "adhocprocess",
+          "type": "Choice",
+          "title": "AdHoc",
+          "value": "false",
+          "description": "Defines an AdHoc process",
+          "description_ja": "アドホックプロセスとして定義",
+          "readonly": false,
+          "optional": true,
+          "items": [
+            {
+              "id": "c1",
+              "title": "false",
+              "value": "false"
+            },
+            {
+              "id": "c2",
+              "title": "true",
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "id": "imports",
+          "type": "Import",
+          "title": "Imports",
+          "value": "",
+          "description": "Comma-separated imports",
+          "description_ja": "カンマ区切りインポート",
+          "readonly": false,
+          "optional": true
+        },
+        {
+          "id": "globals",
+          "type": "Global",
+          "title": "Globals",
+          "value": "",
+          "description": "Comma-separated globals",
+          "description_ja": "カンマ区切りグローバル",
+          "readonly": false,
+          "optional": true
+        },
+        {
+          "id": "id",
+          "type": "String",
+          "title": "ID",
+          "value": "[/defaultPackage, /defaultPackage].BPMN2-SampleProcess",
+          "description": "ID",
+          "description_ja": "ID",
+          "readonly": false,
+          "optional": true
+        },
+        {
+          "id": "version",
+          "type": "String",
+          "title": "Version",
+          "value": "",
+          "description": "This defines the Version number of the Diagram.",
+          "description_ja": "ダイアグラムのバージョン番号を定義します。",
+          "readonly": false,
+          "optional": true,
+          "length": "50"
+        },
+        {
+          "id": "timeunit",
+          "type": "Choice",
+          "title": "Base time unit",
+          "value": "s",
+          "description": "Time unit options (seconds, minutes, hours)",
+          "description_ja": "Time unit options (seconds, minutes, hours)",
+          "readonly": false,
+          "optional": true,
+          "simulation": true,
+          "items": [
+            {
+              "id": "c1",
+              "title": "milliseconds",
+              "value": "ms"
+            },
+            {
+              "id": "c2",
+              "title": "seconds",
+              "value": "s"
+            },
+            {
+              "id": "c3",
+              "title": "minutes",
+              "value": "min"
+            },
+            {
+              "id": "c4",
+              "title": "hours",
+              "value": "hour"
+            },
+            {
+              "id": "c5",
+              "title": "days",
+              "value": "day"
+            },
+            {
+              "id": "c6",
+              "title": "years",
+              "value": "year"
+            }
+          ]
+        },
+        {
+          "id": "currency",
+          "type": "String",
+          "title": "Base Currency",
+          "value": "",
+          "description": "Base currency (ISO 4217)",
+          "readonly": false,
+          "optional": true,
+          "simulation": true,
+          "length": "50"
+        },
+        /**{
+          "id":"author",
+          "type":"String",
+          "title":"Author",
+          "value":"",
+          "description":"This holds the name of the author of the Diagram.",
+          "description_ja":"ダイアグラムの作成者を保持します。",
+          "readonly":false,
+          "optional":true,
+          "length":"50"
+      },**/
+        /**{
+          "id":"language",
+          "type":"String",
+          "title":"Language",
+          "value":"English",
+          "description":"This holds the name of the language in which text is written.",
+          "description_ja":"テキストに使用された言語を保持します。",
+          "readonly":false,
+          "optional":true,
+          "length":"50"
+      },**/
+        /**{	
+          "id":"namespaces",
+          "type":"Complex",
+          "title":"Namespaces",
+          "value":"",
+          "description":"Additional namespaces and theire prefixes used in the diagram., ",
+          "description_ja":"ダイアグラムで使用された追加の名前空間とそのプレフィックス。",
+          "readonly":false,
+          "optional":true,
+          "complexItems": [
+              {
+                  "id":"prefix",
+                  "name":"Prefix",
+                  "type":"String",
+                  "value":"",
+                  "width":100,
+                  "optional":false 
+              },
+              {
+                  "id":"url",
+                  "name":"URL",
+                  "type":"String",
+                  "value":"",
+                  "width":200,
+                  "optional":false 
+              }
+          ]
+      },**/
+        {
+          "id": "targetnamespace",
+          "type": "String",
+          "title": "Target Namespace",
+          "value": "http://www.omg.org/bpmn20",
+          "description": "Defines the XML namespace of the elements inside the document.",
+          "description_ja": "ドキュメント内の要素のXML名前空間を定義します。",
+          "readonly": true,
+          "optional": true,
+          "length": "50"
+        },
+        /**{
+          "id":"expressionlanguage",
+          "type":"String",
+          "title":"ExpressionLanguage",
+          "value":"http://www.w3.org/1999/XPath",
+          "description":"A Language may be provided so that the syntax of expressions used in the Diagram can be understood.",
+          "description_ja":"ダイアグラムで使用される式の構文を理解できるように言語が提供されることがあります。",
+          "readonly":false,
+          "optional":true,
+          "length":"50"
+      },**/
+        {
+          "id": "typelanguage",
+          "type": "String",
+          "title": "TypeLanguage",
+          "value": "http://www.w3.org/2001/XMLSchema",
+          "description": "This attribute identifies the type system used by the elements of this Definition.",
+          "description_ja": "この属性は、この定義の要素で使用されるタイプシステムを識別します。",
+          "readonly": true,
+          "optional": true,
+          "length": "50"
+        },
+        /**{
+          "id":"creationdate",
+          "type":"Date",
+          "title":"CreationDate",
+          "value":"",
+          "description":"This defines the date on which the Diagram was created.",
+          "description_ja":"ダイアグラムが作成された日付を定義します。",
+          "readonly":false,
+          "optional":true,
+          "dateFormat":"j/m/y"
+      },**/
+        /**{
+          "id":"modificationdate",
+          "type":"Date",
+          "title":"ModificationDate",
+          "value":"",
+          "description":"This defines the date on which the Diagram was last modified.",
+          "description_ja":"ダイアグラムが最後に変更された日付を定義します。",
+          "readonly":false,
+          "optional":true,
+          "dateFormat":"j/m/y"
+      }**/
+      ]
+    },
+    {
+      "name": "flowElement",
+      "properties": [
+        /**{
+          "id":"categories",
+          "type":"String",
+          "title":"Categories",
+          "value":"",
+          "description":"",
+          "readonly":false,
+          "optional":true,
+          "refToView":"",
+          "length":"50",
+          "wrapLines":true
+      }**/
+      ]
+    },
+    {
+      "name": "itemAwareElement",
+      "properties": [
+        {
+          "id": "itemsubjectref",
+          "type": "String",
+          "title": "ItemSubjectRef",
+          "description": "Specification of the items that are stored or conveyed by the ItemAwareElement",
+          "description_ja": "ItemAwareElementによって格納または搬送されるアイテムの指定",
+          "readonly": false,
+          "optional": true,
+          "length": 50,
+          "wrapLines": true
+        },
+        {
+          "id": "datastate",
+          "type": "String",
+          "title": "DataState",
+          "description": "A reference to the DataState, which defines certain states for the data contained in the item.",
+          "description_ja": "アイテムに含まれるデータの特定の状態を定義するDataStateへの参照。",
+          "readonly": false,
+          "optional": true,
+          "length": 50,
+          "wrapLines": true
+        }
+      ]
+    },
+    /**{
+      "name":"properties",
+      "properties": [
+          {
+              "id":"properties",
+              "type":"Complex",
+              "title":"Properties",
+              "value":"",
+              "description":"Modeler-defined properties MAY be added to an Activity. These properties are local to the Activity. (e.g., Add Customer.Customer Name).",
+              "description_ja":"モデラー定義のプロパティをアクティビティに追加することができます。これらのプロパティはアクティビティにローカルです（Customer.Customer Nameの追加など）。",
+              "readonly": 	false,
+              "optional": 	false,
+              "complexItems": [
+                  {
+                      "id":"name",
+                      "name":"Name",
+                      "type":"String",
+                      "value":"",
+                      "width":100,
+                      "optional":false 
+                  },
+                  {
+                      "id":"datastate",
+                      "name":"DataState",
+                      "type":"String",
+                      "value":"",
+                      "width":80,
+                      "optional":true
+                  },
+                  {
+                      "id":"itemkind",
+                      "name":"ItemKind",
+                      "type":"Choice",
+                      "value":"Information",
+                      "items" : [
+                         {
+                             "id":"information",
+                             "title":"Information",
+                             "value":"Information"
+                         },
+                         {
+                             "id":"physical",
+                             "title":"Physical",
+                             "value":"Physical"
+                         }
+                                 
+                      ],
+                      "width":80,
+                      "optional":true
+                  },
+                  {
+                      "id":"structure",
+                      "name":"Structure",
+                      "type":"String",
+                      "value":"",
+                      "width":100,
+                      "optional":true
+                  },
+                  {
+                      "id":"iscollection",
+                      "name":"isCollection",
+                      "type":"Boolean",
+                      "value":false,
+                      "width":50,
+                      "optional":true
+                  }
+              ]
+          }
+      ]
+  },**/
+    {
+      "name": "iospecification",
+      "properties": [
+        {
+          "id": "datainputset",
+          "type": "Datainput",
+          "title": "DataInputSet",
+          "value": "",
+          "description": "An InputSet is a collection of DataInput elements that together define a valid set of data inputs.",
+          "description_ja": "InputSetは、データ入力の有効なセットを合わせて定義するDataInputエレメントのコレクションです。",
+          "readonly": false,
+          "optional": true,
+          "fortasktypes": "None|Send|Receive|User|Manual|Service"
+          /** "complexItems": [
+            {
+                "id":"name",
+                "name":"Name",
+                "type":"String",
+                "value":"",
+                "width":100,
+                "optional":false 
+            },
+            {
+                "id":"optional",
+                "name":"Optional",
+                "type":"Boolean",
+                "value":false,
+                "width":50,
+                "optional":true
+            },
+            {
+                "id":"whileexecuting",
+                "name":"WhileExecuting",
+                "type":"Boolean",
+                "value":false,
+                "width":80,
+                "optional":true
+            }
+        ] **/
+        },
+        {
+          "id": "dataoutputset",
+          "type": "Dataoutput",
+          "title": "DataOutputSet",
+          "value": "",
+          "description": "An OutputSet is a collection of DataOutputs elements that together may be produced as output from an Activity or Event.",
+          "description_ja": "OutputSet は、アクティビティまたはイベントの出力としてまとめて生成されるDataOutputs要素のコレクションです。",
+          "readonly": false,
+          "optional": true,
+          "fortasktypes": "None|Send|Receive|User|Manual|Service"
+          /** "complexItems": [
+            {
+                "id":"name",
+                "name":"Name",
+                "type":"String",
+                "value":"",
+                "width":100,
+                "optional":false 
+            },
+            {
+                "id":"optional",
+                "name":"Optional",
+                "type":"Boolean",
+                "value":false,
+                "width":50,
+                "optional":true
+            },
+            {
+                "id":"whileexecuting",
+                "name":"WhileExecuting",
+                "type":"Boolean",
+                "value":false,
+                "width":80,
+                "optional":true
+            }
+        ] **/
+        }
+      ]
+    },
+    {
+      "name": "activity",
+      "properties": [
+        /**{
+          "id":"startquantity",
+          "type":"Integer",
+          "title":"StartQuantity",
+          "value":1,
+          "description":"",
+          "readonly":false,
+          "optional":false,
+          "refToView":"",
+          "min":"1"
+      },**/
+        /**{
+          "id":"completionquantity",
+          "type":"Integer",
+          "title":"CompletionQuantity",
+          "value":1,
+          "description":"Defines the number of tokens that must be generated from the activity",
+          "description_ja":"アクティビティから生成する必要のあるトークンの数を定義します。",
+          "readonly":false,
+          "optional":false,
+          "refToView":"",
+          "min":"1"
+      },**/
+        {
+          "id": "isforcompensation",
+          "type": "Boolean",
+          "title": "Is for Compensation",
+          "value": false,
+          "description": "A flag that identifies whether this activity is intended for the purposes of compensation.",
+          "description_ja": "このアクティビティCompensationの目的を意図しているかどうかを識別するフラグ。",
+          "readonly": false,
+          "optional": true,
+          "refToView": "compensation"
+        },
+        {
+          "id": "assignments",
+          "type": "Dataassignment",
+          "title": "Assignments",
+          "value": "",
+          "description": "",
+          "readonly": false,
+          "optional": true,
+          "fortasktypes": "None|Send|Receive|User|Manual|Service"
+          /** "complexItems": [
+            {
+                "id":"to",
+                "name":"To",
+                "type":"String",
+                "value":"",
+                "width":100,
+                "optional":false 
+            },
+            {
+                "id":"from",
+                "name":"From",
+                "type":"String",
+                "value":"",
+                "width":100,
+                "optional":false
+            },
+            {
+                "id":"assigntime",
+                "name":"AssignTime",
+                "type":"Choice",
+                "value":"Start",
+                "width":100,
+                "optional":true,
+                "items": [
+                    {
+                        "id":"c1",
+                        "title":"Start",
+                        "value":"Start",
+                        "refToView":""
+                    },
+                    {
+                        "id":"c2",
+                        "title":"End",
+                        "value":"End",
+                        "refToView":""
+                    }
+                ]
+            }
+        ] **/
+        }
+        /**,
+				{
+					"id":"callacitivity",
+					"type":"Boolean",
+					"title":"is a Call Activity",
+					"value":false,
+					"description":"a Call Activity is a wrapper for a globally defined Sub-Process that is reused in the current process.",
+                                        "description_ja":"コールアクティビティは、現在のプロセスで再利用されているグローバル定義サブプロセスのラッパーです。",
+					"readonly":false,
+					"optional":"true",
+					"refToView":"callActivity"
+				}**/
+      ]
+    },
+    // start custom activity properties
+    {
+      "name": "customactivity",
+      "properties": [
+        {
+          "id": "isforcompensation",
+          "type": "Boolean",
+          "title": "Is for Compensation",
+          "value": false,
+          "description": "A flag that identifies whether this activity is intended for the purposes of compensation.",
+          "description_ja": "このアクティビティCompensationの目的を意図しているかどうかを識別するフラグ。",
+          "readonly": true,
+          "optional": true,
+          "refToView": "compensation"
+        }
+        /**,
+				{
+					"id":"callacitivity",
+					"type":"Boolean",
+					"title":"is a Call Activity",
+					"value":false,
+					"description":"a Call Activity is a wrapper for a globally defined Sub-Process that is reused in the current process.",
+                                        "description_ja":"コールアクティビティは、現在のプロセスで再利用されているグローバル定義サブプロセスのラッパーです。",
+					"readonly":true,
+					"optional":"true",
+					"refToView":"callActivity"
+				}**/
+      ]
+    },
+    // end custom activity properties
+    {
+      "name": "operation",
+      "properties": [
+        {
+          "id": "operationname",
+          "type": "String",
+          "title": "OperationName",
+          "value": "",
+          "description": "The descriptive name for the operation element.",
+          "description_ja": "オペレーション要素のわかりやすい名前。",
+          "readonly": false,
+          "optional": "true"
+        },
+        {
+          "id": "inmessagename",
+          "type": "String",
+          "title": "InMessageName",
+          "value": "",
+          "description": "The descriptive name for the InMessage element",
+          "description_ja": "InMessage要素のわかりやすい名前。",
+          "readonly": false,
+          "optional": "true"
+        },
+        {
+          "id": "inmsgitemkind",
+          "type": "Choice",
+          "title": "InMessageItemKind",
+          "value": "Information",
+          "description": "This defines the nature of the Item. Possible values are Physical or Information. The default value is Information.",
+          "description_ja": "アイテムの性質を定義します。有効な値はPhysicalまたはInformationです。デフォルト値はInformationです。",
+          "readonly": false,
+          "optional": true,
+          "items": [
+            {
+              "id": "c1",
+              "title": "Physical",
+              "value": "Physical"
+            },
+            {
+              "id": "c2",
+              "title": "Information",
+              "value": "Information"
+            }
+          ]
+        },
+        {
+          "id": "inmsgstructure",
+          "type": "String",
+          "title": "InMessageStructure",
+          "value": "",
+          "description": "This defines the nature of the Item. Possible values are Physical or Information. The default value is Information.",
+          "description_ja": "アイテムの性質を定義します。有効な値はPhysicalまたはInformationです。デフォルト値はInformationです。",
+          "readonly": false,
+          "optional": true
+        },
+        {
+          "id": "inmsgimport",
+          "type": "Complex",
+          "title": "InMessageImport",
+          "value": "",
+          "description": "Identifies the location of the data structure and its format. If the importType attribute is left unspecified, the typeLanguage specified in the Definitions is assumed.",
+          "description_ja": "データ構造体の場所とそのフォーマットを識別します。importType属性が未指定のままの場合、定義に指定されたtypeLanguageを使用するものと見なされます。",
+          "readonly": false,
+          "optional": true,
+          "complexItems": [
+            {
+              "id": "c1",
+              "type": "String",
+              "width": 200,
+              "value": "",
+              "name": "ImportType",
+            },
+            {
+              "id": "c2",
+              "type": "String",
+              "width": 100,
+              "value": "",
+              "name": "Location"
+            },
+            {
+              "id": "c3",
+              "type": "String",
+              "width": 200,
+              "value": "",
+              "name": "Namespace",
+            }
+          ]
+        },
+        {
+          "id": "inmsgiscollection",
+          "type": "Boolean",
+          "title": "InMessageIsCollection",
+          "value": false,
+          "description": "Setting this flag to true indicates that the actual data type is a collection.",
+          "description_ja": "実際のデータタイプがコレクションであることを示すには、このフラグをTrueに設定します。",
+          "readonly": false,
+          "optional": true
+        },
+        {
+          "id": "outmessagename",
+          "type": "String",
+          "title": "OutMessageName",
+          "value": "",
+          "description": "The descriptive name for the OutMessage element",
+          "description_ja": "OutMessage要素のわかりやすい名前。",
+          "readonly": false,
+          "optional": "true"
+        },
+        {
+          "id": "outmsgitemkind",
+          "type": "Choice",
+          "title": "OutMessageItemKind",
+          "value": "Information",
+          "description": "This defines the nature of the Item. Possible values are Physical or Information. The default value is Information.",
+          "description_ja": "アイテムの性質を定義します。有効な値はPhysicalまたはInformationです。デフォルト値はInformationです。",
+          "readonly": false,
+          "optional": true,
+          "items": [
+            {
+              "id": "c1",
+              "title": "Physical",
+              "value": "Physical"
+            },
+            {
+              "id": "c2",
+              "title": "Information",
+              "value": "Information"
+            }
+          ]
+        },
+        {
+          "id": "outmsgstructure",
+          "type": "String",
+          "title": "OutMessageStructure",
+          "value": "",
+          "description": "This defines the nature of the Item. Possible values are Physical or Information. The default value is Information.",
+          "description_ja": "アイテムの性質を定義します。有効な値はPhysicalまたはInformationです。デフォルト値はInformationです。",
+          "readonly": false,
+          "optional": true
+        },
+        {
+          "id": "outmsgimport",
+          "type": "Complex",
+          "title": "OutMessageImport",
+          "value": "",
+          "description": "Identifies the location of the data structure and its format. If the importType attribute is left unspecified, the typeLanguage specified in the Definitions is assumed.",
+          "description_ja": "データ構造体の場所とそのフォーマットを識別します。importType属性が未指定のままの場合、定義に指定されたtypeLanguageを使用するものと見なされます。",
+          "readonly": false,
+          "optional": true,
+          "complexItems": [
+            {
+              "id": "c1",
+              "type": "String",
+              "width": 200,
+              "value": "",
+              "name": "ImportType",
+            },
+            {
+              "id": "c2",
+              "type": "String",
+              "width": 100,
+              "value": "",
+              "name": "Location"
+            },
+            {
+              "id": "c3",
+              "type": "String",
+              "width": 200,
+              "value": "",
+              "name": "Namespace",
+            }
+          ]
+        },
+        {
+          "id": "outmsgiscollection",
+          "type": "Boolean",
+          "title": "OutMessageIsCollection",
+          "value": false,
+          "description": "Setting this flag to true indicates that the actual data type is a collection.",
+          "description_ja": "実際のデータタイプがコレクションであることを示すには、このフラグをTrueに設定します。",
+          "readonly": false,
+          "optional": true
+        }
+      ]
+    },
+    {
+      "name": "loopcharacteristics",
+      "properties": [
+        {
+          "id": "looptype",
+          "type": "Choice",
+          "title": "LoopType",
+          "value": "None",
+          "description": "",
+          "readonly": false,
+          "optional": false,
+          "refToView": "",
+          "items": [
+            {
+              "id": "c1",
+              "title": "None",
+              "value": "None",
+              "refToView": "none"
+            },
+            {
+              "id": "c2",
+              "title": "Standard",
+              "value": "Standard",
+              "icon": "activity/list/looptype.standard.png",
+              "refToView": "loop"
+            },
+            {
+              "id": "c3",
+              "title": "MI Parallel",
+              "value": "Parallel",
+              "icon": "activity/list/mi.parallel.png",
+              "refToView": "parallel"
+            },
+            {
+              "id": "c4",
+              "title": "MI Sequential",
+              "value": "Sequential",
+              "icon": "activity/list/mi.sequential.png",
+              "refToView": "sequential"
+            }
+          ]
+        },
+        {
+          "id": "testbefore",
+          "type": "Boolean",
+          "title": "TestBefore",
+          "value": false,
+          "description": "Flag that controls whether the loop condition is evaluated at the beginning (testBefore = true) or at the end (testBefore = false)of the loop iteration.",
+          "description_ja": "ループ条件をループの先頭（testBefore = true）で評価するか、末尾で評価するか（testBefore = false）を制御するフラグ。",
+        },
+        {
+          "id": "loopcondition",
+          "type": "String",
+          "title": "LoopCondition",
+          "value": "",
+          "description": "",
+          "readonly": false,
+          "optional": false
+        },
+        {
+          "id": "loopmaximum",
+          "type": "Integer",
+          "title": "LoopMaximum",
+          "description": "",
+          "readonly": false,
+          "optional": true,
+          "refToView": "",
+          "min": "0"
+        },
+        {
+          "id": "loopcardinality",
+          "type": "String",
+          "title": "LoopCardinality",
+          "value": "",
+          "description": "A numeric Expression that controls the number of Activity instances that will be created. This Expression MUST evaluate to an integer.",
+          "description_ja": "作成するアクティビティインスタンスの数を制御する数式。この式は整数に評価される必要があります。",
+          "readonly": false,
+          "optional": true
+        },
+        {
+          "id": "loopdatainput",
+          "type": "String",
+          "title": "LoopDataInput",
+          "value": "",
+          "description": "A reference to a DataInput which is part of the Activity InputOutputSpecification. This DataInput is used to determine the number of Activity instances, one Activity instance per item in the collection of data stored in that DataInput element.",
+          "description_ja": "アクティビティのInputOutputSpecificationの一部であるDataInputへの参照。このDataInputは、アクティビティの数を特定するために使用されます。データのコレクション内のアイテムあたり1アクティビティインスタンスがそのDataInput要素に格納されます。",
+          "readonly": false,
+          "optional": true
+        },
+        {
+          "id": "loopdataoutput",
+          "type": "String",
+          "title": "LoopDataInput",
+          "value": "",
+          "description": "A reference to a DataOutput which is part of the Activity InputOutputSpecification.",
+          "description_ja": "アクティビティのInputOutputSpecificationの一部であるDataOutputへの参照。",
+          "readonly": false,
+          "optional": true
+        },
+        {
+          "id": "inputdataitem",
+          "type": "String",
+          "title": "InputDataItem",
+          "value": "",
+          "description": "A Property, representing for every Activity instance the single item of the collection stored in the loopDataInput.",
+          "description_ja": "すべてのアクティビティインスタンスに対して、loopDataInputに格納されているコレクションの単一のアイテムを表すプロパティ。",
+          "readonly": false,
+          "optional": true
+        },
+        {
+          "id": "outputdataitem",
+          "type": "String",
+          "title": "OutputDataItem",
+          "value": "",
+          "description": "A Property, representing for every Activity instance the single item of the collection stored in the loopDataOutput.",
+          "description_ja": "すべてのアクティビティインスタンスに対して、loopDataOutputに格納されているコレクションの単一のアイテムを表すプロパティ。",
+          "readonly": false,
+          "optional": true
+        },
+        /**{
+          "id":"behavior",
+          "type":"Choice",
+          "title":"Behavior",
+          "description":"The attribute behavior acts as a shortcut for specifying when events shall be thrown from an Activity instance that is about to complete. It can assume values of none, one, all, and complex.",
+          "description_ja":"属性は、完了直前のアクティビティインスタンスからイベントがいつスローされるかを指定するためのショートカットとして動作します。有効な値は、none、one、all、およびcomplexです。",
+          "value":"all",
+          "items": [
+              {
+                  "id":"cnone",
+                  "value":"None",
+                  "title":"None"
+              },
+              {
+                  "id":"cone",
+                  "value":"One",
+                  "title":"One"
+              },
+              {
+                  "id":"call",
+                  "value":"All",
+                  "title":"All"
+              },
+              {
+                  "id":"ccomplex",
+                  "value":"Complex",
+                  "title":"Complex"
+              }
+          ]
+      },**/
+        {
+          "id": "complexbehaviordefinition",
+          "type": "Complex",
+          "title": "ComplexBehaviorDefinition:",
+          "description": "Controls when and which Events are thrown in case behavior is set to complex.",
+          "description_ja": "動作がcomplexに設定されているときに、どのイベントをいつスローするかを制御します。",
+          "value": "",
+          "optional": true,
+          "readonly": false,
+          "complexItems": [
+            {
+              "id": "cexpression",
+              "type": "String",
+              "width": 200,
+              "value": "",
+              "name": "Condition",
+            },
+            {
+              "id": "ceventdefinition",
+              "type": "Choice",
+              "value": "signal",
+              "width": 100,
+              "name": "EventDefinition",
+              "items": [
+                {
+                  "id": "cnone",
+                  "value": "None",
+                  "title": "None"
+                },
+                {
+                  "id": "cmessage",
+                  "value": "Message",
+                  "title": "Message"
+                },
+                {
+                  "id": "cescalation",
+                  "value": "Escalation",
+                  "title": "Escalation"
+                },
+                {
+                  "id": "cerror",
+                  "value": "Error",
+                  "title": "Error"
+                },
+                {
+                  "id": "ccancel",
+                  "value": "Cancel",
+                  "title": "Cancel"
+                },
+                {
+                  "id": "ccompensation",
+                  "value": "Compensation",
+                  "title": "Compensation"
+                },
+                {
+                  "id": "csignal",
+                  "value": "Signal",
+                  "title": "Signal"
+                },
+                {
+                  "id": "cterminate",
+                  "value": "Terminate",
+                  "title": "Terminate"
+                }
+              ]
+            }
+          ]
+        },
+        /**{
+          "id":"completioncondition",
+          "type":"String",
+          "title":"CompletionCondition:",
+          "description":"This attribute defines a Boolean Expression that when evaluated to true, cancels the remaining Activity instances and produces a token.",
+          "description_ja":"この属性は、trueに評価されたときに残りのアクティビティインスタンスをキャンセルし、トークンを生成するブール式を定義します。",
+          "value":""
+      },**/
+        {
+          "id": "onebehavioreventref",
+          "type": "Choice",
+          "value": "signal",
+          "title": "OneBehaviorEventRef",
+          "description": "The EventDefinition which is thrown when behavior is set to one and the first internal Activity instance has completed.",
+          "description_ja": "動作が 1 つに設定され、最初の内部アクティビティインスタンスが完了したときにスローされるEventDefinition。",
+          "items": [
+            {
+              "id": "cnone",
+              "value": "None",
+              "title": "None"
+            },
+            {
+              "id": "cmessage",
+              "value": "Message",
+              "title": "Message"
+            },
+            {
+              "id": "cescalation",
+              "value": "Escalation",
+              "title": "Escalation"
+            },
+            {
+              "id": "cerror",
+              "value": "Error",
+              "title": "Error"
+            },
+            {
+              "id": "ccancel",
+              "value": "Cancel",
+              "title": "Cancel"
+            },
+            {
+              "id": "ccompensation",
+              "value": "Compensation",
+              "title": "Compensation"
+            },
+            {
+              "id": "csignal",
+              "value": "Signal",
+              "title": "Signal"
+            },
+            {
+              "id": "cterminate",
+              "value": "Terminate",
+              "title": "Terminate"
+            }
+          ]
+        },
+        {
+          "id": "nonebehavioreventref",
+          "type": "Choice",
+          "value": "signal",
+          "title": "NoneBehaviorEventRef",
+          "items": [
+            {
+              "id": "cnone",
+              "value": "None",
+              "title": "None"
+            },
+            {
+              "id": "cmessage",
+              "value": "Message",
+              "title": "Message"
+            },
+            {
+              "id": "cescalation",
+              "value": "Escalation",
+              "title": "Escalation"
+            },
+            {
+              "id": "cerror",
+              "value": "Error",
+              "title": "Error"
+            },
+            {
+              "id": "ccancel",
+              "value": "Cancel",
+              "title": "Cancel"
+            },
+            {
+              "id": "ccompensation",
+              "value": "Compensation",
+              "title": "Compensation"
+            },
+            {
+              "id": "csignal",
+              "value": "Signal",
+              "title": "Signal"
+            },
+            {
+              "id": "cterminate",
+              "value": "Terminate",
+              "title": "Terminate"
+            }
+          ]
+        }
+      ]
+    },
+    // start custom loop characteristics
+    {
+      "name": "customloopcharacteristics",
+      "properties": [
+        {
+          "id": "looptype",
+          "type": "Choice",
+          "title": "LoopType",
+          "value": "None",
+          "description": "",
+          "readonly": true,
+          "optional": false,
+          "refToView": "",
+          "items": [
+            {
+              "id": "c1",
+              "title": "None",
+              "value": "None",
+              "refToView": "none"
+            },
+            {
+              "id": "c2",
+              "title": "Standard",
+              "value": "Standard",
+              "icon": "activity/list/looptype.standard.png",
+              "refToView": "loop"
+            },
+            {
+              "id": "c3",
+              "title": "MI Parallel",
+              "value": "Parallel",
+              "icon": "activity/list/mi.parallel.png",
+              "refToView": "parallel"
+            },
+            {
+              "id": "c4",
+              "title": "MI Sequential",
+              "value": "Sequential",
+              "icon": "activity/list/mi.sequential.png",
+              "refToView": "sequential"
+            }
+          ]
+        },
+        {
+          "id": "completioncondition",
+          "type": "String",
+          "title": "CompletionCondition:",
+          "description": "This attribute defines a Boolean Expression that when evaluated to true, cancels the remaining Activity instances and produces a token.",
+          "description_ja": "この属性は、trueに評価されたときに残りのアクティビティインスタンスをキャンセルし、トークンを生成するブール式を定義します。",
+          "value": ""
+        }
+      ]
+    },
+    // end custom loop characteristics
+    {
+      "name": "task",
+      "properties": [
+        {
+          "id": "tasktype",
+          "type": "Choice",
+          "title": "TaskType",
+          "value": "None",
+          "description": "",
+          "readonly": false,
+          "optional": false,
+          "refToView": "",
+          "directlyEditable": false,
+          "items": [
+            {
+              "id": "c1",
+              "title": "None",
+              "value": "None",
+              "refToView": "none"
+            },
+            {
+              "id": "c2",
+              "title": "Send",
+              "value": "Send",
+              "icon": "activity/list/type.send.png",
+              "refToView": "sendTask"
+            },
+            {
+              "id": "c3",
+              "title": "Receive",
+              "value": "Receive",
+              "icon": "activity/list/type.receive.png",
+              "refToView": "receiveTask"
+            },
+            {
+              "id": "c4",
+              "title": "User",
+              "value": "User",
+              "icon": "activity/list/type.user.png",
+              "refToView": "userTask"
+            },
+            {
+              "id": "c5",
+              "title": "Manual",
+              "value": "Manual",
+              "icon": "activity/list/type.manual.png",
+              "refToView": "manualTask"
+            },
+            {
+              "id": "c6",
+              "title": "Service",
+              "value": "Service",
+              "icon": "activity/list/type.service.png",
+              "refToView": "serviceTask"
+            },
+            {
+              "id": "c7",
+              "title": "Business Rule",
+              "value": "Business Rule",
+              "icon": "activity/list/type.business.rule.png",
+              "refToView": "businessRuleTask"
+            },
+            {
+              "id": "c8",
+              "title": "Script",
+              "value": "Script",
+              "icon": "activity/list/type.script.png",
+              "refToView": "scriptTask"
+            }
+          ]
+        },
+        /**{
+          "id":"implementation",
+          "type":"Choice",
+          "title":"Implementation",
+          "value":"webService",
+          "description":"",
+          "readonly":false,
+          "optional":false,
+          "refToView":"",
+          "items": [
+              {
+                  "id":"c1",
+                  "title":"HumanTaskWebService",
+                  "value":"humanTaskWebService",
+                  "refToView":""
+              },
+              {
+                  "id":"c2",
+                  "title":"BuisnessRuleWebService",
+                  "value":"BuisnessRuleWebService",
+                  "refToView":""
+              },
+              {
+                  "id":"c1",
+                  "title":"WebService",
+                  "value":"webService",
+                  "refToView":""
+              },
+              {
+                  "id":"c2",
+                  "title":"Other",
+                  "value":"other",
+                  "refToView":""
+              },
+              {
+                  "id":"c2",
+                  "title":"Unspecified",
+                  "value":"unspecified",
+                  "refToView":""
+              }
+          ]
+      },**/
+        /**{
+          "id":"resources",
+          "type":"Complex",
+          "title":"Resources",
+          "value":"",
+          "description":"",
+          "readonly":false,
+          "optional":true,
+          "complexItems": [
+              {
+                  "id":"resource_type",
+                  "name":"Type",
+                  "type":"Choice",
+                  "value":"",
+                  "width":100,
+                  "optional":false,
+                  "items": [
+                      {
+                          "id":"c1",
+                          "title":"Performer",
+                          "value":"Performer",
+                          "refToView":""
+                      },
+                      {
+                          "id":"c2",
+                          "title":"HumanPerformer",
+                          "value":"HumanPerformer",
+                          "refToView":""
+                      },
+                      {
+                          "id":"c3",
+                          "title":"PotentialOwner",
+                          "value":"PotentialOwner",
+                          "refToView":""
+                      }
+                  ]
+              },
+              {
+                  "id":"resource",
+                  "name":"Resource",
+                  "type":"String",
+                  "value":"",
+                  "width":200,
+                  "optional":true
+              },
+              {
+                  "id":"resourceassignmentexpr",
+                  "name":"ResourceAssignmentExpression",
+                  "type":"String",
+                  "value":"",
+                  "width":200,
+                  "optional":true
+              },
+              {
+                  "id":"language",
+                  "name":"Language",
+                  "type":"String",
+                  "value":"",
+                  "width":100,
+                  "optional":true
+              },
+              {
+                  "id":"evaluatestotype",
+                  "name":"EvaluatesToType",
+                  "type":"String",
+                  "value":"",
+                  "width":200,
+                  "optional":true
+              }
+          ]
+      },**/
+        {
+          "id": "messageref",
+          "type": "String",
+          "title": "MessageRef",
+          "value": "",
+          "description": "",
+          "readonly": false,
+          "optional": false,
+          "refToView": "",
+          "length": "50",
+          "fortasktypes": "None|Send|Receive"
+        },
+        /**{
+          "id":"operationref",
+          "type":"String",
+          "title":"OperationRef",
+          "value":"",
+          "description":"ID-Reference to an operation definition.",
+          "description_ja":"オペレーションの定義へのID参照。",
+          "readonly":false,
+          "optional":true
+      },**/
+        /**{
+          "id":"instantiate",
+          "type":"Boolean",
+          "title":"Instantiate",
+          "value":false,
+          "description":"",
+          "readonly":false,
+          "optional":false,
+          "refToView":""
+      },**/
+        {
+          "id": "script",
+          "type": "Expression",
+          "title": "Script",
+          "value": "",
+          "description": "Script that can be run when the Task is performed. Related to the Script TaskType, if a script is not included, then the Task will act equivalent to a TaskType of None.",
+          "description_ja": "タスクを実行するときに実行可能なスクリプト。スクリプトのTaskTypeに関連して、スクリプトが含まれない場合は、タスクはTaskTypeがNoneである場合と同じように動作します。",
+          "readonly": false,
+          "optional": true,
+          "fortasktypes": "None|Script"
+        },
+        {
+          "id": "script_language",
+          "type": "Choice",
+          "title": "ScriptLanguage",
+          "value": "java",
+          "description": "Defines the script language. The script language MUST be provided if a script is provided.",
+          "description_ja": "スクリプト言語を定義します。スクリプトを使用する場合は、スクリプト言語を指定する必要があります。",
+          "readonly": false,
+          "optional": true,
+          "fortasktypes": "None|Send|Receive|User|Manual|Service|Script",
+          "items": [
+            {
+              "id": "c1",
+              "title": "java",
+              "value": "java"
+            },
+            {
+              "id": "c2",
+              "title": "mvel",
+              "value": "mvel"
+            }
+          ]
+        },
+        /**{
+          "id":"inmessagetype",
+          "type":"String",
+          "title":"In Message",
+          "value":"",
+          "description":"Type of input message",
+          "description_ja":"入力メッセージのタイプ",
+          "readonly":false,
+          "optional":true
+      },**/
+        /**{
+          "id":"outmessagetype",
+          "type":"String",
+          "title":"Out Message",
+          "value":"",
+          "description":"Type of output message",
+          "description_ja":"出力メッセージのタイプ",
+          "readonly":false,
+          "optional":true
+      },**/
+        /**{
+          "id":"servicename",
+          "type":"String",
+          "title":"servicename",
+          "value":"",
+          "description":"name of service",
+          "description_ja":"サービスの名前",
+          "readonly":false,
+          "optional":true
+      },**/
+        /**{
+          "id":"namespace",
+          "type":"String",
+          "title":"Namespace",
+          "value":"",
+          "description":"Defines the XML namespace of the elements inside the document.",
+          "description_ja":"ドキュメント内の要素のXML名前空間を定義します。",
+          "readonly":false,
+          "optional":true,
+          "length":"50"
+      },**/
+        /** {
+          "id":"operation",
+          "type":"String",
+          "title":"operation",
+          "value":"",
+          "description":"operation",
+          "description_ja":"オペレーション",
+          "readonly":false,
+          "optional":true,
+          "fortasktypes":"None|Service"
+      }, **/
+        /**{
+          "id":"porttype",
+          "type":"String",
+          "title":"porttype",
+          "value":"",
+          "description":"porttype",
+          "description_ja":"ポートタイプ",
+          "readonly":false,
+          "optional":true
+      },**/
+        /**{
+          "id":"wsdlUrl",
+          "type":"String",
+          "title":"wsdlUrl",
+          "value":"",
+          "description":"wsdlUrl",
+          "description_ja":"WSDLURL",
+          "readonly":false,
+          "optional":true
+      },**/
+        {
+          "id": "bgcolor",
+          "type": "Color",
+          "title": "BackgroundColor",
+          "value": "#b1c2d6",
+          "gradient": true,
+          "description": "",
+          "readonly": false,
+          "optional": false,
+          "refToView": "fill_el",
+          "fill": true,
+          "stroke": false
+        },
+        {
+          "id": "bordercolor",
+          "type": "Color",
+          "title": "BorderColor",
+          "value": "#000000",
+          "description": "",
+          "readonly": false,
+          "optional": false,
+          "refToView": [
+            "edge",
+            "fill_border",
+            "bg_frame",
+            "frame",
+            "frame2",
+            "frame3",
+            "frame4",
+            "frame5",
+            "frame6",
+            "frame7",
+            "frame8",
+            "frame9",
+            "frame10",
+            "frame11",
+            "frame12",
+            "frame13",
+            "frame14",
+            "frame15",
+            "frame16",
+            "frame17",
+            "frame18",
+            "frame19",
+            "frame20",
+            "frame21",
+            "frame22",
+            "frame23",
+            "frame24",
+            "frame25",
+            "frame26",
+            "border"
+          ],
+          "fill": false,
+          "stroke": true
+        },
+        {
+          "id": "fontcolor",
+          "type": "Color",
+          "title": "Font Color",
+          "value": "#000000",
+          "description": "Font color",
+          "description_ja": "フォントの色",
+          "readonly": false,
+          "optional": false,
+          "refToView": [
+            "text_name"
+          ],
+          "fill": true,
+          "stroke": false
+        },
+        {
+          "id": "fontsize",
+          "type": "Choice",
+          "title": "Font Size",
+          "value": "",
+          "description": "The Font Size",
+          "description_ja": "フォントのサイズ",
+          "readonly": false,
+          "optional": false,
+          "refToView": "text_name",
+          "items": [
+            {
+              "id": "c1",
+              "title": "8",
+              "value": "8"
+            },
+            {
+              "id": "c2",
+              "title": "9",
+              "value": "9"
+            },
+            {
+              "id": "c3",
+              "title": "10",
+              "value": "10"
+            },
+            {
+              "id": "c4",
+              "title": "11",
+              "value": "11"
+            },
+            {
+              "id": "c5",
+              "title": "12",
+              "value": "12"
+            },
+            {
+              "id": "c6",
+              "title": "14",
+              "value": "14"
+            },
+            {
+              "id": "c7",
+              "title": "18",
+              "value": "18"
+            },
+            {
+              "id": "c8",
+              "title": "20",
+              "value": "20"
+            },
+            {
+              "id": "c9",
+              "title": "24",
+              "value": "24"
+            },
+            {
+              "id": "c10",
+              "title": "36",
+              "value": "36"
+            },
+            {
+              "id": "c11",
+              "title": "48",
+              "value": "48"
+            },
+            {
+              "id": "c12",
+              "title": "72",
+              "value": "72"
+            }
+          ]
+        }
+      ]
+    },
+    // start custom task properties
+    {
+      "name": "customtask",
+      "properties": [
+        /**{
+          "id":"implementation",
+          "type":"Choice",
+          "title":"Implementation",
+          "value":"other",
+          "description":"",
+          "readonly":true,
+          "optional":false,
+          "refToView":"",
+          "items": [
+              {
+                  "id":"c1",
+                  "title":"HumanTaskWebService",
+                  "value":"humanTaskWebService",
+                  "refToView":""
+              },
+              {
+                  "id":"c2",
+                  "title":"BuisnessRuleWebService",
+                  "value":"BuisnessRuleWebService",
+                  "refToView":""
+              },
+              {
+                  "id":"c1",
+                  "title":"WebService",
+                  "value":"webService",
+                  "refToView":""
+              },
+              {
+                  "id":"c2",
+                  "title":"Other",
+                  "value":"other",
+                  "refToView":""
+              },
+              {
+                  "id":"c2",
+                  "title":"Unspecified",
+                  "value":"unspecified",
+                  "refToView":""
+              }
+          ]
+      },**/
+        {
+          "id": "bgcolor",
+          "type": "Color",
+          "title": "BackgroundColor",
+          "value": "#b1c2d6",
+          "gradient": true,
+          "description": "",
+          "readonly": false,
+          "optional": false,
+          "refToView": "fill_el",
+          "fill": true,
+          "stroke": false
+        },
+        {
+          "id": "bordercolor",
+          "type": "Color",
+          "title": "BorderColor",
+          "value": "#000000",
+          "description": "",
+          "readonly": false,
+          "optional": false,
+          "refToView": [
+            "edge",
+            "fill_border",
+            "bg_frame",
+            "frame",
+            "frame2",
+            "frame3",
+            "frame4",
+            "frame5",
+            "frame6",
+            "frame7",
+            "frame8",
+            "frame9",
+            "frame10",
+            "frame11",
+            "frame12",
+            "frame13",
+            "frame14",
+            "frame15",
+            "frame16",
+            "frame17",
+            "frame18",
+            "frame19",
+            "frame20",
+            "frame21",
+            "frame22",
+            "frame23",
+            "frame24",
+            "frame25",
+            "frame26",
+            "border"
+          ],
+          "fill": false,
+          "stroke": true
+        },
+        {
+          "id": "fontcolor",
+          "type": "Color",
+          "title": "Font Color",
+          "value": "#000000",
+          "description": "Font color",
+          "description_ja": "フォントの色",
+          "readonly": false,
+          "optional": false,
+          "refToView": [
+            "text_name"
+          ],
+          "fill": true,
+          "stroke": false
+        },
+        {
+          "id": "fontsize",
+          "type": "Choice",
+          "title": "Font Size",
+          "value": "",
+          "description": "The Font Size",
+          "description_ja": "フォントのサイズ",
+          "readonly": false,
+          "optional": false,
+          "refToView": "text_name",
+          "items": [
+            {
+              "id": "c1",
+              "title": "8",
+              "value": "8"
+            },
+            {
+              "id": "c2",
+              "title": "9",
+              "value": "9"
+            },
+            {
+              "id": "c3",
+              "title": "10",
+              "value": "10"
+            },
+            {
+              "id": "c4",
+              "title": "11",
+              "value": "11"
+            },
+            {
+              "id": "c5",
+              "title": "12",
+              "value": "12"
+            },
+            {
+              "id": "c6",
+              "title": "14",
+              "value": "14"
+            },
+            {
+              "id": "c7",
+              "title": "18",
+              "value": "18"
+            },
+            {
+              "id": "c8",
+              "title": "20",
+              "value": "20"
+            },
+            {
+              "id": "c9",
+              "title": "24",
+              "value": "24"
+            },
+            {
+              "id": "c10",
+              "title": "36",
+              "value": "36"
+            },
+            {
+              "id": "c11",
+              "title": "48",
+              "value": "48"
+            },
+            {
+              "id": "c12",
+              "title": "72",
+              "value": "72"
+            }
+          ]
+        }
+      ]
+    },
+    // end custom task properties
+    {
+      "name": "subprocess",
+      "properties": [
+        /**{
+          "id": "subprocesstype",
+          "type": "Choice",
+          "title": "subProcessType",
+          "value": "Embedded",
+          "description": "SubProcessType is an attribute that defines whether the Sub-Process details are embedded within the higher level Process or refers to another, re-usable Process. The default is Embedded.",
+          "description_ja": "SubProcessTypeは、サブプロセスの詳細を上位レベルのプロセスに埋め込むか、別の再利用可能なプロセスを参照するかを定義する属性です。デフォルトはEmbeddedです。",
+          "optional": false,
+          "refToView": "",
+          "items": [
+              {
+                  "id": "choice1",
+                  "title":"Embedded",
+                  "value":"Embedded"
+              },
+              {
+                  "id": "choice2",
+                  "title": "Independent",
+                  "value": "Independent"
+              },
+              {
+                  "id": "choice3",
+                  "title": "Reusable",
+                  "value": "Reusable"
+              }
+          ]
+      },**/
+        /**{
+          "id":"isatransaction",
+          "type":"Boolean",
+          "title":"is a Transaction",
+          "value":false,
+          "description":"A Transaction is a set of activities that logically belongs together; it might follow a specified transaction protocol.",
+          "description_ja":"トランザクションは、論理的にまとめられているアクティビティのセットです。指定されたトランザクションプロトコルに従います。",
+          "readonly":false,
+          "optional":false,
+          "refToView":"border"
+      },**/
+        /**{
+          "id":"transaction",
+          "type":"String",
+          "title":"TransactionRef",
+          "value":"",
+          "description":"",
+          "readonly":false,
+          "optional":true,
+          "refToView":"",
+          "length":"50"
+      },**/
+        /**{
+          "id":"transactionmethod",
+          "type":"Choice",
+          "title":"TransactionMethod",
+          "value":"compensate",
+          "description":"The technique that will be used to undo a transaction that has been cancelled.",
+          "description_ja":"キャンセルされたトランザクションを元に戻すために使用される技術。",
+          "readonly":false,
+          "optional":true,
+          "items": [
+              {
+                  "id":"c1",
+                  "title":"Compensate",
+                  "value":"compensate"
+              },
+              {
+                  "id":"c2",
+                  "title":"Store",
+                  "value":"store"
+              },
+              {
+                  "id":"c3",
+                  "title":"Image",
+                  "value":"image"
+              }
+          ]
+      },**/
+        {
+          "id": "isadhoc",
+          "type": "Boolean",
+          "title": "isAdHoc",
+          "value": false,
+          "description": "",
+          "readonly": false,
+          "optional": false,
+          "refToView": "adhoc"
+        },
+        {
+          "id": "adhocordering",
+          "type": "Choice",
+          "title": "",
+          "value": "Sequential",
+          "description": "",
+          "readonly": false,
+          "optional": false,
+          "refToView": "",
+          "items": [
+            {
+              "id": "c1",
+              "title": "Sequential",
+              "value": "Sequential",
+              "icon": "activity/list/mi.sequential.png",
+              "refToView": "sequential"
+            },
+            {
+              "id": "c2",
+              "title": "Parallel",
+              "value": "Parallel",
+              "icon": "activity/list/mi.parallel.png",
+              "refToView": "parallel"
+            }
+          ]
+        },
+        {
+          "id": "adhoccompletioncondition",
+          "type": "Expression",
+          "title": "AdHocCompletionCondition",
+          "value": "",
+          "description": "",
+          "readonly": false,
+          "optional": true,
+          "refToView": ""
+        },
+        {
+          "id": "adhoccancelremaininginstances",
+          "type": "Boolean",
+          "title": "AdhocCancelRemainingInstances",
+          "value": true,
+          "description": "This attribute is used only if ordering is parallel. It determines whether running instances are cancelled when the completionCondition becomes true.",
+          "description_ja": "この属性は、順序が並列の場合のみ使用されます。completionConditionがtrueになったときに、実行中のインスタンスをキャンセルするかどうかを決定します。",
+          "readonly": false,
+          "optional": true
+        }
+        /**,
+      {
+          "id":"entry",
+          "type":"DiagramLink",
+          "title":"SubProcessRef",
+          "value":"",
+          "description":"",
+          "readonly":false,
+          "optional":false,
+          "refToView":"u"
+      }**/
+        /**,
+      {
+          "id":"diagramref",
+          "type":"String",
+          "title":"DiagramRef",
+          "value":"",
+          "description":"",
+          "readonly":false,
+          "optional":false,
+          "refToView":""
+      },
+      {
+          "id":"processref",
+          "type":"String",
+          "title":"ProcessRef",
+          "value":"",
+          "description":"",
+          "readonly":false,
+          "optional":false,
+          "refToView":""
+      } **/
+        /**,**/
+        /**{
+          "id":"inputmaps",
+          "type":"String",
+          "title":"InputMaps",
+          "value":"",
+          "description":"",
+          "readonly":false,
+          "optional":false,
+          "refToView":""
+      },**/
+        /**{
+          "id":"outputmaps",
+          "type":"String",
+          "title":"OutputMaps",
+          "value":"",
+          "description":"",
+          "readonly":false,
+          "optional":false,
+          "refToView":""
+      }**/
+      ]
+    },
+    {
+      "name": "adhocsubprocess",
+      "properties": [
+        /** {
+          "id": "subprocesstype",
+          "type": "Choice",
+          "title": "subProcessType",
+          "value": "AdHoc",
+          "description": "SubProcessType is an attribute that defines whether the Sub-Process details are embedded within the higher level Process or refers to another, re-usable Process. The default is Embedded.",
+          "description_ja": "SubProcessTypeは、サブプロセスの詳細を上位レベルのプロセスに埋め込むか、別の再利用可能なプロセスを参照するかを定義する属性です。デフォルトはEmbeddedです。",
+          "optional": false,
+          "refToView": "",
+          "items": [
+              {
+                  "id": "choice1",
+                  "title":"Embedded",
+                  "value":"Embedded"
+              },
+              {
+                  "id": "choice2",
+                  "title": "Independent",
+                  "value": "Independent"
+              },
+              {
+                  "id": "choice3",
+                  "title": "Reusable",
+                  "value": "Reusable"
+              }
+          ]
+      },**/
+        /**{
+          "id":"isatransaction",
+          "type":"Boolean",
+          "title":"is a Transaction",
+          "value":false,
+          "description":"A Transaction is a set of activities that logically belongs together; it might follow a specified transaction protocol.",
+          "description_ja":"トランザクションは、論理的にまとめられているアクティビティのセットです。指定されたトランザクションプロトコルに従います。",
+          "readonly":false,
+          "optional":false,
+          "refToView":"border"
+      },**/
+        /**{
+          "id":"transaction",
+          "type":"String",
+          "title":"TransactionRef",
+          "value":"",
+          "description":"",
+          "readonly":false,
+          "optional":true,
+          "refToView":"",
+          "length":"50"
+      },**/
+        /**{
+          "id":"transactionmethod",
+          "type":"Choice",
+          "title":"TransactionMethod",
+          "value":"compensate",
+          "description":"The technique that will be used to undo a transaction that has been cancelled.",
+          "description_ja":"キャンセルされたトランザクションを元に戻すために使用される技術。",
+          "readonly":false,
+          "optional":true,
+          "items": [
+              {
+                  "id":"c1",
+                  "title":"Compensate",
+                  "value":"compensate"
+              },
+              {
+                  "id":"c2",
+                  "title":"Store",
+                  "value":"store"
+              },
+              {
+                  "id":"c3",
+                  "title":"Image",
+                  "value":"image"
+              }
+          ]
+      },**/
+        {
+          "id": "isadhoc",
+          "type": "Boolean",
+          "title": "isAdHoc",
+          "value": true,
+          "description": "",
+          "readonly": false,
+          "optional": false,
+          "refToView": "adhoc"
+        },
+        {
+          "id": "adhocordering",
+          "type": "Choice",
+          "title": "AdHocOrdering",
+          "value": "Sequential",
+          "description": "",
+          "readonly": false,
+          "optional": false,
+          "refToView": "none",
+          "items": [
+            {
+              "id": "c1",
+              "title": "Sequential",
+              "value": "Sequential",
+              "icon": "activity/list/mi.sequential.png",
+              "refToView": "misequential"
+            },
+            {
+              "id": "c2",
+              "title": "Parallel",
+              "value": "Parallel",
+              "icon": "activity/list/mi.parallel.png",
+              "refToView": "miparallel"
+            }
+          ]
+        },
+        {
+          "id": "adhoccompletioncondition",
+          "type": "Expression",
+          "title": "AdHocCompletionCondition",
+          "value": "",
+          "description": "",
+          "readonly": false,
+          "optional": true,
+          "refToView": ""
+        },
+        {
+          "id": "adhoccancelremaininginstances",
+          "type": "Boolean",
+          "title": "AdhocCancelRemainingInstances",
+          "value": true,
+          "description": "This attribute is used only if ordering is parallel. It determines whether running instances are cancelled when the completionCondition becomes true.",
+          "description_ja": "この属性は、順序が並列の場合のみ使用されます。completionConditionがtrueになったときに、実行中のインスタンスをキャンセルするかどうかを決定します。",
+          "readonly": false,
+          "optional": true
+        },
+        /**{
+          "id":"entry",
+          "type":"DiagramLink",
+          "title":"SubProcessRef",
+          "value":"",
+          "description":"",
+          "readonly":false,
+          "optional":false,
+          "refToView":"u"
+      },**/
+        /**{
+          "id":"diagramref",
+          "type":"String",
+          "title":"DiagramRef",
+          "value":"",
+          "description":"",
+          "readonly":false,
+          "optional":false,
+          "refToView":""
+      },**/
+        /**{
+          "id":"processref",
+          "type":"String",
+          "title":"ProcessRef",
+          "value":"",
+          "description":"",
+          "readonly":false,
+          "optional":false,
+          "refToView":""
+      }
+      /**,**/
+        /**{
+          "id":"inputmaps",
+          "type":"String",
+          "title":"InputMaps",
+          "value":"",
+          "description":"",
+          "readonly":false,
+          "optional":false,
+          "refToView":""
+      },**/
+        /**{
+          "id":"outputmaps",
+          "type":"String",
+          "title":"OutputMaps",
+          "value":"",
+          "description":"",
+          "readonly":false,
+          "optional":false,
+          "refToView":""
+      }**/
+      ]
+    },
+    {
+      "name": "gateway",
+      "properties": [
+        /**{
+          "id":"assignments",
+          "type":"Dataassignment",
+          "title":"Assignments",
+          "value":"",
+          "description":"",
+          "readonly":false,
+          "optional":true,
+          "complexItems": [
+              {
+                  "id":"to",
+                  "name":"To",
+                  "type":"String",
+                  "value":"",
+                  "width":100,
+                  "optional":false 
+              },
+              {
+                  "id":"from",
+                  "name":"From",
+                  "type":"String",
+                  "value":"",
+                  "width":100,
+                  "optional":false
+              },
+              {
+                  "id":"assigntime",
+                  "name":"AssignTime",
+                  "type":"Choice",
+                  "value":"Start",
+                  "width":100,
+                  "optional":true,
+                  "items": [
+                      {
+                          "id":"c1",
+                          "title":"Start",
+                          "value":"Start",
+                          "refToView":""
+                      },
+                      {
+                          "id":"c2",
+                          "title":"End",
+                          "value":"End",
+                          "refToView":""
+                      }
+                  ]
+              }
+          ]
+      }**/
+        /**,
+      {
+          "id":"gates",
+          "type":"String",
+          "title":"Gates",
+          "value":"",
+          "description":"",
+          "readonly":false,
+          "optional":true,
+          "refToView":"",
+          "length":"50",
+          "wrapLines":true
+      }**/
+        /**,
+      {
+          "id":"gates_outgoingsequenceflow",
+          "type":"String",
+          "title":"[Gates] OutgoingSequenceFlow",
+          "value":"",
+          "description":"",
+          "readonly":false,
+          "optional":true,
+          "refToView":"",
+          "length":"50",
+          "wrapLines":true
+      },
+      {
+          "id":"gates_assignments",
+          "type":"String",
+          "title":"[Gates] Assignments",
+          "value":"",
+          "description":"",
+          "readonly":false,
+          "optional":true,
+          "refToView":"",
+          "length":"50",
+          "wrapLines":true
+      }**/
+      ]
+    },
+    {
+      "name": "artifact",
+      "properties": [
+      ]
+    },
+    {
+      "name": "process",
+      "properties": [
+        {
+          "id": "processtype",
+          "type": "Choice",
+          "title": "ProcessType",
+          "value": "None",
+          "description": "The processType attribute Provides additional information about the level of abstraction modeled by this Process.",
+          "description_ja": "processType属性は、このプロセスによってモデル化される抽象化のレベルについての情報を提供します。",
+          "readonly": false,
+          "optional": false,
+          "popular": true,
+          "items": [
+            {
+              "id": "c1",
+              "title": "None",
+              "value": "None"
+            },
+            {
+              "id": "c2",
+              "title": "Executable",
+              "value": "Executable"
+            },
+            {
+              "id": "c3",
+              "title": "Non-Executable",
+              "value": "Non-Executable"
+            },
+            {
+              "id": "c4",
+              "title": "Public",
+              "value": "Public"
+            }
+          ]
+        },
+        {
+          "id": "isclosed",
+          "type": "Boolean",
+          "title": "isClosed",
+          "value": false,
+          "description": "A Boolean value specifying whether interactions, such as sending and receiving Messages and Events, not modeled in the Process can occur when the Process is executed or performed. If the value is true, they MAY NOT occur. If the value is false, they MAY occur.",
+          "description_ja": "メッセージやイベントの送受信などプロセス内でモデル化されていないやりとりの発生を、プロセスが実行されたときに許可するかどうかを指定するブール値。値がtrueの場合、これらは発生しません。値がfalseの場合、これらは発生します。",
+          "readonly": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "name": "pool",
+      "properties": [
+        {
+          "id": "multiinstance",
+          "type": "Boolean",
+          "title": "is Multi Instance Participant",
+          "value": false,
+          "description": "",
+          "readonly": false,
+          "optional": true,
+          "refToView": "multiInstance"
+        },
+        {
+          "id": "boundaryvisible",
+          "type": "Boolean",
+          "title": "BoundaryVisible",
+          "value": true,
+          "description": "Defines if the rectangular boundary for the Pool is visible.",
+          "description_ja": "プールの長方形のBoundaryが可視かどうかを定義します。",
+          "readonly": false,
+          "optional": false,
+          "refToView": [
+            "border",
+            "c",
+            "caption",
+            "captionDisableAntialiasing"
+          ],
+          "visible": false
+        },
+        {
+          "id": "processname",
+          "type": "String",
+          "title": "ProcessName",
+          "value": "",
+          "description": "",
+          "readonly": false,
+          "optional": false,
+          "refToView": "",
+          "length": "30"
+        },
+        {
+          "id": "status",
+          "type": "Choice",
+          "title": "Status",
+          "value": "None",
+          "description": "",
+          "readonly": false,
+          "optional": false,
+          "popular": true,
+          "items": [
+            {
+              "id": "c1",
+              "title": "None",
+              "value": "None"
+            },
+            {
+              "id": "c2",
+              "title": "Ready",
+              "value": "Ready"
+            },
+            {
+              "id": "c3",
+              "title": "Active",
+              "value": "Active"
+            },
+            {
+              "id": "c4",
+              "title": "Cancelled",
+              "value": "Cancelled"
+            },
+            {
+              "id": "c5",
+              "title": "Aborting",
+              "value": "Aborting"
+            },
+            {
+              "id": "c6",
+              "title": "Aborted",
+              "value": "Aborted"
+            },
+            {
+              "id": "c7",
+              "title": "Completing",
+              "value": "Completing"
+            },
+            {
+              "id": "c8",
+              "title": "Completed",
+              "value": "Completed"
+            }
+          ]
+        },
+        {
+          "id": "adhoc",
+          "type": "Boolean",
+          "title": "AdHoc",
+          "value": false,
+          "description": "",
+          "readonly": false,
+          "optional": false
+        },
+        {
+          "id": "adhocordering",
+          "type": "Choice",
+          "title": "AdHocOrdering",
+          "value": "Parallel",
+          "description": "",
+          "readonly": false,
+          "optional": false,
+          "refToView": "none",
+          "items": [
+            {
+              "id": "c1",
+              "title": "Sequential",
+              "value": "Sequential",
+              "icon": "activity/list/mi.sequential.png",
+              "refToView": "misequential"
+            },
+            {
+              "id": "c2",
+              "title": "Parallel",
+              "value": "Parallel",
+              "icon": "activity/list/mi.parallel.png",
+              "refToView": "miparallel"
+            }
+          ]
+        },
+        {
+          "id": "adhoccompletioncondition",
+          "type": "Expression",
+          "title": "AdHocCompletionCondition",
+          "value": "",
+          "description": "",
+          "readonly": false,
+          "optional": true,
+          "refToView": "",
+          "length": "50"
+        },
+        {
+          "id": "suppressjoinfailure",
+          "type": "Boolean",
+          "title": "SuppressJoinFailure",
+          "value": false,
+          "description": "",
+          "readonly": false,
+          "optional": false
+        },
+        {
+          "id": "enableinstancecompensation",
+          "type": "Boolean",
+          "title": "EnableBooleanCompensation",
+          "value": false,
+          "description": "",
+          "readonly": false,
+          "optional": false
+        },
+        {
+          "id": "processcategories",
+          "type": "String",
+          "title": "ProcessCategories",
+          "value": "",
+          "description": "",
+          "readonly": false,
+          "optional": true,
+          "refToView": "",
+          "length": "50",
+          "wrapLines": true
+        },
+        {
+          "id": "processdocumentation",
+          "type": "String",
+          "title": "Process Documentation",
+          "value": "",
+          "description": "",
+          "readonly": false,
+          "optional": true,
+          "refToView": "",
+          "length": "",
+          "wrapLines": true
+        }
+      ]
+    },
+    {
+      "name": "dataAssociation",
+      "properties": [
+        {
+          "id": "assignments",
+          "type": "Dataassignment",
+          "title": "Assignments",
+          "value": "",
+          "description": "",
+          "readonly": false,
+          "optional": true,
+          "popular": true,
+          "complexItems": [
+            {
+              "id": "to",
+              "name": "To",
+              "type": "String",
+              "value": "",
+              "width": 100,
+              "optional": false
+            },
+            {
+              "id": "from",
+              "name": "From",
+              "type": "String",
+              "value": "",
+              "width": 100,
+              "optional": false
+            }
+            /**,**/
+            /**{
+              "id":"language",
+              "name":"Language",
+              "type":"String",
+              "value":"",
+              "width":100,
+              "optional":true
+          }**/
+          ]
+        },
+        {
+          "id": "transformation",
+          "title": "Transformation",
+          "type": "String",
+          "value": "",
+          "optional": true,
+          "popular": true
+        }
+      ]
+    }
+  ]
+}

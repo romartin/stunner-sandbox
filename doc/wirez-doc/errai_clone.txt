@@ -1,0 +1,67 @@
+<roger600_> hi boss
+<roger600_> around?
+<csadilek> sry. meeting after meeting. and tons of PRs waiting.
+<csadilek> what’s up?
+<roger600_> np man
+<roger600_> can understand you too :)
+<roger600_> question about the pojo model & errai
+<roger600_> summarized in one word: clone
+<roger600_> mark said that we can clone the pojos using errai serialization / deserialization
+<roger600_> probably it's not the best solution in terms of performance,etc but can work for us now
+<roger600_> should you follow that way?
+<roger600_> if so, how? can u give me some clues please?
+<csadilek> what exactly do you want to do?
+<roger600_> clone a pojo, an object
+<roger600_> as idont know the method i can't do any generic clone handler...
+<roger600_> and we dont want each pojo to provide cloning code... they should be easy to create
+<csadilek> ok
+<roger600_> well as they are bindable, i can iterate over properties too
+<roger600_> not sure
+<roger600_> several options..
+<csadilek> I think we have that. one sec.
+<roger600_> ok
+<roger600_> thx
+<roger600_> so i have a pojo, that class members are more pojos, and i want to clone all at runtime and after that, i will set manually a new identifier for the pojo..
+<csadilek> yes we have it
+<roger600_> you're god
+<roger600_> show me the money :P
+<csadilek> so you can call deepUnwrap on a proxy which gives you a deep (recursive clone) copying all properties recursively
+<csadilek> so the model you get from the binder
+<roger600_> aha
+<csadilek> you can cast it to (BindableProxy)
+<csadilek> and call deepUnwrap
+<roger600_> and it returns an objeect, the new pojo cloned instance
+<csadilek> it will give you clone bakck.
+<roger600_> ok
+<roger600_> any incompatibilities with cdi injection points?
+<csadilek> what do you mean?
+<roger600_> i have injections like that
+<roger600_> https://github.com/romartin/wirez/blob/f6e9ac04a698103f9cc219990673a80b51bda7e6/wirez-sets/wirez-bpmn/wirez-bpmn-api/src/main/java/org/wirez/bpmn/api/BPMNDiagram.java
+<roger600_> they are depedent scope all
+<csadilek> oh that won’t work
+<csadilek> but it won’t work in any  case.
+<csadilek> neither with CDI on the server or client.
+<roger600_> what will happens here?
+
+<csadilek> model types are not supposed to be injected into.
+<roger600_> ahh
+<roger600_> so
+<csadilek> like
+<roger600_> using new keywords then?
+<csadilek> you won’t inject a type into a JPA model on the server either.
+<csadilek> yeah or nothing at all
+<roger600_> nothing at all?
+<csadilek> as databinding will initialize the field anyways (automatically)
+<roger600_> ahhh
+<roger600_> ahhh
+<roger600_> sounds good!
+<csadilek> given the have default contructor.
+<csadilek> so you wouldn’t ever use CDI injection in a data type (i.e. a JPA type) on the server
+<csadilek> so we don’t do that on the client either.
+<roger600_> ok
+<roger600_> it makes sense
+<csadilek> but other then that you should be good.
+<csadilek> ok getting back to PRs and meetings now ;)..
+<roger600_> okk
+<roger600_> thx
+<roger600_> !!

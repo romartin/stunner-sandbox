@@ -1,0 +1,308 @@
+{
+  "type": "node",
+  "id": "ReusableSubprocess",
+  "title": "Reusable Subprocess",
+  "groups": [
+    "Activities"
+  ],
+  "description": "A reusable subprocess. It can be used to invoke another process.",
+  "description_ja": "再利用可能なサブプロセス。別のプロセスの起動に使用できます。",
+  "view": "activity/subprocess.collapsed.svg",
+  "icon": "activity/subprocess.png",
+  "propertyPackages": [
+    "baseAttributes",
+    "flowElement",
+    "activity",
+    /** "subprocess", **/
+    /** "loopcharacteristics", **/
+    "bgColor",
+    "properties",
+    "iospecification"
+  ],
+  "properties": [
+    {
+      "id": "activitytype",
+      "type": "String",
+      "title": "ActivityType",
+      "value": "Sub-Process",
+      "description": "The Type of Activity.",
+      "description_ja": "アクティビティのタイプ。",
+      "readonly": true,
+      "optional": false,
+      "length": ""
+    },
+    {
+      "id": "bgcolor",
+      "type": "Color",
+      "title": "BackgroundColor",
+      "value": "#fafad2",
+      "description": "",
+      "readonly": false,
+      "optional": false,
+      "refToView": "fill_el",
+      "fill": true,
+      "stroke": false
+    },
+    {
+      "id": "origbgcolor",
+      "type": "Color",
+      "title": "Original Background Color",
+      "value": "#fafad2",
+      "description": "",
+      "readonly": false,
+      "optional": true,
+      "hidden": true,
+      "visible": false
+    },
+    {
+      "id": "bordercolor",
+      "type": "Color",
+      "title": "BorderColor",
+      "value": "#000000",
+      "description": "",
+      "readonly": false,
+      "optional": false,
+      "refToView": [
+        "edge",
+        "fill_border",
+        "bg_frame",
+        "frame",
+        "frame2",
+        "frame3",
+        "frame4",
+        "frame5",
+        "frame6",
+        "frame7",
+        "frame8",
+        "frame9",
+        "frame10",
+        "frame11",
+        "frame12",
+        "frame13",
+        "frame14",
+        "frame15",
+        "frame16",
+        "frame17",
+        "frame18",
+        "frame19",
+        "frame20",
+        "frame21",
+        "frame22",
+        "frame23",
+        "frame24",
+        "frame25",
+        "frame26",
+        "border"
+      ],
+      "fill": false,
+      "stroke": true
+    },
+    {
+      "id": "origbordercolor",
+      "type": "Color",
+      "title": "Original Border Color",
+      "value": "#000000",
+      "description": "",
+      "readonly": false,
+      "optional": true,
+      "hidden": true,
+      "visible": false
+    },
+    {
+      "id": "fontcolor",
+      "type": "Color",
+      "title": "Font Color",
+      "value": "#000000",
+      "description": "Font color",
+      "description_ja": "フォントの色",
+      "readonly": false,
+      "optional": false,
+      "refToView": [
+        "text_name"
+      ],
+      "fill": true,
+      "stroke": false
+    },
+    {
+      "id": "fontsize",
+      "type": "Choice",
+      "title": "Font Size",
+      "value": "",
+      "description": "The Font Size",
+      "description_ja": "フォントのサイズ",
+      "readonly": false,
+      "optional": false,
+      "refToView": "text_name",
+      "items": [
+        {
+          "id": "c1",
+          "title": "8",
+          "value": "8"
+        },
+        {
+          "id": "c2",
+          "title": "9",
+          "value": "9"
+        },
+        {
+          "id": "c3",
+          "title": "10",
+          "value": "10"
+        },
+        {
+          "id": "c4",
+          "title": "11",
+          "value": "11"
+        },
+        {
+          "id": "c5",
+          "title": "12",
+          "value": "12"
+        },
+        {
+          "id": "c6",
+          "title": "14",
+          "value": "14"
+        },
+        {
+          "id": "c7",
+          "title": "18",
+          "value": "18"
+        },
+        {
+          "id": "c8",
+          "title": "20",
+          "value": "20"
+        },
+        {
+          "id": "c9",
+          "title": "24",
+          "value": "24"
+        },
+        {
+          "id": "c10",
+          "title": "36",
+          "value": "36"
+        },
+        {
+          "id": "c11",
+          "title": "48",
+          "value": "48"
+        },
+        {
+          "id": "c12",
+          "title": "72",
+          "value": "72"
+        }
+      ]
+    },
+    {
+      "id": "calledelement",
+      "type": "CalledElement",
+      "title": "Called Element",
+      "value": "",
+      "description": "",
+      "readonly": false,
+      "optional": false,
+      "refToView": "pimg",
+      "length": ""
+    },
+    {
+      "id": "onEntryActions",
+      "type": "Action",
+      "title": "On Entry Actions",
+      "value": "",
+      "description": "on entry actions",
+      "description_ja": "アクション開始時",
+      "readonly": false,
+      "optional": true
+    },
+    {
+      "id": "onExitActions",
+      "type": "Action",
+      "title": "On Exit Actions",
+      "value": "",
+      "description": "on exit actions",
+      "description_ja": "アクション終了時",
+      "readonly": false,
+      "optional": true
+    },
+    {
+      "id": "independent",
+      "type": "Choice",
+      "title": "Independent",
+      "value": "true",
+      "description": "If set to true the child process is started as an independent process.",
+      "description_ja": "trueに設定した場合、子プロセスは独立したプロセスとして開始されます。",
+      "readonly": false,
+      "optional": true,
+      "items": [
+        {
+          "id": "c1",
+          "title": "true",
+          "value": "true"
+        },
+        {
+          "id": "c2",
+          "title": "false",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "id": "waitforcompletion",
+      "type": "Choice",
+      "title": "Wait for completion",
+      "value": "true",
+      "description": "If true this sub-process node will only continue if the child process that was started has terminated its execution (completed or aborted)",
+      "description_ja": "trueの場合、このサブプロセスノードは、開始した子プロセスが実行を終了した（完了または中止）場合のみ続行します",
+      "readonly": false,
+      "optional": true,
+      "items": [
+        {
+          "id": "c1",
+          "title": "true",
+          "value": "true"
+        },
+        {
+          "id": "c2",
+          "title": "false",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "id": "script_language",
+      "type": "Choice",
+      "title": "ScriptLanguage",
+      "value": "java",
+      "description": "Defines the script language.",
+      "description_ja": "スクリプト言語を定義します。",
+      "readonly": false,
+      "optional": true,
+      "items": [
+        {
+          "id": "c1",
+          "title": "java",
+          "value": "java"
+        },
+        {
+          "id": "c2",
+          "title": "mvel",
+          "value": "mvel"
+        }
+      ]
+    }
+  ],
+  "roles": [
+    "all",
+    "sequence_start",
+    "sequence_end",
+    "messageflow_start",
+    "messageflow_end",
+    "to_task_event",
+    "from_task_event",
+    "fromtoall",
+    "ActivitiesMorph"
+  ]
+}

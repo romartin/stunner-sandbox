@@ -1,0 +1,130 @@
+we probably do need "soft" stencils, that are purely data driven - for more dynamic stuff.
+but we should also be able to provide static, type safe stencils, that are as much pojo as possible.
+
+so this is fine for "soft" things
+but you'll lose ALL type safety
+of properties
+and all refactoring
+I personally really don't like
+Set<PropertySet> getPropertySets();
+it's fine for a data driven thing
+if users are dynamically adding pallete extensions at runtime - and maybe we have to support that too.
+but we should be able to provide pojo stati type safe impl. all properties are fields
+
+well think about it
+you can do it as a sketch
+can you encode all BPMN2 nodes 
+jsut pure properties
+as classes and fields
+can use nested classes for compositions
+two ways
+
+1) annotation driven for discovery
+2) reflection for everything else
+or a combination of the two
+for everything  else
+roger600 if you are clever
+you can build your own introspector with adapters
+that can work of different providers
+be it pojo
+or json
+or what ever
+you just ask it the introspector "list properties"
+and getProperty
+get what I mean?
+so the stencil and node system is abstracted from the encodification of the thing
+that means you probably can't use JDK reflection directly
+you'll create your own helpers
+one impl for hte helpers might be reflection based
+another might look just like your Content
+get what I mean?
+so that means your Content might be useful still
+
+for "soft" stuff
+but I like the idea of stencil sets we use heavil and refactor and fix
+being static type safe and refactory tools that have type earch
+
+not all of it is single value properties though
+so there is different type of content
+the content that is used in the diagram itself
+
+and content that describes how the diagram behaves
+the "rules"
+
+
+
+as i remember thinking, could the rules be encoded as annotations
+@CanContain( [GateWay.class, X.class] )
+
+we'd need to review the rules
+but if you look at the bean validator
+you can encode most "rules" as annotations
+that's really what this is
+it's the validation of bean
+
+
+bean validator has cardinality rules for instance
+we can make new beans for containment
+sorry new annotations for containement
+
+
+roger600  now here is the downside I think two reasons why michael did it his way
+was he said he wsa trying ot keep it as close to oryx
+to make transfer of rules easier
+i.e. copying the json file
+and also GWT doesn't have reflection
+
+and the current reflection helpers we have, do not include info on annotaitons.
+
+when you reflect on something it has to be turned into a object model that you execute on
+right?
+
+so there is no reason why you cannot do that on teh server side
+so you build and populate your paletes and stencils on the server
+it's the results sent to the clients
+
+your "rules"  might be encoded in annotations
+but they still need to be transformed into an engine that runs against objects
+
+you aren't going to parse the antnoations repeatedly
+
+this would allow you to create a runtime representation in the client
+that has everyhing you need
+
+that is separated from the encoding
+which I think is important
+
+how we encode things may and will change over time
+that's probalby the best way of thinking about it
+don't tie your client to an specific encoding
+
+
+roger600  just start out by saying
+how do I encode all my bpmn2 nodes as pojos
+sketch that out first
+keep building up the required properties
+then think
+how do I reflect that information
+to build a representation that I need to use that pojo within the UI
+roger600 or this first iteration just hard code it against hte pojo
+up to you
+might be best o keep it smaller code
+and if/when we have the need for soft stuff
+we can add that later
+
+but what I find is
+the more you move away from pojos
+and annotations
+the mode you try and build alternative things
+the messier the code
+and the less it takes advantage of the tooling 
+roger600 you might want to categories differnt properties
+this might actually help with the properties UI generation
+rather than one big fat list of fields
+espeically as many fields will be shared among objects
+like name, title, description.
+so instead you put those into a class
+
+like General
+and now you hae a General field on your node
+

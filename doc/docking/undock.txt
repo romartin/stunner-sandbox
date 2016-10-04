@@ -1,0 +1,48 @@
+so look in WiresShapeDragHandler and DockingAndContainmentHandler
+so at the end
+it says addShapeToParent
+and
+what you need to do
+is record the start dock/parent
+if they changed
+then you have an undock
+or an uncontainment
+so you want a listener
+DockChangeHandler
+ContainmentChangeHandler
+and all you are doing really
+is checking when those properties change
+
+Me: why not adding those methods on same acceptor ifaces?
+    IDockingAcceptor & IContaintmentAcceptor
+    ?
+
+yeah
+that's good too
+so I guess maybe do an acceptor then
+changeAcceptor
+make sure it has two refereces
+previous and now
+so if change is not allowed
+it won't even detach
+
+it might allow you to move it around the parent
+but the adjust will fail
+if you go outside of the parent
+
+so, if we do not allow something to undock
+the adjust method
+should fail and now allow it to move otuside of the border/body
+but it will still allow it to move around a valid location
+
+so it can chagne x/y as long as the existing parent/dock value doesn't change
+make sure oyu record parent/dock values on drag start
+
+    Me: you raised a good point.... allow / deny undock. I was just considering how detect undock hehe, you go further nice, I had not considered this
+    
+Im not sure we have the use case
+not sure as well
+Mark Proctor (mdproctor@gmail.com)
+but no harm in doing it
+
+-> Do this on lienzo side

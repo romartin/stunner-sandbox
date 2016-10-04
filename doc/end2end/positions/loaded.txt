@@ -1,0 +1,32 @@
+[NodeBuilder=StartNoneEventBuilder] [NodeId=09016BCF-73DD-45DB-8CC3-20021D148C7A]  [properties={bgcolor=#9acd32, name=My start event, fontcolor=#000000, isinterrupting=false, isselectable=true, bordercolor=#000000}]  [outgoingResourceIds=[5AF81CC7-380E-4797-9440-328F96B6E01B]]  [boundUL=[Ljava.lang.Double;@6d059c8c]  [boundLR=[Ljava.lang.Double;@7d4bceca]  [childrenIds=[]] 
+[NodeBuilder=TaskBuilder] [NodeId=4383A829-C935-45F0-9A5B-1979F371972E]  [properties={tasktype=None, assignments=, unitcost=0.0, isasync=false, isselectable=true, standarddeviation=0.0, bordercolor=#000000, bgcolor=#fafad2, multipleinstance=false, distributiontype=normal, mean=0.0, name=My task, fontcolor=#000000}]  [outgoingResourceIds=[88A431C2-C76B-4AEA-A3FE-F684A68A4FAF]]  [boundUL=[Ljava.lang.Double;@3cbc5bfe]  [boundLR=[Ljava.lang.Double;@4f1716f]  [childrenIds=[]] 
+[NodeBuilder=EndNoneEventBuilder] [NodeId=99DAC0DC-EDFA-4269-AEF4-14BC29BD041C]  [properties={bgcolor=#ff6347, name=My end event, fontcolor=#000000, isselectable=true, bordercolor=#000000}]  [outgoingResourceIds=[]]  [boundUL=[Ljava.lang.Double;@45516c81]  [boundLR=[Ljava.lang.Double;@664fc77f]  [childrenIds=[]] 
+[EdgeBuilder=SequenceFlowBuilder][NodeBuilder=BpmnEdgeImplNodeBuilder] [NodeId=5AF81CC7-380E-4797-9440-328F96B6E01B]  [properties={bgcolor=#000000, name=My sequence flow, isimmediate=false, fontcolor=#000000, isselectable=true, bordercolor=#000000}]  [outgoingResourceIds=[4383A829-C935-45F0-9A5B-1979F371972E]]  [boundUL=null]  [boundLR=null] 
+[EdgeBuilder=SequenceFlowBuilder][NodeBuilder=BpmnEdgeImplNodeBuilder] [NodeId=88A431C2-C76B-4AEA-A3FE-F684A68A4FAF]  [properties={bgcolor=#000000, name=My sequence flow, isimmediate=false, fontcolor=#000000, isselectable=true, bordercolor=#000000}]  [outgoingResourceIds=[99DAC0DC-EDFA-4269-AEF4-14BC29BD041C]]  [boundUL=null]  [boundLR=null] 
+[NodeBuilder=BPMNDiagramBuilder]  [NodeId=_yY7U8fg-EeWtALIxLLtfqg]  [properties={package=/defaultPackage/defaultPackage, imports=, targetnamespace=http://www.omg.org/bpmn20, name=, typelanguage=http://www.w3.org/2001/XMLSchema, currency=, id=_yY9xMPg-EeWtALIxLLtfqg, timeunit=ms, expressionlanguage=http://www.w3.org/1999/XPath, executable=true, namespaces=}]  [outgoingResourceIds=[]]  [boundUL=null]  [boundLR=null]  [childrenIds=[09016BCF-73DD-45DB-8CC3-20021D148C7A, 4383A829-C935-45F0-9A5B-1979F371972E, 99DAC0DC-EDFA-4269-AEF4-14BC29BD041C, 5AF81CC7-380E-4797-9440-328F96B6E01B, 88A431C2-C76B-4AEA-A3FE-F684A68A4FAF]] 
+
+diagram
+-------
+x=0
+y=0
+w=950
+h=950
+
+start
+------
+x=86
+y=183
+r=15
+
+task
+-------
+x=306
+y=217
+w=136
+h=48
+
+end
+------
+x=382
+y=184
+r=15

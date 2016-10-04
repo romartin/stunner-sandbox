@@ -1,0 +1,33 @@
+
+Connection
+***********
+
+{
+    "role": "SequenceFlow",
+    "connects": [
+      {
+        "from": "sequence_start",
+        "to": [
+          "sequence_end"
+        ]
+      },
+      {
+        "from": "choreography_sequence_start",
+        "to": [
+          "choreography_sequence_end"
+        ]
+      },
+      {
+        "from": "Exclusive_Eventbased_Gateway",
+        "to": [
+          "FromEventbasedGateway"
+        ]
+      },
+      {
+        "from": "EventbasedGateway",
+        "to": [
+          "FromEventbasedGateway"
+        ]
+      }
+    ]
+  }

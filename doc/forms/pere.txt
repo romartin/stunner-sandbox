@@ -1,0 +1,9 @@
+- Forms 
+********
+
+- Refactor Name property 
+    - To use in dyn forms widget
+    - Refactor HasValuePropertyAdapter#accepts
+- Investigate about of BindableAdapterUtils#handleBindableProxyClass
+    - Use method handleBIndlableProxyClass in a single place
+     

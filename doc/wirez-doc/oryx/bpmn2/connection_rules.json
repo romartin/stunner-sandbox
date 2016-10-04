@@ -1,0 +1,266 @@
+{
+"connectionRules": [
+      {
+        "role": "SequenceFlow",
+        "connects": [
+          {
+            "from": "sequence_start",
+            "to": [
+              "sequence_end"
+            ]
+          },
+          {
+            "from": "choreography_sequence_start",
+            "to": [
+              "choreography_sequence_end"
+            ]
+          },
+          {
+            "from": "Exclusive_Eventbased_Gateway",
+            "to": [
+              "FromEventbasedGateway"
+            ]
+          },
+          {
+            "from": "EventbasedGateway",
+            "to": [
+              "FromEventbasedGateway"
+            ]
+          }
+        ]
+      },
+      {
+        "role": "MessageFlow",
+        "connects": [
+          {
+            "from": "messageflow_start",
+            "to": [
+              "messageflow_end"
+            ]
+          }
+        ]
+      },
+      {
+        "role": "ChoreographyMessageFlowStart",
+        "connects": [
+          {
+            "from": "messageflow_start",
+            "to": [
+              "choreography_messageflow_end"
+            ]
+          }
+        ]
+      },
+      {
+        "role": "ChoreographyMessageFlowEnd",
+        "connects": [
+          {
+            "from": "choreography_messageflow_start",
+            "to": [
+              "messageflow_end"
+            ]
+          }
+        ]
+      },
+      {
+        "role": "IntermediateEventOnActivityBoundary",
+        "connects": [
+          {
+            "from": "Task",
+            "to": [
+              "IntermediateEventOnActivityBoundary"
+            ]
+          }
+        ]
+      },
+      {
+        "role": "IntermediateEventOnSubprocessBoundary",
+        "connects": [
+          {
+            "from": "CollapsedSubprocess",
+            "to": [
+              "IntermediateEventOnSubprocessBoundary"
+            ]
+          },
+          {
+            "from": "Subprocess",
+            "to": [
+              "IntermediateEventOnSubprocessBoundary"
+            ]
+          }
+          /** ,
+          {
+              "from":"ReusableSubprocess",
+              "to":["IntermediateEventOnSubprocessBoundary"]
+          }**/
+        ]
+      },
+      {
+        "role": "EventOnChoreographyActivityBoundary",
+        "connects": [
+          {
+            "from": "ChoreographyMorph",
+            "to": [
+              "EventOnChoreographyActivityBoundary"
+            ]
+          }
+        ]
+      },
+      {
+        "role": "Directed_Association",
+        "connects": [
+          {
+            "from": "from_task_event",
+            "to": [
+              "DataObject"
+            ]
+          },
+          {
+            "from": "from_task_event",
+            "to": [
+              "DataStore"
+            ]
+          },
+          {
+            "from": "from_task_event",
+            "to": [
+              "ITSystem"
+            ]
+          },
+          {
+            "from": "DataObject",
+            "to": [
+              "to_task_event"
+            ]
+          },
+          {
+            "from": "DataStore",
+            "to": [
+              "to_task_event"
+            ]
+          },
+          {
+            "from": "ITSystem",
+            "to": [
+              "to_task_event"
+            ]
+          },
+          {
+            "from": "IntermediateCompensationEventCatching",
+            "to": [
+              "to_task_event"
+            ]
+          }
+        ]
+      },
+      {
+        "role": "Association_Undirected",
+        "connects": [
+          {
+            "from": "SequenceFlow",
+            "to": [
+              "DataObject"
+            ]
+          },
+          {
+            "from": "DataObject",
+            "to": [
+              "SequenceFlow"
+            ]
+          },
+          {
+            "from": "DataObject",
+            "to": [
+              "MessageFlow"
+            ]
+          },
+          {
+            "from": "MessageFlow",
+            "to": [
+              "DataObject"
+            ]
+          },
+          {
+            "from": "ITSystem",
+            "to": [
+              "to_task_event"
+            ]
+          },
+          {
+            "from": "from_task_event",
+            "to": [
+              "ITSystem"
+            ]
+          },
+          {
+            "from": "DataStore",
+            "to": [
+              "to_task_event"
+            ]
+          },
+          {
+            "from": "from_task_event",
+            "to": [
+              "DataStore"
+            ]
+          },
+          {
+            "from": "fromtoall",
+            "to": [
+              "TextAnnotation"
+            ]
+          },
+          {
+            "from": "TextAnnotation",
+            "to": "fromtoall"
+          },
+          {
+            "from": "Message",
+            "to": [
+              "MessageFlow"
+            ]
+          },
+          {
+            "from": "MessageFlow",
+            "to": [
+              "Message"
+            ]
+          },
+          {
+            "from": "Message",
+            "to": [
+              "ChoreographyElement"
+            ]
+          },
+          {
+            "from": "ChoreographyElement",
+            "to": [
+              "Message"
+            ]
+          },
+          {
+            "from": "ChoreographyElement",
+            "to": [
+              "TextAnnotation"
+            ]
+          },
+          {
+            "from": "TextAnnotation",
+            "to": "ChoreographyElement"
+          },
+          {
+            "from": "ActivitiesMorph",
+            "to": [
+              "to_participant"
+            ]
+          },
+          {
+            "from": "to_participant",
+            "to": [
+              "ActivitiesMorph"
+            ]
+          }
+        ]
+      }
+    ]
+}

@@ -1,0 +1,59 @@
+- Why moving to a new designer?
+    - Problem
+        The BPMN designer is the most important area in the product and also the area that gets the most complaints. These complaints are primarily about reliability, Oryx was inherited from an old community project (for time to market) and came with too much technical debt. There are lots of small details, which can detract from the overall experience.
+        Oryx is not testable and regressions happen with almost every fix, making it very hard and costly to stabilise.
+    - Solution
+        Work with the Lienzo (A modern canvas library) community to build a new visio like tool, that can support BPMN2, and provide a commercial quality experience.
+        Have a strong focus on enabling testability.
+        Real time drawing of shapes and lines during drag. Including real time alignment and distribution guidelines and snap.
+        Proper Orthogonal lines, with multipoint support, and heuristics to provide minimal number of turns for each line.
+        Reduced and more attractive properties (designed by UXD).
+        Change palette from accordion to horizontal bar with fly-outs. Support standard and compact palettes.
+        etc
+    
+- Links
+    
+    - Some Mark's videos
+        - multipath resize -> https://www.lienzo-core.com/lienzo-ks/#MULTIPATH_RESIZE
+        - orthogonal lines -> http://www.screencast.com/users/MarkPr/folders/Jing/media/9457bf7a-77d6-4088-ac15-bc9d61fe513d
+        - magnets, connectors & orthogonal lines -> http://www.screencast.com/users/MarkPr/folders/Jing/media/23630312-615c-4df2-8f4b-2e39574e71f8
+    
+    - Joe
+        - https://docs.google.com/document/d/1ude4PTuZCmsaXTIJDXRYMUzyktnmgyOuLj_a7mPJDik/edit#heading=h.27jcuoisxdhv
+        - https://docs.google.com/document/d/1ude4PTuZCmsaXTIJDXRYMUzyktnmgyOuLj_a7mPJDik/edit#heading=h.vd3008tfh0ss
+        - lanes -> https://grapholite.com/Diagrams/Swimlane
+        - subprocess on new canvas (when click)
+        - copy elements between canvas
+        - user task panels - https://docs.google.com/document/d/1iCee5GnjmWAwJI2bXV522KEWl4uvlWGvztTsP9ndllM/edit#
+        
+    - QE
+        - Lienzo testing -> https://docs.google.com/document/d/1QITse3Guo-p1mA33JLzBLN9qDOburaS_3ubWeNN0Dgo/edit#heading=h.32egv0z2klab
+        
+    -  genmymodel
+        - https://dashboard.genmymodel.com/
+        
+        
+    Graph theory
+        - http://blog.athico.com/2015/08/ruleml2015-hybrid-reactive-relational.html
+
+- QE
+    - https://docs.google.com/document/d/1ACUnbDnMd-1x6i9IiqolkfP0tD-s83EWiRk5eLyT_xw/edit#
+    
+- Property editors
+	- http://www.eunomia-process.com/
+	- https://docs.oracle.com/cd/E18941_01/tutorials/jdtut_11r2_44/images/pi_taskflowcall.gif
+	- http://docs.oracle.com/cd/E36909_01/doc.1111/e15176/img/intr_stud_prop_inspect_bpmpd.gif
+
+- Oracle
+    - https://docs.oracle.com/cd/E29542_01/doc.1111/e15176/img/intr_stud_full_ui_bpmpd.gif
+    - http://www.oracle.com/ocom/groups/public/@opnpublic/documents/digitalasset/1931022.png
+- Joe
+    - Toolbox connectors
+        - http://huxhzq.axshare.com/#p=process
+            - if you click the [+] box. it will then draw a line that is a continuation in the direction of the last input line - to get the line direction, and will mirror the length of that line. then it will use a dummy SVG for at the end. Which is the grphical collection of composed possible shapes. That hte user will select.
+            - if they click the [+] and drag, it'll drop the dummy SVG where ever the mouse finishes.
+    - User task type properties
+        - http://huxhzq.axshare.com/#p=user_task_detail_panels&c=1
+        
+- SVG
+    - Examples -> http://svgicons.sparkk.fr/

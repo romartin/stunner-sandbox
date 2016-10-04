@@ -1,0 +1,604 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:oryx="http://oryx-editor.org" id="_D2FAF22C-024D-496A-A211-3EE83FEA68E1"
+     width="685" height="591" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svg="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="_64A8B077-D971-416B-BA6F-D42EC77458A8start" refX="1" refY="5" markerUnits="userSpaceOnUse"
+            markerWidth="17" markerHeight="11" orient="auto" fill="#000000" stroke="#000000">
+      <path id="_64A8B077-D971-416B-BA6F-D42EC77458A8conditional" d="M 0 5 L 8 0 L 16 5 L 8 10 L 0 5" fill="white"
+            stroke="#000000" stroke-width="1" display="none"/>
+      <path id="_64A8B077-D971-416B-BA6F-D42EC77458A8default" d="M 5 0 L 11 10" fill="white" stroke="#000000"
+            stroke-width="1" display="none"/>
+    </marker>
+    <marker id="_64A8B077-D971-416B-BA6F-D42EC77458A8end" refX="15" refY="6" markerUnits="userSpaceOnUse"
+            markerWidth="15" markerHeight="12" orient="auto" fill="#000000" stroke="#000000">
+      <path id="_64A8B077-D971-416B-BA6F-D42EC77458A8frame2" d="M 0 1 L 15 6 L 0 11z" fill="#000000" stroke="#000000"
+            stroke-linejoin="round" stroke-width="2"/>
+    </marker>
+    <marker id="_5B94E6EE-08D9-4834-A4FC-DC890D43D77Bstart" refX="1" refY="5" markerUnits="userSpaceOnUse"
+            markerWidth="17" markerHeight="11" orient="auto" fill="#000000" stroke="#000000">
+      <path id="_5B94E6EE-08D9-4834-A4FC-DC890D43D77Bconditional" d="M 0 5 L 8 0 L 16 5 L 8 10 L 0 5" fill="white"
+            stroke="#000000" stroke-width="1" display="none"/>
+      <path id="_5B94E6EE-08D9-4834-A4FC-DC890D43D77Bdefault" d="M 5 0 L 11 10" fill="white" stroke="#000000"
+            stroke-width="1" display="none"/>
+    </marker>
+    <marker id="_5B94E6EE-08D9-4834-A4FC-DC890D43D77Bend" refX="15" refY="6" markerUnits="userSpaceOnUse"
+            markerWidth="15" markerHeight="12" orient="auto" fill="#000000" stroke="#000000">
+      <path id="_5B94E6EE-08D9-4834-A4FC-DC890D43D77Bframe2" d="M 0 1 L 15 6 L 0 11z" fill="#000000" stroke="#000000"
+            stroke-linejoin="round" stroke-width="2"/>
+    </marker>
+    <marker id="_40FC0980-0075-45FC-AB38-4B8796EE1AF7start" refX="1" refY="5" markerUnits="userSpaceOnUse"
+            markerWidth="17" markerHeight="11" orient="auto" fill="#000000" stroke="#000000">
+      <path id="_40FC0980-0075-45FC-AB38-4B8796EE1AF7conditional" d="M 0 5 L 8 0 L 16 5 L 8 10 L 0 5" fill="white"
+            stroke="#000000" stroke-width="1" display="none"/>
+      <path id="_40FC0980-0075-45FC-AB38-4B8796EE1AF7default" d="M 5 0 L 11 10" fill="white" stroke="#000000"
+            stroke-width="1" display="none"/>
+    </marker>
+    <marker id="_40FC0980-0075-45FC-AB38-4B8796EE1AF7end" refX="15" refY="6" markerUnits="userSpaceOnUse"
+            markerWidth="15" markerHeight="12" orient="auto" fill="#000000" stroke="#000000">
+      <path id="_40FC0980-0075-45FC-AB38-4B8796EE1AF7frame2" d="M 0 1 L 15 6 L 0 11z" fill="#000000" stroke="#000000"
+            stroke-linejoin="round" stroke-width="2"/>
+    </marker>
+  </defs>
+  <g stroke="none" font-family="Verdana, sans-serif" font-size-adjust="none" font-style="normal" font-variant="normal"
+     font-weight="normal" line-heigth="normal" font-size="12">
+    <g class="stencils" transform="translate(15, 16)">
+      <g class="me"/>
+      <g class="children">
+        <g id="_3EA2DB1C-EF8C-4D7C-816B-82F76B1363BF" bpmn2nodeid="_DC3CC8D1-EED0-42F4-B460-B8098ED9DF41">
+          <g class="stencils" transform="translate(45, 300)">
+            <g class="me">
+              <g pointer-events="painted" id="_3EA2DB1C-EF8C-4D7C-816B-82F76B1363BF">
+                <defs id="_3EA2DB1C-EF8C-4D7C-816B-82F76B1363BF__3EA2DB1C-EF8C-4D7C-816B-82F76B1363BF_3">
+                  <radialGradient id="_3EA2DB1C-EF8C-4D7C-816B-82F76B1363BFbackground" cx="0%" cy="10%" r="100%"
+                                  fx="20%" fy="10%">
+                    <stop offset="0%" stop-color="#ffffff" stop-opacity="1"
+                          id="_3EA2DB1C-EF8C-4D7C-816B-82F76B1363BF__3EA2DB1C-EF8C-4D7C-816B-82F76B1363BF_4"/>
+                    <stop id="_3EA2DB1C-EF8C-4D7C-816B-82F76B1363BFfill_el" offset="100%" stop-color="#ffffff"
+                          stop-opacity="1"/>
+                  </radialGradient>
+                </defs>
+                <rect id="_3EA2DB1C-EF8C-4D7C-816B-82F76B1363BFborder" oryx:resize="vertical horizontal" x="0" y="0"
+                      width="600" height="250" stroke="#000000" stroke-width="1"
+                      fill="url(#_3EA2DB1C-EF8C-4D7C-816B-82F76B1363BFbackground) white"/>
+                <path id="_3EA2DB1C-EF8C-4D7C-816B-82F76B1363BFframe2" style="fill:none;stroke-width:1"
+                      d="M 0,0 L 0,250" oryx:anchors="left top bottom" stroke="#000000"/>
+                undefined
+                <text x="50" y="125" oryx:rotate="270" font-size="12"
+                      id="_3EA2DB1C-EF8C-4D7C-816B-82F76B1363BFtext_name" oryx:align="middle center" oryx:anchors="left"
+                      oryx:fittoelem="frame" stroke="black" stroke-width="0pt" letter-spacing="-0.01px" fill="#000000"
+                      text-anchor="middle" transform="rotate(270 50 125)" visibility="inherit" oryx:fontSize="12">
+                  <tspan x="50" y="125" dy="5" id="ext-gen672">Lane2</tspan>
+                </text>
+              </g>
+            </g>
+            <g class="children" style="overflow:hidden">
+              <g id="_291451D6-1D1F-442E-BF86-B731605C34A0" bpmn2nodeid="_323ED317-55EA-47A2-9AD6-0F1455E14D0F">
+                <g class="stencils" transform="translate(323, 85)">
+                  <g class="me">
+                    <g pointer-events="fill" oryx:minimumSize="50 40" id="_291451D6-1D1F-442E-BF86-B731605C34A0">
+                      <defs id="_291451D6-1D1F-442E-BF86-B731605C34A0__291451D6-1D1F-442E-BF86-B731605C34A0_17">
+                        <radialGradient id="_291451D6-1D1F-442E-BF86-B731605C34A0background" cx="10%" cy="10%" r="100%"
+                                        fx="10%" fy="10%">
+                          <stop offset="0%" stop-color="#ffffff" stop-opacity="1"
+                                id="_291451D6-1D1F-442E-BF86-B731605C34A0__291451D6-1D1F-442E-BF86-B731605C34A0_18"/>
+                          <stop id="_291451D6-1D1F-442E-BF86-B731605C34A0fill_el" offset="100%" stop-color="#fafad2"
+                                stop-opacity="1"/>
+                        </radialGradient>
+                        <radialGradient id="_291451D6-1D1F-442E-BF86-B731605C34A0borderbackground" cx="10%" cy="10%"
+                                        r="100%" fx="10%" fy="10%">
+                          <stop offset="0%" stop-color="#ffffff" stop-opacity="1"
+                                id="_291451D6-1D1F-442E-BF86-B731605C34A0__291451D6-1D1F-442E-BF86-B731605C34A0_19"/>
+                          <stop id="_291451D6-1D1F-442E-BF86-B731605C34A0fill_border" offset="100%" stop-color="#000000"
+                                stop-opacity="1" stroke="#000000"/>
+                        </radialGradient>
+                      </defs>
+                      <rect id="_291451D6-1D1F-442E-BF86-B731605C34A0text_frame" oryx:anchors="bottom top right left"
+                            x="1" y="1" width="94" height="79" rx="10" ry="10" stroke="none" stroke-width="0"
+                            fill="none"/>
+                      <rect id="_291451D6-1D1F-442E-BF86-B731605C34A0bg_frame" oryx:resize="vertical horizontal" x="0"
+                            y="0" width="100" height="80" rx="10" ry="10" stroke="#000000" stroke-width="1"
+                            fill="url(#_291451D6-1D1F-442E-BF86-B731605C34A0background) #ffffcc"/>
+                      <text font-size="12" id="_291451D6-1D1F-442E-BF86-B731605C34A0text_name" x="50" y="40"
+                            oryx:align="middle center" oryx:fittoelem="text_frame" stroke="black" text-anchor="middle"
+                            stroke-width="0pt" letter-spacing="-0.01px" fill="#000000" transform="rotate(0 50 40)"
+                            visibility="inherit" oryx:fontSize="12">
+                        <tspan x="50" y="40" dy="5" id="ext-gen800">Task2</tspan>
+                      </text>
+                      <g id="_291451D6-1D1F-442E-BF86-B731605C34A0manualTask" transform="scale(0.7,0.7) translate(8,8)"
+                         display="none">
+                        <path oryx:anchors="top left" id="_291451D6-1D1F-442E-BF86-B731605C34A0frame"
+                              style="opacity:1;fill:none;fill-opacity:1;stroke-width:1"
+                              d="M0.5,3.751l4.083-3.25c0,0,11.166,0.083,12.083,0.083s-2.417,2.917-1.5,2.917     s11.667,0,12.584,0c1.166,1.708-0.168,3.167-0.834,3.667s0.875,1.917-1,4.417c-0.75,0.25,0.75,1.875-1.333,3.333     c-1.167,0.583,0.583,1.542-1.25,2.833c-1.167,0-20.833,0.083-20.833,0.083l-2-1.333V3.751z"
+                              stroke="#000000"/>
+                        <path id="_291451D6-1D1F-442E-BF86-B731605C34A0frame2" oryx:anchors="top left"
+                              style="opacity:1;fill:none;stroke-width:2" d="M 13.5 7 L 27 7" stroke="#000000"/>
+                        <path id="_291451D6-1D1F-442E-BF86-B731605C34A0frame3" oryx:anchors="top left"
+                              style="opacity:1;fill:none;stroke-width:2" d="M 13.5 11 L 26 11" stroke="#000000"/>
+                        <path id="_291451D6-1D1F-442E-BF86-B731605C34A0frame4" oryx:anchors="top left"
+                              style="opacity:1;fill:none;stroke-width:1.5" d="M 14 14.5 L 25 14.5" stroke="#000000"/>
+                        <path id="_291451D6-1D1F-442E-BF86-B731605C34A0frame5" oryx:anchors="top left"
+                              style="opacity:1;fill:none;stroke-width:1.5" d="M 8.2 3.1 L 15 3.1" stroke="#000000"/>
+                      </g>
+                      <g id="_291451D6-1D1F-442E-BF86-B731605C34A0businessRuleTask"
+                         transform="scale(0.7,0.7) translate(8,8)" display="none">
+                        <rect id="_291451D6-1D1F-442E-BF86-B731605C34A0frame6" oryx:anchors="top left" x="0" y="0"
+                              width="22" height="4" style="opacity:1;fill:#B3B1B3;fill-opacity:1;" stroke="#000000"/>
+                        <rect id="_291451D6-1D1F-442E-BF86-B731605C34A0frame7" oryx:anchors="top left" x="0" y="4"
+                              style="opacity:1;fill:none;" width="22" height="12" stroke="#000000"/>
+                        <path id="_291451D6-1D1F-442E-BF86-B731605C34A0frame8" oryx:anchors="top left"
+                              style="opacity:1;fill:none;" d="M 0 10 L 22 10" stroke="#000000"/>
+                        <path id="_291451D6-1D1F-442E-BF86-B731605C34A0frame9" oryx:anchors="top left"
+                              style="opacity:1; fill:none;" d="M 7 4 L 7 16" stroke="#000000"/>
+                      </g>
+                      <g id="_291451D6-1D1F-442E-BF86-B731605C34A0scriptTask" transform="scale(0.7,0.7) translate(8,8)"
+                         display="none">
+                        <path oryx:anchors="top left" id="_291451D6-1D1F-442E-BF86-B731605C34A0frame10"
+                              style="opacity:1;fill:none;" stroke="#000000"
+                              d="M6.402,0.5h14.5c0,0-5.833,2.833-5.833,5.583s4.417,6,4.417,9.167    s-4.167,5.083-4.167,5.083H0.235c0,0,5-2.667,5-5s-4.583-6.75-4.583-9.25S6.402,0.5,6.402,0.5z"/>
+                        <path oryx:anchors="top left" id="_291451D6-1D1F-442E-BF86-B731605C34A0frame11"
+                              style="opacity:1;fill:none;stroke-width:1.5" d="M 3.5 4.5 L 13.5 4.5" stroke="#000000"/>
+                        <path oryx:anchors="top left" id="_291451D6-1D1F-442E-BF86-B731605C34A0frame12"
+                              style="opacity:1;fill:none;stroke-width:1.5" d="M 3.8 8.5 L 13.8 8.5" stroke="#000000"/>
+                        <path oryx:anchors="top left" id="_291451D6-1D1F-442E-BF86-B731605C34A0frame13"
+                              style="opacity:1;fill:none;stroke-width:1.5" d="M 6.3 12.5 L 16.3 12.5" stroke="#000000"/>
+                        <path oryx:anchors="top left" id="_291451D6-1D1F-442E-BF86-B731605C34A0frame14"
+                              style="opacity:1;fill:none;stroke-width:1.5" d="M 6.5 16.5 L 16.5 16.5" stroke="#000000"/>
+                      </g>
+                      <g id="_291451D6-1D1F-442E-BF86-B731605C34A0userTask" transform="scale(0.7,0.7) translate(8,8)"
+                         display="none">
+                        <path id="_291451D6-1D1F-442E-BF86-B731605C34A0frame15" oryx:anchors="top left"
+                              style="opacity:1;fill:#F4F6F7" stroke="#000000"
+                              d="M0.585,24.167h24.083v-7.833c0,0-2.333-3.917-7.083-5.167h-9.25    c-4.417,1.333-7.833,5.75-7.833,5.75L0.585,24.167z"/>
+                        <path id="_291451D6-1D1F-442E-BF86-B731605C34A0frame16" oryx:anchors="top left"
+                              style="opacity:1;fill:none" d="M 6 20 L 6 24" stroke="#000000"/>
+                        <path id="_291451D6-1D1F-442E-BF86-B731605C34A0frame17" oryx:anchors="top left"
+                              style="opacity:1;fill:none" d="M 20 20 L 20 24" stroke="#000000"/>
+                        <circle id="_291451D6-1D1F-442E-BF86-B731605C34A0frame18" oryx:anchors="top left" fill="black"
+                                cx="13.002" cy="5.916" r="5.417" stroke="#000000"/>
+                        <path id="_291451D6-1D1F-442E-BF86-B731605C34A0frame19" oryx:anchors="top left"
+                              style="opacity:1;fill:#F0EFF0;" stroke="#000000"
+                              d="M8.043,7.083c0,0,2.814-2.426,5.376-1.807s4.624-0.693,4.624-0.693    c0.25,1.688,0.042,3.75-1.458,5.584c0,0,1.083,0.75,1.083,1.5s0.125,1.875-1,3s-5.5,1.25-6.75,0S8.668,12.834,8.668,12    s0.583-1.25,1.25-1.917C8.835,9.5,7.419,7.708,8.043,7.083z"/>
+                      </g>
+                      <g id="_291451D6-1D1F-442E-BF86-B731605C34A0serviceTask" transform="scale(0.7,0.7) translate(8,8)"
+                         display="none">
+                        <polygon oryx:anchors="top left" id="_291451D6-1D1F-442E-BF86-B731605C34A0frame20"
+                                 style="opacity:1;fill:#ffffff" stroke="#000000"
+                                 points="15.392,5.064 17.954,2.502 20.347,4.895 17.786,7.455     18.729,9.732 22.353,9.732 22.353,13.115 18.731,13.115 17.788,15.392 20.351,17.955 17.958,20.347 15.397,17.786 13.12,18.729     13.12,22.353 9.737,22.353 9.737,18.731 7.46,17.788 4.897,20.35 2.506,17.958 5.066,15.397 4.124,13.12 0.5,13.12 0.5,9.737     4.121,9.737 5.065,7.461 2.503,4.898 4.895,2.506 7.455,5.066 9.732,4.125 9.732,0.5 13.116,0.5 13.116,4.121 "/>
+                        <circle oryx:anchors="top left" id="_291451D6-1D1F-442E-BF86-B731605C34A0frame21"
+                                style="opacity:1;fill:none" stroke="#000000" cx="11.427" cy="11.426" r="3.714"/>
+                        <polygon oryx:anchors="top left" id="_291451D6-1D1F-442E-BF86-B731605C34A0frame22"
+                                 style="opacity:1;fill:#ffffff" stroke="#000000"
+                                 points="21.392,11.064 23.954,8.502 26.347,10.895 23.786,13.455     24.729,15.732 28.353,15.732 28.353,19.115 24.731,19.115 23.788,21.392 26.351,23.955 23.958,26.347 21.397,23.786 19.12,24.729     19.12,28.353 15.737,28.353 15.737,24.731 13.46,23.788 10.897,26.35 8.506,23.958 11.066,21.397 10.124,19.12 6.5,19.12     6.5,15.737 10.121,15.737 11.065,13.461 8.503,10.898 10.895,8.506 13.455,11.066 15.732,10.125 15.732,6.5 19.116,6.5     19.116,10.121 "/>
+                        <circle oryx:anchors="top left" id="_291451D6-1D1F-442E-BF86-B731605C34A0frame23"
+                                style="opacity:1;fill:none;" stroke="#000000" cx="17.427" cy="17.426" r="3.714"/>
+                      </g>
+                      <g id="_291451D6-1D1F-442E-BF86-B731605C34A0sendTask" display="none">
+                        <path id="_291451D6-1D1F-442E-BF86-B731605C34A0stframe24" oryx:anchors="left top"
+                              stroke="#FFFFFF" fill="black" stroke-width="1" d="M8,11 L8,21 L24,21 L24,11 L16,17z"/>
+                        <path id="_291451D6-1D1F-442E-BF86-B731605C34A0stframe25" oryx:anchors="left top"
+                              stroke="#FFFFFF" fill="black" stroke-width="1" d="M7,10 L16,17 L25 10z"/>
+                      </g>
+                      <g id="_291451D6-1D1F-442E-BF86-B731605C34A0receiveTask" display="none">
+                        <path id="_291451D6-1D1F-442E-BF86-B731605C34A0frame26" oryx:anchors="left top" stroke="#000000"
+                              fill="none" stroke-width="1" d="M8,11 L8,21 L24,21 L24,11z M8,11 L16,17 L24,11"/>
+                      </g>
+                      <g id="_291451D6-1D1F-442E-BF86-B731605C34A0none" display="inherit"/>
+                      <g id="_291451D6-1D1F-442E-BF86-B731605C34A0sequential" display="none">
+                        <path oryx:anchors="bottom" fill="none" stroke="#000000" stroke-width="2"
+                              d="M46,76h10M46,72h10 M46,68h10"
+                              id="_291451D6-1D1F-442E-BF86-B731605C34A0__291451D6-1D1F-442E-BF86-B731605C34A0_20"/>
+                      </g>
+                    </g>
+                  </g>
+                  <g class="children" style="overflow:hidden"/>
+                  <g class="edge"/>
+                </g>
+                <g class="controls">
+                  <g class="dockers"/>
+                  <g class="magnets" transform="translate(323, 85)">
+                    <g pointer-events="all" display="none" transform="translate(-7, 12)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(-7, 32)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(-7, 52)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(17, 71)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(42, 71)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(67, 71)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(91, 12)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(91, 32)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(91, 52)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(17, -7)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(42, -7)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(67, -7)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(42, 32)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g id="_DD757C43-3737-4FFC-A7E4-EC4195FDCCDC" bpmn2nodeid="_D411D442-8913-4004-BA99-A136F5D80BD9">
+                <g class="stencils" transform="translate(468, 111)">
+                  <g class="me">
+                    <g pointer-events="fill" id="_DD757C43-3737-4FFC-A7E4-EC4195FDCCDC">
+                      <defs id="_DD757C43-3737-4FFC-A7E4-EC4195FDCCDC__DD757C43-3737-4FFC-A7E4-EC4195FDCCDC_5">
+                        <radialGradient id="_DD757C43-3737-4FFC-A7E4-EC4195FDCCDCbackground" cx="10%" cy="10%" r="100%"
+                                        fx="10%" fy="10%">
+                          <stop offset="0%" stop-color="#ffffff" stop-opacity="1"
+                                id="_DD757C43-3737-4FFC-A7E4-EC4195FDCCDC__DD757C43-3737-4FFC-A7E4-EC4195FDCCDC_6"/>
+                          <stop id="_DD757C43-3737-4FFC-A7E4-EC4195FDCCDCfill_el" offset="100%" stop-color="#ff6347"
+                                stop-opacity="1"/>
+                        </radialGradient>
+                      </defs>
+                      <circle id="_DD757C43-3737-4FFC-A7E4-EC4195FDCCDCbg_frame" cx="14" cy="14" r="14" stroke="#000000"
+                              fill="url(#_DD757C43-3737-4FFC-A7E4-EC4195FDCCDCbackground) white" stroke-width="3"/>
+                      <text font-size="11" id="_DD757C43-3737-4FFC-A7E4-EC4195FDCCDCtext_name" x="14" y="30"
+                            oryx:align="top center" stroke="black" stroke-width="0pt" letter-spacing="-0.01px"
+                            fill="#000000" text-anchor="middle" transform="rotate(0 14 30)" visibility="inherit"
+                            oryx:fontSize="11"/>
+                    </g>
+                  </g>
+                  <g class="children" style="overflow:hidden"/>
+                  <g class="edge"/>
+                </g>
+                <g class="controls">
+                  <g class="dockers"/>
+                  <g class="magnets" transform="translate(468, 111)">
+                    <g pointer-events="all" display="none" transform="translate(6, 6)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+            <g class="edge"/>
+          </g>
+          <g class="controls">
+            <g class="dockers"/>
+            <g class="magnets" transform="translate(45, 300)">
+              <g pointer-events="all" display="none" transform="translate(292, 117)">
+                <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="_27D5A1BA-EB3C-43BB-B203-30D356EE0DC3" bpmn2nodeid="_16505AE9-3650-4E76-9F3D-9C05A7669364">
+          <g class="stencils" transform="translate(45, 15)">
+            <g class="me">
+              <g pointer-events="painted" id="_27D5A1BA-EB3C-43BB-B203-30D356EE0DC3">
+                <defs id="_27D5A1BA-EB3C-43BB-B203-30D356EE0DC3__27D5A1BA-EB3C-43BB-B203-30D356EE0DC3_3">
+                  <radialGradient id="_27D5A1BA-EB3C-43BB-B203-30D356EE0DC3background" cx="0%" cy="10%" r="100%"
+                                  fx="20%" fy="10%">
+                    <stop offset="0%" stop-color="#ffffff" stop-opacity="1"
+                          id="_27D5A1BA-EB3C-43BB-B203-30D356EE0DC3__27D5A1BA-EB3C-43BB-B203-30D356EE0DC3_4"/>
+                    <stop id="_27D5A1BA-EB3C-43BB-B203-30D356EE0DC3fill_el" offset="100%" stop-color="#ffffff"
+                          stop-opacity="1"/>
+                  </radialGradient>
+                </defs>
+                <rect id="_27D5A1BA-EB3C-43BB-B203-30D356EE0DC3border" oryx:resize="vertical horizontal" x="0" y="0"
+                      width="600" height="250" stroke="#000000" stroke-width="1"
+                      fill="url(#_27D5A1BA-EB3C-43BB-B203-30D356EE0DC3background) white"/>
+                <path id="_27D5A1BA-EB3C-43BB-B203-30D356EE0DC3frame2" style="fill:none;stroke-width:1"
+                      d="M 0,0 L 0,250" oryx:anchors="left top bottom" stroke="#000000"/>
+                undefined
+                <text x="50" y="125" oryx:rotate="270" font-size="12"
+                      id="_27D5A1BA-EB3C-43BB-B203-30D356EE0DC3text_name" oryx:align="middle center" oryx:anchors="left"
+                      oryx:fittoelem="frame" stroke="black" stroke-width="0pt" letter-spacing="-0.01px" fill="#000000"
+                      text-anchor="middle" transform="rotate(270 50 125)" visibility="inherit" oryx:fontSize="12">
+                  <tspan x="50" y="125" dy="5">Lane1</tspan>
+                </text>
+              </g>
+            </g>
+            <g class="children" style="overflow:hidden">
+              <g id="_B10428B9-849D-41DB-B3BD-D455A63866D6" bpmn2nodeid="processStartEvent">
+                <g class="stencils" transform="translate(103, 110)">
+                  <g class="me">
+                    <g pointer-events="fill" id="_B10428B9-849D-41DB-B3BD-D455A63866D6">
+                      <defs id="_B10428B9-849D-41DB-B3BD-D455A63866D6__B10428B9-849D-41DB-B3BD-D455A63866D6_5">
+                        <radialGradient id="_B10428B9-849D-41DB-B3BD-D455A63866D6background" cx="10%" cy="10%" r="100%"
+                                        fx="10%" fy="10%">
+                          <stop offset="0%" stop-color="#ffffff" stop-opacity="1"
+                                id="_B10428B9-849D-41DB-B3BD-D455A63866D6__B10428B9-849D-41DB-B3BD-D455A63866D6_6"/>
+                          <stop id="_B10428B9-849D-41DB-B3BD-D455A63866D6fill_el" offset="100%" stop-color="#9acd32"
+                                stop-opacity="1"/>
+                        </radialGradient>
+                      </defs>
+                      <circle id="_B10428B9-849D-41DB-B3BD-D455A63866D6bg_frame" cx="15" cy="15" r="15" stroke="#000000"
+                              fill="url(#_B10428B9-849D-41DB-B3BD-D455A63866D6background) white" stroke-width="1"
+                              style="stroke-dasharray: 5.5, 3"/>
+                      <circle id="_B10428B9-849D-41DB-B3BD-D455A63866D6frame" cx="15" cy="15" r="15" stroke="#000000"
+                              fill="none" stroke-width="1" display="inherit"/>
+                      <text font-size="11" id="_B10428B9-849D-41DB-B3BD-D455A63866D6text_name" x="15" y="32"
+                            oryx:align="top center" stroke="black" stroke-width="0pt" letter-spacing="-0.01px"
+                            fill="#000000" text-anchor="middle" transform="rotate(0 15 32)" visibility="inherit"
+                            oryx:fontSize="11"/>
+                    </g>
+                  </g>
+                  <g class="children" style="overflow:hidden"/>
+                  <g class="edge"/>
+                </g>
+                <g class="controls">
+                  <g class="dockers"/>
+                  <g class="magnets" transform="translate(103, 110)">
+                    <g pointer-events="all" display="none" transform="translate(7, 7)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89C" bpmn2nodeid="_374097F7-61D0-4B18-A915-FEB238C06348">
+                <g class="stencils" transform="translate(178, 85)">
+                  <g class="me">
+                    <g pointer-events="fill" oryx:minimumSize="50 40" id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89C">
+                      <defs id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89C__36BC40C3-2005-4E8B-9A4F-91EB0774C89C_17">
+                        <radialGradient id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cbackground" cx="10%" cy="10%" r="100%"
+                                        fx="10%" fy="10%">
+                          <stop offset="0%" stop-color="#ffffff" stop-opacity="1"
+                                id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89C__36BC40C3-2005-4E8B-9A4F-91EB0774C89C_18"/>
+                          <stop id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cfill_el" offset="100%" stop-color="#fafad2"
+                                stop-opacity="1"/>
+                        </radialGradient>
+                        <radialGradient id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cborderbackground" cx="10%" cy="10%"
+                                        r="100%" fx="10%" fy="10%">
+                          <stop offset="0%" stop-color="#ffffff" stop-opacity="1"
+                                id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89C__36BC40C3-2005-4E8B-9A4F-91EB0774C89C_19"/>
+                          <stop id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cfill_border" offset="100%" stop-color="#000000"
+                                stop-opacity="1" stroke="#000000"/>
+                        </radialGradient>
+                      </defs>
+                      <rect id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Ctext_frame" oryx:anchors="bottom top right left"
+                            x="1" y="1" width="94" height="79" rx="10" ry="10" stroke="none" stroke-width="0"
+                            fill="none"/>
+                      <rect id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cbg_frame" oryx:resize="vertical horizontal" x="0"
+                            y="0" width="100" height="80" rx="10" ry="10" stroke="#000000" stroke-width="1"
+                            fill="url(#_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cbackground) #ffffcc"/>
+                      <text font-size="12" id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Ctext_name" x="50" y="40"
+                            oryx:align="middle center" oryx:fittoelem="text_frame" stroke="black" text-anchor="middle"
+                            stroke-width="0pt" letter-spacing="-0.01px" fill="#000000" transform="rotate(0 50 40)"
+                            visibility="inherit" oryx:fontSize="12">
+                        <tspan x="50" y="40" dy="5" id="ext-gen759">Task1</tspan>
+                      </text>
+                      <g id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89CmanualTask" transform="scale(0.7,0.7) translate(8,8)"
+                         display="none">
+                        <path oryx:anchors="top left" id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe"
+                              style="opacity:1;fill:none;fill-opacity:1;stroke-width:1"
+                              d="M0.5,3.751l4.083-3.25c0,0,11.166,0.083,12.083,0.083s-2.417,2.917-1.5,2.917     s11.667,0,12.584,0c1.166,1.708-0.168,3.167-0.834,3.667s0.875,1.917-1,4.417c-0.75,0.25,0.75,1.875-1.333,3.333     c-1.167,0.583,0.583,1.542-1.25,2.833c-1.167,0-20.833,0.083-20.833,0.083l-2-1.333V3.751z"
+                              stroke="#000000"/>
+                        <path id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe2" oryx:anchors="top left"
+                              style="opacity:1;fill:none;stroke-width:2" d="M 13.5 7 L 27 7" stroke="#000000"/>
+                        <path id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe3" oryx:anchors="top left"
+                              style="opacity:1;fill:none;stroke-width:2" d="M 13.5 11 L 26 11" stroke="#000000"/>
+                        <path id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe4" oryx:anchors="top left"
+                              style="opacity:1;fill:none;stroke-width:1.5" d="M 14 14.5 L 25 14.5" stroke="#000000"/>
+                        <path id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe5" oryx:anchors="top left"
+                              style="opacity:1;fill:none;stroke-width:1.5" d="M 8.2 3.1 L 15 3.1" stroke="#000000"/>
+                      </g>
+                      <g id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89CbusinessRuleTask"
+                         transform="scale(0.7,0.7) translate(8,8)" display="none">
+                        <rect id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe6" oryx:anchors="top left" x="0" y="0"
+                              width="22" height="4" style="opacity:1;fill:#B3B1B3;fill-opacity:1;" stroke="#000000"/>
+                        <rect id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe7" oryx:anchors="top left" x="0" y="4"
+                              style="opacity:1;fill:none;" width="22" height="12" stroke="#000000"/>
+                        <path id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe8" oryx:anchors="top left"
+                              style="opacity:1;fill:none;" d="M 0 10 L 22 10" stroke="#000000"/>
+                        <path id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe9" oryx:anchors="top left"
+                              style="opacity:1; fill:none;" d="M 7 4 L 7 16" stroke="#000000"/>
+                      </g>
+                      <g id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89CscriptTask" transform="scale(0.7,0.7) translate(8,8)"
+                         display="none">
+                        <path oryx:anchors="top left" id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe10"
+                              style="opacity:1;fill:none;" stroke="#000000"
+                              d="M6.402,0.5h14.5c0,0-5.833,2.833-5.833,5.583s4.417,6,4.417,9.167    s-4.167,5.083-4.167,5.083H0.235c0,0,5-2.667,5-5s-4.583-6.75-4.583-9.25S6.402,0.5,6.402,0.5z"/>
+                        <path oryx:anchors="top left" id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe11"
+                              style="opacity:1;fill:none;stroke-width:1.5" d="M 3.5 4.5 L 13.5 4.5" stroke="#000000"/>
+                        <path oryx:anchors="top left" id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe12"
+                              style="opacity:1;fill:none;stroke-width:1.5" d="M 3.8 8.5 L 13.8 8.5" stroke="#000000"/>
+                        <path oryx:anchors="top left" id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe13"
+                              style="opacity:1;fill:none;stroke-width:1.5" d="M 6.3 12.5 L 16.3 12.5" stroke="#000000"/>
+                        <path oryx:anchors="top left" id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe14"
+                              style="opacity:1;fill:none;stroke-width:1.5" d="M 6.5 16.5 L 16.5 16.5" stroke="#000000"/>
+                      </g>
+                      <g id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89CuserTask" transform="scale(0.7,0.7) translate(8,8)"
+                         display="none">
+                        <path id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe15" oryx:anchors="top left"
+                              style="opacity:1;fill:#F4F6F7" stroke="#000000"
+                              d="M0.585,24.167h24.083v-7.833c0,0-2.333-3.917-7.083-5.167h-9.25    c-4.417,1.333-7.833,5.75-7.833,5.75L0.585,24.167z"/>
+                        <path id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe16" oryx:anchors="top left"
+                              style="opacity:1;fill:none" d="M 6 20 L 6 24" stroke="#000000"/>
+                        <path id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe17" oryx:anchors="top left"
+                              style="opacity:1;fill:none" d="M 20 20 L 20 24" stroke="#000000"/>
+                        <circle id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe18" oryx:anchors="top left" fill="black"
+                                cx="13.002" cy="5.916" r="5.417" stroke="#000000"/>
+                        <path id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe19" oryx:anchors="top left"
+                              style="opacity:1;fill:#F0EFF0;" stroke="#000000"
+                              d="M8.043,7.083c0,0,2.814-2.426,5.376-1.807s4.624-0.693,4.624-0.693    c0.25,1.688,0.042,3.75-1.458,5.584c0,0,1.083,0.75,1.083,1.5s0.125,1.875-1,3s-5.5,1.25-6.75,0S8.668,12.834,8.668,12    s0.583-1.25,1.25-1.917C8.835,9.5,7.419,7.708,8.043,7.083z"/>
+                      </g>
+                      <g id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89CserviceTask" transform="scale(0.7,0.7) translate(8,8)"
+                         display="none">
+                        <polygon oryx:anchors="top left" id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe20"
+                                 style="opacity:1;fill:#ffffff" stroke="#000000"
+                                 points="15.392,5.064 17.954,2.502 20.347,4.895 17.786,7.455     18.729,9.732 22.353,9.732 22.353,13.115 18.731,13.115 17.788,15.392 20.351,17.955 17.958,20.347 15.397,17.786 13.12,18.729     13.12,22.353 9.737,22.353 9.737,18.731 7.46,17.788 4.897,20.35 2.506,17.958 5.066,15.397 4.124,13.12 0.5,13.12 0.5,9.737     4.121,9.737 5.065,7.461 2.503,4.898 4.895,2.506 7.455,5.066 9.732,4.125 9.732,0.5 13.116,0.5 13.116,4.121 "/>
+                        <circle oryx:anchors="top left" id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe21"
+                                style="opacity:1;fill:none" stroke="#000000" cx="11.427" cy="11.426" r="3.714"/>
+                        <polygon oryx:anchors="top left" id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe22"
+                                 style="opacity:1;fill:#ffffff" stroke="#000000"
+                                 points="21.392,11.064 23.954,8.502 26.347,10.895 23.786,13.455     24.729,15.732 28.353,15.732 28.353,19.115 24.731,19.115 23.788,21.392 26.351,23.955 23.958,26.347 21.397,23.786 19.12,24.729     19.12,28.353 15.737,28.353 15.737,24.731 13.46,23.788 10.897,26.35 8.506,23.958 11.066,21.397 10.124,19.12 6.5,19.12     6.5,15.737 10.121,15.737 11.065,13.461 8.503,10.898 10.895,8.506 13.455,11.066 15.732,10.125 15.732,6.5 19.116,6.5     19.116,10.121 "/>
+                        <circle oryx:anchors="top left" id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe23"
+                                style="opacity:1;fill:none;" stroke="#000000" cx="17.427" cy="17.426" r="3.714"/>
+                      </g>
+                      <g id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89CsendTask" display="none">
+                        <path id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cstframe24" oryx:anchors="left top"
+                              stroke="#FFFFFF" fill="black" stroke-width="1" d="M8,11 L8,21 L24,21 L24,11 L16,17z"/>
+                        <path id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cstframe25" oryx:anchors="left top"
+                              stroke="#FFFFFF" fill="black" stroke-width="1" d="M7,10 L16,17 L25 10z"/>
+                      </g>
+                      <g id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89CreceiveTask" display="none">
+                        <path id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cframe26" oryx:anchors="left top" stroke="#000000"
+                              fill="none" stroke-width="1" d="M8,11 L8,21 L24,21 L24,11z M8,11 L16,17 L24,11"/>
+                      </g>
+                      <g id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Cnone" display="inherit"/>
+                      <g id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89Csequential" display="none">
+                        <path oryx:anchors="bottom" fill="none" stroke="#000000" stroke-width="2"
+                              d="M46,76h10M46,72h10 M46,68h10"
+                              id="_36BC40C3-2005-4E8B-9A4F-91EB0774C89C__36BC40C3-2005-4E8B-9A4F-91EB0774C89C_20"/>
+                      </g>
+                    </g>
+                  </g>
+                  <g class="children" style="overflow:hidden"/>
+                  <g class="edge"/>
+                </g>
+                <g class="controls">
+                  <g class="dockers"/>
+                  <g class="magnets" transform="translate(178, 85)">
+                    <g pointer-events="all" display="none" transform="translate(-7, 12)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(-7, 32)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(-7, 52)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(17, 71)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(42, 71)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(67, 71)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(91, 12)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(91, 32)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(91, 52)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(17, -7)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(42, -7)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(67, -7)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                    <g pointer-events="all" display="none" transform="translate(42, 32)">
+                      <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+            <g class="edge"/>
+          </g>
+          <g class="controls">
+            <g class="dockers"/>
+            <g class="magnets" transform="translate(45, 15)">
+              <g pointer-events="all" display="none" transform="translate(292, 117)">
+                <circle cx="8" cy="8" r="4" stroke="none" fill="red" fill-opacity="0.3"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g class="edge">
+        <g id="_64A8B077-D971-416B-BA6F-D42EC77458A8" bpmn2nodeid="_97A5F428-5E08-4DC2-AC38-61350BFE5514">
+          <g class="stencils">
+            <g class="me">
+              <g pointer-events="painted" bpmn2nodeid="_97A5F428-5E08-4DC2-AC38-61350BFE5514">
+                <path id="_64A8B077-D971-416B-BA6F-D42EC77458A8_1" d="M178.609375 140L222.15625 140 " stroke="#000000"
+                      fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      marker-start="url(#_64A8B077-D971-416B-BA6F-D42EC77458A8start)"
+                      marker-end="url(#_64A8B077-D971-416B-BA6F-D42EC77458A8end)"/>
+              </g>
+              <text id="_64A8B077-D971-416B-BA6F-D42EC77458A8text_name" font-size="12" x="192.609375" y="126"
+                    oryx:edgePosition="startTop" stroke-width="0pt" letter-spacing="-0.01px" fill="#000000"
+                    text-anchor="start" transform="rotate(360 178.609375 140)" visibility="inherit" oryx:fontSize="12"/>
+            </g>
+            <g class="children" style="overflow:hidden"/>
+            <g class="edge"/>
+          </g>
+          <g class="controls">
+            <g class="dockers"/>
+            <g class="magnets"/>
+          </g>
+        </g>
+        <g id="_5B94E6EE-08D9-4834-A4FC-DC890D43D77B" bpmn2nodeid="_C9B1CD7E-E634-4511-BBB6-DB05AEF92D0F">
+          <g class="stencils">
+            <g class="me">
+              <g pointer-events="painted" bpmn2nodeid="_C9B1CD7E-E634-4511-BBB6-DB05AEF92D0F">
+                <path id="_5B94E6EE-08D9-4834-A4FC-DC890D43D77B_1"
+                      d="M293.56087911872055 180.4127624057611L397.43912088127945 384.5872375942389 " stroke="#000000"
+                      fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      marker-start="url(#_5B94E6EE-08D9-4834-A4FC-DC890D43D77Bstart)"
+                      marker-end="url(#_5B94E6EE-08D9-4834-A4FC-DC890D43D77Bend)"/>
+              </g>
+              <text id="_5B94E6EE-08D9-4834-A4FC-DC890D43D77Btext_name" font-size="12" x="307.56087911872055"
+                    y="166.4127624057611" oryx:edgePosition="startTop" stroke-width="0pt" letter-spacing="-0.01px"
+                    fill="#000000" text-anchor="start"
+                    transform="rotate(63.034285567129814 293.56087911872055 180.4127624057611)" visibility="inherit"
+                    oryx:fontSize="12"/>
+            </g>
+            <g class="children" style="overflow:hidden"/>
+            <g class="edge"/>
+          </g>
+          <g class="controls">
+            <g class="dockers"/>
+            <g class="magnets"/>
+          </g>
+        </g>
+        <g id="_40FC0980-0075-45FC-AB38-4B8796EE1AF7" bpmn2nodeid="_89D15FED-A187-4BD6-B4AF-8BBE837EDCB5">
+          <g class="stencils">
+            <g class="me">
+              <g pointer-events="painted" bpmn2nodeid="_89D15FED-A187-4BD6-B4AF-8BBE837EDCB5">
+                <path id="_40FC0980-0075-45FC-AB38-4B8796EE1AF7_1" d="M468.390625 425L512.375 425 " stroke="#000000"
+                      fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      marker-start="url(#_40FC0980-0075-45FC-AB38-4B8796EE1AF7start)"
+                      marker-end="url(#_40FC0980-0075-45FC-AB38-4B8796EE1AF7end)"/>
+              </g>
+              <text id="_40FC0980-0075-45FC-AB38-4B8796EE1AF7text_name" font-size="12" x="482.390625" y="411"
+                    oryx:edgePosition="startTop" stroke-width="0pt" letter-spacing="-0.01px" fill="#000000"
+                    text-anchor="start" transform="rotate(360 468.390625 425)" visibility="inherit" oryx:fontSize="12"/>
+            </g>
+            <g class="children" style="overflow:hidden"/>
+            <g class="edge"/>
+          </g>
+          <g class="controls">
+            <g class="dockers"/>
+            <g class="magnets"/>
+          </g>
+        </g>
+      </g>
+      <text id="_ACA8E877-D478-40BF-85E0-8D282D30BA1E"
+            style="stroke-width:1;fill:rgb(177,194,214);font-family:arial;font-weight:bold" font-size="12"
+            onclick="ORYX.Plugins.CanvasTitle.openTextualAnalysis()"
+            onmouseover="ORYX.Plugins.CanvasTitle.addToolTip('_ACA8E877-D478-40BF-85E0-8D282D30BA1E')"
+            transform="translate(10, 20)">lanesss v.1.0 (Evaluation.lanesss)
+      </text>
+    </g>
+  </g>
+</svg>

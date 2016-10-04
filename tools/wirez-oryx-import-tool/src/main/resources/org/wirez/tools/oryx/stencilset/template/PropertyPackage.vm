@@ -1,0 +1,68 @@
+package $pojo.pkg;
+
+import org.jboss.errai.common.client.api.annotations.MapsTo;
+import org.jboss.errai.common.client.api.annotations.Portable;
+import org.jboss.errai.databinding.client.api.Bindable;
+import org.wirez.bpmn.api.BPMNPropertySet;
+import org.wirez.core.api.annotation.propertyset.Property;
+import org.wirez.core.api.definition.property.PropertySet;
+import javax.inject.Inject;
+
+#foreach ($p in $properties)
+    import $p.pkg.$p.className;
+#end
+
+@Portable
+@Bindable
+@org.wirez.core.api.annotation.propertyset.PropertySet
+public class $pojo.className implements BPMNPropertySet {
+
+    public static final String ID = "$$pojo.id";
+    public static final String NAME = "$$pojo.id";
+    
+    #foreach ($p in $properties)
+        @Property
+        $p.className $p.id;
+    #end
+    
+    public $pojo.className () {
+    }
+
+    public $pojo.className (
+        #set( $counter = 0 )
+        #foreach ($p in $properties)
+            @MapsTo("$p.id") $p.className $p.id
+            #if ( $counter < ( $properties.size() - 1 ) )
+                ,
+            #end
+            #set( $counter = $counter + 1 )
+        #end
+    ) {
+            #foreach ($p in $properties)
+                this.$p.id = $p.id;
+            #end
+    }
+    
+    @Override
+    public String getPropertySetId() {
+        return ID;
+    }
+    
+    @Override
+    public String getPropertySetName() {
+        return NAME;
+    }
+
+    #foreach ($p in $properties)
+        
+        public $p.className get$p.className () {
+            return $p.id;
+        }
+
+        public void set$p.className ($p.className $p.id) {
+            this.$p.id =  $p.id;
+        }
+        
+    #end
+
+}

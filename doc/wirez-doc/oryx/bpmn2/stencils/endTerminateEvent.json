@@ -1,0 +1,129 @@
+{
+  "type": "node",
+  "id": "EndTerminateEvent",
+  "title": "Terminate End Event",
+  "groups": [
+    "End Events"
+  ],
+  "description": "Triggering the immediate termination of a process instance. All steps still in execution in parallel branches are terminated.",
+  "description_ja": "プロセスインスタンスの即時終了のトリガー。並列分岐でまだ実行中のすべてのステップが終了させられます。",
+  "view": "endevent/terminate.svg",
+  "icon": "endevent/terminate.png",
+  "propertyPackages": [
+    "baseAttributes",
+    "throwEventAttributes",
+    "bgColor"
+  ],
+  "roles": [
+    "all",
+    "sequence_end",
+    "to_task_event",
+    "from_task_event",
+    "fromtoall",
+    "choreography_sequence_end",
+    "EndEventsMorph"
+  ],
+  "properties": [
+    {
+      "id": "bgcolor",
+      "type": "Color",
+      "title": "BackgroundColor",
+      "value": "#ff6347",
+      "description": "",
+      "readonly": false,
+      "optional": false,
+      "refToView": "fill_el",
+      "fill": true,
+      "stroke": false
+    },
+    {
+      "id": "origbgcolor",
+      "type": "Color",
+      "title": "Original Background Color",
+      "value": "#ff6347",
+      "description": "",
+      "readonly": false,
+      "optional": true,
+      "hidden": true,
+      "visible": false
+    },
+    {
+      "id": "bordercolor",
+      "type": "Color",
+      "title": "BorderColor",
+      "value": "#000000",
+      "description": "",
+      "readonly": false,
+      "optional": false,
+      "refToView": [
+        "edge",
+        "fill_border",
+        "bg_frame",
+        "frame",
+        "frame2",
+        "frame3",
+        "frame4",
+        "frame5",
+        "frame6",
+        "frame7",
+        "frame8",
+        "frame9",
+        "frame10",
+        "frame11",
+        "frame12",
+        "frame13",
+        "frame14",
+        "frame15",
+        "frame16",
+        "frame17",
+        "frame18",
+        "frame19",
+        "frame20",
+        "frame21",
+        "frame22",
+        "frame23",
+        "frame24",
+        "frame25",
+        "frame26",
+        "border"
+      ],
+      "fill": false,
+      "stroke": true
+    },
+    {
+      "id": "origbordercolor",
+      "type": "Color",
+      "title": "Original Border Color",
+      "value": "#000000",
+      "description": "",
+      "readonly": false,
+      "optional": true,
+      "hidden": true,
+      "visible": false
+    },
+    {
+      "id": "fontcolor",
+      "type": "Color",
+      "title": "Font Color",
+      "value": "#000000",
+      "description": "Font color",
+      "description_ja": "フォントの色",
+      "readonly": false,
+      "optional": false,
+      "refToView": [
+        "text_name"
+      ],
+      "fill": true,
+      "stroke": false
+    }
+    /**{
+                "id":"trigger",
+                "type":"String",
+                "title":"Trigger",
+                "value":"Terminate",
+                "description":"",
+                "readonly":true,
+                "optional":false
+            }**/
+  ]
+}

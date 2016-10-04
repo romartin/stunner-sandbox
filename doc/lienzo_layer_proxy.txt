@@ -1,0 +1,231 @@
+btw maybe you coud look into the Context2D proxy?
+I think dean has already mad that pluggable
+because he made the RecoridngContext2D
+let me check
+this probably is very easy to do
+he has
+RecordingContext2D
+please remember first the main goal of having this
+Mark Proctor (mdproctor@gmail.com)
+so this should be trivial
+this is for your "view"
+what you want the proxy to do?
+Mark Proctor (mdproctor@gmail.com)
+in the top right
+ahhh
+ok
+got it
+sure
+Mark Proctor (mdproctor@gmail.com)
+to save you drawing everythign twice
+yeah!
+this sounds really nice, great idea!
+and easy
+but i need another transform
+reduce the size
+Mark Proctor (mdproctor@gmail.com)
+I think you can do that
+let me check
+so maybe wrapping two  real context and applying the transform on the preview one?
+Mark Proctor (mdproctor@gmail.com)
+you can still do your own stuff ot the context2d
+it's a seprate canvas
+so you set your own zoom on it
+sure
+are independent
+sounds easy 
+Mark Proctor (mdproctor@gmail.com)
+ok so go to Layer.getCanvasElement
+looking
+Mark Proctor (mdproctor@gmail.com)
+hmm he has it hard coded, that surprises me
+m_context = new Context2D(m_element);
+
+m_recctx = new RecordingContext2D(m_context);
+why would he create a recording context
+if he's not recording
+might not always be on
+let me check
+hmmm no factory  here
+i think the recording is never enabled for now
+Mark Proctor (mdproctor@gmail.com)
+something tells me this isn't quite finished
+for sure
+but it's just a wrapper what we need
+Mark Proctor (mdproctor@gmail.com)
+anyway what you do
+we can finish this
+Mark Proctor (mdproctor@gmail.com)
+see this line
+m_element = Document.get().createCanvasElement();
+that's your actual canvas
+so notice that RecordingContext2D extends Context2D
+you can do the same technqieu
+ReplicatingContext2D
+and it takes two Eleemnts
+one is the Element for hte current canvas
+yeah that's it
+Mark Proctor (mdproctor@gmail.com)
+the other is the Element from a different canvas
+sure
+or in deed N elements
+Mark Proctor (mdproctor@gmail.com)
+you'll have to find a way to pass that canvas element
+then just override every method
+we can proxy N elements, is it?
+Mark Proctor (mdproctor@gmail.com)
+call it once on one element
+and then call the super
+which then calls it on the other element
+ah ok
+delegating
+Mark Proctor (mdproctor@gmail.com)
+you could do....
+yes
+so stick with 2
+for performance reasons
+but i need different transforms remember
+Mark Proctor (mdproctor@gmail.com)
+the base does one eleemnt
+before performing the draw
+Mark Proctor (mdproctor@gmail.com)
+the child does the other element
+yeah
+Mark Proctor (mdproctor@gmail.com)
+you can hack this first outside of wires
+hard code things
+just to check it works
+well pure lienzo
+sure
+Mark Proctor (mdproctor@gmail.com)
+if it does work
+it should
+Mark Proctor (mdproctor@gmail.com)
+then i think what you do isthis
+Layer.setReplicatedLayer( Layer replicatedLayer )
+so that becomes a field on the Layer itself
+if that field is null
+use normal Context2D
+ff that field is populated hten use the ReplicatingContet2D
+job done :)
+simples
+haha yeah 
+will work
+for sure
+Mark Proctor (mdproctor@gmail.com)
+you can then set the zoom on the other layer
+and the viewport
+as those are separate
+yup
+an scale
+and that's it
+Mark Proctor (mdproctor@gmail.com)
+probably only thig you'll want to do different
+is always draw a rectangle
+as border?
+Mark Proctor (mdproctor@gmail.com)
+that represents the main layer viewport on the zoomed out one
+oh yes!
+Mark Proctor (mdproctor@gmail.com)
+the main layer may be zoomed in, so you are seeing part of the canvas.
+that will give you the x,y, width/height
+where as the other the viewport is always 100% of the layer. and the layer is fit to width.
+and the pan mediator should work with no tweaks right?
+Mark Proctor (mdproctor@gmail.com)
+os you draw a rectangular border for that x, y, width and height
+yup
+got it
+Mark Proctor (mdproctor@gmail.com)
+as you pan
+you change the x/y of the rectangle
+the transorm with be applied on both layers
+yes
+so nothing to do
+is it?
+Mark Proctor (mdproctor@gmail.com)
+on the replicating layer
+mmmm
+Mark Proctor (mdproctor@gmail.com)
+there is no reason why you can't draw additional shapes
+there may be some lock step issue
+well life cycle issue
+??
+Mark Proctor (mdproctor@gmail.com)
+of what you draw the rectangle
+you have one layer driving the drawing of the mirror
+the mirror then needs to add a rectangle
+it must be added after the mirror finishes drawing
+you'll understand what i mean
+ah yes
+Mark Proctor (mdproctor@gmail.com)
+when you start doing this
+well if I have wrapped the mirror
+I can listen for the canvas drawn ?
+or just overriding the drawWithTransforms and after calling on the mirror, applyu the rectangle on the mirror as well
+Mark Proctor (mdproctor@gmail.com)
+https://github.com/ahome-it/lienzo-core/wiki/Node#Viewport
+I've not used viewport yet
+hoping it's not hard
+i just used meidators
+yeah not sounds hard
+yeah I see, we need to listen too all scenes to be rendered on the mirro first
+Mark Proctor (mdproctor@gmail.com)
+the mediator was for replicating state?
+is it?
+no, I use mediators for pan & zoom....
+Mark Proctor (mdproctor@gmail.com)
+ok
+ok I see
+it has built in ones
+yes!
+Mark Proctor (mdproctor@gmail.com)
+great
+are integrated on the designer
+with mouse wheel
+etc
+i forgot to show on demo 😞 
+and pluggable on runtime
+as are cdi beans
+Mark Proctor (mdproctor@gmail.com)
+freemodeller is down?
+https://freemodeler-cloud.jboss.org/freemodeler/org.jbpm.designer.jBPMDesigner/designer.html?ticket=ST-65495-6H954rqjrgQOQABSI0BT-jboss-org-sso#org.freemodeler.explorer
+wanted ot check if it had pan and zoom
+I think there is no free modeler any more...
+good point, not sure
+Mark Proctor (mdproctor@gmail.com)
+it was working a month or so ago
+I think there were some polythical problems with it
+not sure
+shelly is aware i think
+she can give u more info
+Mark Proctor (mdproctor@gmail.com)
+k
+shame
+I use to try it
+just to compare
+yeah
+Mark Proctor (mdproctor@gmail.com)
+eas quick to do so :)
+honetsly not sure as well
+Mark Proctor (mdproctor@gmail.com)
+I think we can do free modeller properly now
+stick UF + yur stuff
+and link it with externa storage
+like googe drive
+yeah that sounds good ☺ 
+well be patient... there is still some work on the designer ☺ 
+Mark Proctor (mdproctor@gmail.com)
+like draw.io
+love this tool
+Mark Proctor (mdproctor@gmail.com)
+so you select your storage
+that's my goeal
+we can get there
+with errai marshalling, services, the bus
+Mark Proctor (mdproctor@gmail.com)
+btw I was speaking to MarkL
+if we pull this off
+we might be able ot make stunner the technical diagramming tool
+for all of jboss
+as nothign else like this will exist
+we'll have the foundation to compete with MagicDraw

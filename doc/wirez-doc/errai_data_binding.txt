@@ -1,0 +1,219 @@
+<roger600_> around?
+<csadilek> yeah, but not much longer?
+<csadilek> ;)
+<roger600_> :)
+<roger600_> dont woorry will kidnap you another day :)
+<csadilek> something you need?
+<roger600_> yes
+<roger600_> about client side binding with errai
+<roger600_> but not urgent
+<csadilek> ok head a chat with pere about it today
+<csadilek> maybe the same thing?
+<roger600_> yes
+<roger600_> no
+<roger600_> because errai provides widget <-> pojo binding
+<roger600_> i have no widget
+<roger600_> :)
+<roger600_> so i have a pojo on lcient side
+<roger600_> and i want to set its value
+<roger600_> but there is no interface
+<csadilek> pere will generate a widget for you.
+<roger600_> it's annotation based
+<roger600_> yeah but i need to do taht from the canvas
+<roger600_> not any widget
+<roger600_> imagine i move a shape inside the canvas
+<roger600_> this shape has an underlying model
+<roger600_> a node in graph
+<roger600_> that has position memebers
+<roger600_> i need to set those members on client side on the node pojo
+<roger600_> but it's annotation based
+<roger600_> i cannot do pojo.setValue(...)
+<roger600_> ideas?
+<csadilek> I think you guys got something wrong there, tbh.
+<roger600_> why?
+<csadilek> because you’re describing different concepts to me.
+<roger600_> hmm
+<roger600_> probably i'm wrong i know :)
+<roger600_> yeah so this conversation can get longer...
+<roger600_> tomorrow?
+<roger600_> i need to clarify that with you please
+<csadilek> this doesn’t like it has anything to do with errai binding.
+<roger600_> i know
+<csadilek> sound like
+<csadilek> what is it in code that you want to do?
+<roger600_> that's my pojo
+<roger600_> https://github.com/romartin/wirez/blob/3a790d8efd53dee1ff9c86c6eeca41ed9449403a/wirez-sets/wirez-bpmn/wirez-bpmn-api/src/main/java/org/wirez/bpmn/api/Task.java
+<roger600_> really easy
+<roger600_> a task has properties, that are pojos, and have values and other property settings
+<roger600_> that's it
+<roger600_> this model is portable
+<roger600_> and i need to introspect it on client side 
+<csadilek> ok this has nothing to do with errai.
+<roger600_> :(
+<csadilek> you will have to do that yourself.
+<roger600_> ok
+<roger600_> np
+<roger600_> i'm planning to generate for now, a property adapter based on compile time annotations
+<csadilek> introspect means you have access to the metadata of the types.
+<roger600_> so for each property generate and adapter
+<roger600_> class
+<roger600_> probably it's not the best idea but i need something to move forward
+<roger600_> i need to set pojo prpoerty values at client side on runtime, and send them when i need to backend
+<roger600_> what should you suggest to research or look at... ?
+<roger600_> any ideas? :)
+<csadilek> well I can help you there.
+<roger600_> yes? <·
+<roger600_> <3
+<csadilek> because when you make the type @Bindable.
+<roger600_> aha
+<csadilek> I actually generate a proxy for the type.
+<roger600_> will do it for pere
+<roger600_> yes!!!
+<csadilek> then you can invoke 
+<roger600_> that's whhy i'm asking
+<roger600_> instead of Binder.modelFor( widget, pojo )
+<csadilek> someType.setProperty(“property1”, value)
+<roger600_> yes!
+<roger600_> yes!
+<roger600_> pleaseeeee
+<csadilek> and someType.getProperty(“property1”)
+<roger600_> i would love you so much
+<csadilek> I already have that.
+<roger600_> huhu
+<roger600_> oh
+<roger600_> wheree???
+<csadilek> so make it @Bindable or add it to ErraiApp.properties.
+<csadilek> then you can use this API:
+<roger600_> both Bindable and Portable are fine at same time right?
+<csadilek> yes
+<roger600_> nice
+<csadilek> (HasProperties) DataBinder.forType(MyType.class).getModel();
+<csadilek> or
+<roger600_> aha
+<csadilek> (HasProperties) DataBinder.forModel(myInstance).getModel();
+<roger600_> and hasPrpoerties??
+<roger600_> and need some HasValue...
+<roger600_> ?
+<csadilek> in both cases you get an object back cast To has Properties.
+<roger600_> ahh
+<roger600_> ok
+<roger600_> yeah man
+<roger600_> will try tight now
+<csadilek> so can invoke setProperty(name, value) and getProperty(name)
+<roger600_> yes
+<roger600_> you're god 
+<csadilek> on that pojo
+<roger600_> ok man
+<roger600_> thanks
+<roger600_> will let you know
+<roger600_> :)
+<csadilek> it’s a little flaky in the sense that you have to cast.
+<roger600_> np
+<roger600_> it's fine
+<csadilek> but that’s because it’s insider api
+<csadilek> and we don’t want our users to use it ;).
+<csadilek> only framework developers ;)
+<roger600_> yeah np
+<roger600_> nice
+<roger600_> i have "adapters"
+<roger600_> concept
+<roger600_> so for each pojo class can provide different adapter
+<roger600_> and will use this approach as one adapter
+<roger600_> so can be casted
+<roger600_> np
+<csadilek> so it gives you a proxy to that pojo which invokes the corresponding getter and setter of the real object.
+<roger600_> nice
+<roger600_> yep
+<roger600_> i wsa planning to program this by myself
+<csadilek> it has to be a Java Bean property though.
+<roger600_> in a rude way
+<roger600_> so nice
+<roger600_> ok
+<roger600_> nop
+<csadilek> following the Java Bean conventions
+<roger600_> np
+<roger600_> np
+<roger600_> yep
+<csadilek> which means the field name doesn’t matter.
+<roger600_> Beans are pojos, so we can force use of beans
+<roger600_> that'sffine
+<csadilek> the property name is defined by the getter and setter methods.
+<roger600_> yep
+<roger600_> sure
+<csadilek> so if the field is called cust and the getter is called getCustomer.
+<csadilek> then “customer” is the property name.
+<roger600_> sure
+<csadilek> ok ;)
+<csadilek> we can extend this api in Errai 4 if you need it.
+<roger600_> yeahh <3
+<roger600_> nice
+<roger600_> will let you know :)
+<roger600_> thx man
+<csadilek> sure, if that’s all you needed ;). I thought you wanted something very complicated ;).
+<roger600_> i though too as well :)
+<csadilek> oh and all types have to be @Bindable
+<roger600_> any implications?
+<csadilek> I mean the type property types.
+<csadilek> if they are not primitives.
+<csadilek> no. that’s fine.
+<roger600_> this model is supossed to be potentially build by other developers to create custom stencil sets
+<roger600_> so it's what we decide
+<roger600_> how to build it
+<csadilek> ok.
+<roger600_> ok
+<roger600_> i think it fits for now
+<roger600_> np
+<roger600_> great
+<roger600_> thx :)
+<csadilek> it’s better to try and use the existing api instead of generating the same code again…so worth trying.
+<csadilek> sure, np.
+<roger600_> :)
+<csadilek> glad we found something that look useful ;).
+<roger600_> oh yeah
+<roger600_> semms a good day :)
+<roger600_> usually we need more discussion
+<roger600_> haha
+<roger600_> we can marry man :P
+<csadilek> lol
+<roger600_> btw
+<roger600_> no body has complained yet about users stuff
+<roger600_> means that nobody has tryied it
+<roger600_> is it? :)
+<csadilek> not that I heard of now
+<csadilek> no
+<csadilek> let’s see
+<roger600_> haha
+<roger600_> :)
+<csadilek> but people always complain.
+<csadilek> so don’t worry ;)
+<roger600_> i know :)
+<roger600_> thx for the support :)
+<roger600_> haha
+<roger600_> oh let my try the ci environment
+<roger600_> the users stuff sould be there
+<roger600_> yeah it's there
+<roger600_> eci-02.lab.eng.brq.redhat.com:8080/kie-docker-ui-webapp/
+<roger600_> kieci-02.lab.eng.brq.redhat.com:8080/kie-docker-ui-webapp/
+<roger600_> fine 
+<roger600_> thx man
+<roger600_> will see
+<roger600_> i'm going to try you binding stuff :)
+<roger600_> cyaa
+<csadilek> cya
+<roger600_> last thing before you go
+<roger600_> my concern is that think that stencil, properties.... etc probably are hundreds of instances bindable
+<csadilek> yeah that will add some overhead.
+<csadilek> but if you have to inspect types at runtime
+<csadilek> there’s no choice
+<roger600_> yep
+<roger600_> okkk
+<csadilek> we will have to generate code
+<csadilek> somehow
+<roger600_> agreed
+<roger600_> ok
+<roger600_> nice
+<roger600_> will see how it goes :)
+<roger600_> thx man
+<csadilek> only if you can find a solution without introspection..
+<csadilek> yeah let’s see.
+<roger600_> ;)

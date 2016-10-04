@@ -1,0 +1,227 @@
+Stencil
+*******
+"type": "node",
+      "id": "BPMNDiagram",
+      "title": "BPMN-Diagram",
+      "groups": [
+        "Diagram"
+      ],
+      "description": "A BPMN 2.0 Diagram.",
+      "description_ja": "BPMN 2.0ダイアグラム。",
+      "view": "diagram.svg",
+      "icon": "diagram.png",
+      "mayBeRoot": true,
+      "hide": true,
+      "propertyPackages": [
+        "diagram"
+      ],
+      "roles": [
+        "canContainArtifacts"
+      ],
+      "properties": [
+        {
+          "id": "name",
+          "type": "String",
+          "title": "Name",
+          "value": "BPMN2-SampleProcess",
+          "description": "The descriptive name of the BPMN element.",
+          "description_ja": "BPMN要素のわかりやすい名前。",
+          "readonly": false,
+          "optional": true,
+          "length": "",
+          "wrapLines": true,
+          "refToView": "text_name",
+          "popular": true
+        },
+        {
+          "id": "documentation",
+          "type": "Text",
+          "title": "Documentation",
+          "value": "",
+          "description": "This attribute is used to annotate the BPMN element, such as descriptions and other documentation.",
+          "description_ja": "この属性は、説明やドキュメントなど、BPMN要素の注釈に使用されます。",
+          "readonly": false,
+          "optional": true,
+          "length": "",
+          "wrapLines": true,
+          "popular": true
+        }
+      ]
+    }
+    
+Diagam Property Package
+***********************
+{
+      "name": "diagram",
+      "properties": [
+        {
+          "id": "executable",
+          "type": "Boolean",
+          "title": "Executable",
+          "value": true,
+          "description": "Executable",
+          "description_ja": "実行可能",
+          "readonly": false,
+          "optional": true
+        },
+        {
+          "id": "package",
+          "type": "String",
+          "title": "Package",
+          "value": "/defaultPackage/defaultPackage",
+          "description": "Package",
+          "description_ja": "パッケージ",
+          "readonly": false,
+          "optional": true
+        },
+        {
+          "id": "vardefs",
+          "type": "Vardef",
+          "title": "Variable Definitions",
+          "value": "",
+          "description": "Variable Definitions",
+          "description_ja": "変数定義",
+          "readonly": false,
+          "optional": true
+        },
+        {
+          "id": "adhocprocess",
+          "type": "Choice",
+          "title": "AdHoc",
+          "value": "false",
+          "description": "Defines an AdHoc process",
+          "description_ja": "アドホックプロセスとして定義",
+          "readonly": false,
+          "optional": true,
+          "items": [
+            {
+              "id": "c1",
+              "title": "false",
+              "value": "false"
+            },
+            {
+              "id": "c2",
+              "title": "true",
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "id": "imports",
+          "type": "Import",
+          "title": "Imports",
+          "value": "",
+          "description": "Comma-separated imports",
+          "description_ja": "カンマ区切りインポート",
+          "readonly": false,
+          "optional": true
+        },
+        {
+          "id": "globals",
+          "type": "Global",
+          "title": "Globals",
+          "value": "",
+          "description": "Comma-separated globals",
+          "description_ja": "カンマ区切りグローバル",
+          "readonly": false,
+          "optional": true
+        },
+        {
+          "id": "id",
+          "type": "String",
+          "title": "ID",
+          "value": "[/defaultPackage, /defaultPackage].BPMN2-SampleProcess",
+          "description": "ID",
+          "description_ja": "ID",
+          "readonly": false,
+          "optional": true
+        },
+        {
+          "id": "version",
+          "type": "String",
+          "title": "Version",
+          "value": "",
+          "description": "This defines the Version number of the Diagram.",
+          "description_ja": "ダイアグラムのバージョン番号を定義します。",
+          "readonly": false,
+          "optional": true,
+          "length": "50"
+        },
+        {
+          "id": "timeunit",
+          "type": "Choice",
+          "title": "Base time unit",
+          "value": "s",
+          "description": "Time unit options (seconds, minutes, hours)",
+          "description_ja": "Time unit options (seconds, minutes, hours)",
+          "readonly": false,
+          "optional": true,
+          "simulation": true,
+          "items": [
+            {
+              "id": "c1",
+              "title": "milliseconds",
+              "value": "ms"
+            },
+            {
+              "id": "c2",
+              "title": "seconds",
+              "value": "s"
+            },
+            {
+              "id": "c3",
+              "title": "minutes",
+              "value": "min"
+            },
+            {
+              "id": "c4",
+              "title": "hours",
+              "value": "hour"
+            },
+            {
+              "id": "c5",
+              "title": "days",
+              "value": "day"
+            },
+            {
+              "id": "c6",
+              "title": "years",
+              "value": "year"
+            }
+          ]
+        },
+        {
+          "id": "currency",
+          "type": "String",
+          "title": "Base Currency",
+          "value": "",
+          "description": "Base currency (ISO 4217)",
+          "readonly": false,
+          "optional": true,
+          "simulation": true,
+          "length": "50"
+        },
+        {
+          "id": "targetnamespace",
+          "type": "String",
+          "title": "Target Namespace",
+          "value": "http://www.omg.org/bpmn20",
+          "description": "Defines the XML namespace of the elements inside the document.",
+          "description_ja": "ドキュメント内の要素のXML名前空間を定義します。",
+          "readonly": true,
+          "optional": true,
+          "length": "50"
+        },
+        {
+          "id": "typelanguage",
+          "type": "String",
+          "title": "TypeLanguage",
+          "value": "http://www.w3.org/2001/XMLSchema",
+          "description": "This attribute identifies the type system used by the elements of this Definition.",
+          "description_ja": "この属性は、この定義の要素で使用されるタイプシステムを識別します。",
+          "readonly": true,
+          "optional": true,
+          "length": "50"
+        }
+      ]
+    }

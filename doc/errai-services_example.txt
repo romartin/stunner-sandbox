@@ -1,0 +1,58 @@
+Client sessions test
+====================
+
+- Only @Service ( no scopes )
+
+FF - Request1
+**************
+01:09:03,768 INFO  [stdout] (default task-22) *** Thread [259] 
+01:09:03,768 INFO  [stdout] (default task-22)  Service [org.dashbuilder.dataset.service.RogerServiceImpl@1d5d692e]
+01:09:03,769 INFO  [stdout] (default task-22)  Session [6eByYlFIf9kFhbZ1x--k_HZL]
+
+Ch - Request1
+**************
+01:09:06,972 INFO  [stdout] (default task-23) *** Thread [260] 
+01:09:06,973 INFO  [stdout] (default task-23)  Service [org.dashbuilder.dataset.service.RogerServiceImpl@447234f4]
+01:09:06,973 INFO  [stdout] (default task-23)  Session [DW5jzboqZULS5_2yoomBOZrZ]
+
+
+FF - Request2
+**************
+01:09:29,857 INFO  [stdout] (default task-20) *** Thread [262] 
+01:09:29,857 INFO  [stdout] (default task-20)  Service [org.dashbuilder.dataset.service.RogerServiceImpl@1e826b16]
+01:09:29,858 INFO  [stdout] (default task-20)  Session [6eByYlFIf9kFhbZ1x--k_HZL]
+
+Ch - Request2
+**************
+01:09:35,271 INFO  [stdout] (default task-24) *** Thread [264] 
+01:09:35,272 INFO  [stdout] (default task-24)  Service [org.dashbuilder.dataset.service.RogerServiceImpl@1611b300]
+01:09:35,272 INFO  [stdout] (default task-24)  Session [DW5jzboqZULS5_2yoomBOZrZ]
+
+
+
+
+
+
+
+Scopes test
+===========
+
+- Only @Service
+
+    ***************** Thread=787
+     session=NnM1QVX6emZa5FxKc2fHYJBp
+     this=org.dashbuilder.dataset.service.RogerServiceImpl@443504a9
+    
+    ***************** Thread=791
+     session=NnM1QVX6emZa5FxKc2fHYJBp
+     this=org.dashbuilder.dataset.service.RogerServiceImpl@2f6e16
+
+- @Serive & AppScope
+
+    ***************** Thread=789
+     session=NnM1QVX6emZa5FxKc2fHYJBp
+     this=org.dashbuilder.dataset.service.RogerService2Impl@65ff99b2
+    
+    ***************** Thread=793
+     session=NnM1QVX6emZa5FxKc2fHYJBp
+     this=org.dashbuilder.dataset.service.RogerService2Impl@65ff99b2

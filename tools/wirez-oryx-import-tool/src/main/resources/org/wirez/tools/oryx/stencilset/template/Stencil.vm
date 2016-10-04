@@ -1,0 +1,122 @@
+/*
+* Copyright 2016 Red Hat, Inc. and/or its affiliates.
+*  
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*  
+*    http://www.apache.org/licenses/LICENSE-2.0
+*  
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
+package $pojo.pkg;
+
+import org.jboss.errai.common.client.api.annotations.MapsTo;
+import org.jboss.errai.common.client.api.annotations.Portable;
+import org.jboss.errai.databinding.client.api.Bindable;
+import org.wirez.core.api.annotation.definition.Definition;
+import org.wirez.core.api.annotation.definition.Property;
+import org.wirez.core.api.annotation.definition.PropertySet;
+import org.wirez.core.api.definition.BaseDefinition;
+import org.wirez.bpmn.api.BPMNDefinition;
+import org.wirez.core.api.graph.Node;
+import org.wirez.core.api.annotation.rule.*;
+#foreach ($p in $propertyPacks)
+    import $p.pkg.$p.className;
+#end
+#foreach ($p in $properties)
+    import $p.pkg.$p.className;
+#end
+
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+import java.util.HashSet;
+import java.util.Set;
+
+@Portable
+@Bindable
+@Definition( type = $graphElementClass )
+$rules
+public class $pojo.className extends BaseDefinition implements BPMNDefinition {
+
+    public static final String ID = "$pojo.id";
+    // Default values
+    #foreach ( $mapEntry in $defaultPropertyValues.entrySet() )
+    public static final $mapEntry.value.className $mapEntry.key = $mapEntry.value.value;
+    #end
+
+    #foreach ($p in $propertyPacks)
+    @PropertySet
+    $p.className $p.id;
+    #end
+    
+    #foreach ($p in $properties)
+    @Property
+    $p.className $p.id;
+    #end
+    
+    public $pojo.className () {
+        super("$category", "$title", "$description",
+        new HashSet<String>( $roles.size() ){{
+            #foreach ($r in $roles)
+                add( "$r" );
+            #end
+        }});
+    }
+
+    public $pojo.className (
+        #foreach ($p in $properties)
+            @MapsTo("$p.id") $p.className $p.id,
+        #end
+        #set( $counter = 0 )
+        #foreach ($p in $propertyPacks)
+            @MapsTo("$p.id") $p.className $p.id
+            #if ( $counter < ( $propertyPacks.size() - 1 ) )
+                ,
+            #end
+            #set( $counter = $counter + 1 )
+        #end
+    ) {
+        this();
+        #foreach ($p in $properties)
+            this.$p.id = $p.id;
+        #end
+        #foreach ($p in $propertyPacks)
+            this.$p.id = $p.id;
+        #end
+    }
+
+    @Override
+    public String getId() {
+        return ID;
+    }
+
+    #foreach ($p in $properties)
+
+        public $p.className get$p.className () {
+            return $p.id;
+        }
+
+        public void set$p.className ($p.className $p.id) {
+            this.$p.id =  $p.id;
+        }
+
+    #end
+
+    #foreach ($p in $propertyPacks)
+
+        public $p.className get$p.className () {
+            return $p.id;
+        }
+
+        public void set$p.className ($p.className $p.id) {
+            this.$p.id =  $p.id;
+        }
+
+    #end
+}

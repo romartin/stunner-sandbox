@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:b3mn="http://b3mn.org/2007/b3mn" xmlns:ext="http://b3mn.org/2007/ext"
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:atom="http://b3mn.org/2007/atom+xhtml">
+  <head profile="http://purl.org/NET/erdf/profile">
+    <link rel="schema.dc" href="http://purl.org/dc/elements/1.1/"/>
+    <link rel="schema.dcTerms" href="http://purl.org/dc/terms/ "/>
+    <link rel="schema.b3mn" href="http://b3mn.org"/>
+    <link rel="schema.oryx" href="http://oryx-editor.org/"/>
+    <link rel="schema.raziel" href="http://raziel.org/"/>
+    <base
+        href="http://localhost:8080/jbpm-designer-standalone-wildfly8.1/org.jbpm.designer.jBPMDesigner/inlineeditor.jsp"/>
+  </head>
+  <body>
+    <DIV id="Definition">
+      <SPAN class="oryx-type">http://b3mn.org/stencilset/bpmn2.0#BPMNDiagram</SPAN>
+      <SPAN class="oryx-namespaces"></SPAN>
+      <SPAN class="oryx-name"></SPAN>
+      <SPAN class="oryx-expressionlanguage">http://www.mvel.org/2.0</SPAN>
+      <SPAN class="oryx-executable">true</SPAN>
+      <SPAN class="oryx-package">org.jbpm</SPAN>
+      <SPAN class="oryx-vardefs"></SPAN>
+      <SPAN class="oryx-customdescription"></SPAN>
+      <SPAN class="oryx-adhocprocess">false</SPAN>
+      <SPAN class="oryx-imports"></SPAN>
+      <SPAN class="oryx-globals"></SPAN>
+      <SPAN class="oryx-id">Evaluation.test</SPAN>
+      <SPAN class="oryx-version">1.0</SPAN>
+      <SPAN class="oryx-timeunit">min</SPAN>
+      <SPAN class="oryx-currency"></SPAN>
+      <SPAN class="oryx-targetnamespace">http://www.omg.org/bpmn20</SPAN>
+      <SPAN class="oryx-typelanguage">http://www.java.com/javaTypes</SPAN>
+      <SPAN class="oryx-processn">test</SPAN>
+      <SPAN class="oryx-documentation"></SPAN>
+      <SPAN class="oryx-mode">writable</SPAN>
+      <SPAN class="oryx-mode">fullscreen</SPAN>
+      <A rel="oryx-stencilset" href="/org.jbpm.designer.jBPMDesigner/stencilsets/bpmn2.0jbpm/bpmn2.0jbpm.json"/>
+      <A rel="oryx-ssnamespace" href="http://b3mn.org/stencilset/bpmn2.0#"/>
+      <A rel="oryx-render" href="#processStartEvent"/>
+      <A rel="oryx-render" href="#_708E2A74-C513-485F-BBAA-B390ECBA4A6F"/>
+      <A rel="oryx-render" href="#_D779AB5B-A44F-4276-B617-463AAAEBA11B"/>
+      <A rel="oryx-render" href="#_7A951DDE-4593-4007-8AB5-575234074CA2"/>
+      <A rel="oryx-render" href="#_D80BCB07-9288-435F-B797-90ACDBFA7299"/>
+    </DIV>
+    <DIV id="processStartEvent" class="undefined">
+      <SPAN class="oryx-type">http://b3mn.org/stencilset/bpmn2.0#StartNoneEvent</SPAN>
+      <SPAN class="oryx-name">Start</SPAN>
+      <SPAN class="oryx-documentation"></SPAN>
+      <SPAN class="oryx-isselectable">true</SPAN>
+      <SPAN class="oryx-invisid"></SPAN>
+      <SPAN class="oryx-dataoutputassociations"></SPAN>
+      <SPAN class="oryx-dataoutput"></SPAN>
+      <SPAN class="oryx-min">5</SPAN>
+      <SPAN class="oryx-max">10</SPAN>
+      <SPAN class="oryx-standarddeviation">1</SPAN>
+      <SPAN class="oryx-mean">0</SPAN>
+      <SPAN class="oryx-distributiontype">uniform</SPAN>
+      <SPAN class="oryx-probability">100</SPAN>
+      <SPAN class="oryx-isinterrupting">true</SPAN>
+      <SPAN class="oryx-bgcolor">#9acd32</SPAN>
+      <SPAN class="oryx-bordercolor">#000000</SPAN>
+      <SPAN class="oryx-fontcolor">#000000</SPAN>
+      <SPAN class="oryx-fontsize"></SPAN>
+      <SPAN class="oryx-origbgcolor">#9acd32</SPAN>
+      <SPAN class="oryx-origbordercolor">#000000</SPAN>
+      <SPAN class="oryx-bounds">120,165,150,195</SPAN>
+      <A rel="raziel-outgoing" href="#_7A951DDE-4593-4007-8AB5-575234074CA2"/>
+      <A rel="raziel-parent" href="#Definition"/>
+    </DIV>
+    <DIV id="_708E2A74-C513-485F-BBAA-B390ECBA4A6F" class="undefined">
+      <SPAN class="oryx-type">http://b3mn.org/stencilset/bpmn2.0#Task</SPAN>
+      <SPAN class="oryx-name">Task1</SPAN>
+      <SPAN class="oryx-documentation"></SPAN>
+      <SPAN class="oryx-isselectable">true</SPAN>
+      <SPAN class="oryx-invisid"></SPAN>
+      <SPAN class="oryx-isforcompensation"></SPAN>
+      <SPAN class="oryx-assignments"></SPAN>
+      <SPAN class="oryx-tasktype">User</SPAN>
+      <SPAN class="oryx-messageref"></SPAN>
+      <SPAN class="oryx-script"></SPAN>
+      <SPAN class="oryx-script_language">java</SPAN>
+      <SPAN class="oryx-bgcolor">#fafad2</SPAN>
+      <SPAN class="oryx-bordercolor">#000000</SPAN>
+      <SPAN class="oryx-fontcolor">#000000</SPAN>
+      <SPAN class="oryx-fontsize"></SPAN>
+      <SPAN class="oryx-datainputset"></SPAN>
+      <SPAN class="oryx-dataoutputset"></SPAN>
+      <SPAN class="oryx-origbgcolor">#fafad2</SPAN>
+      <SPAN class="oryx-nomorph">true</SPAN>
+      <SPAN class="oryx-origbordercolor">#000000</SPAN>
+      <SPAN class="oryx-ruleflowgroup"></SPAN>
+      <SPAN class="oryx-onentryactions"></SPAN>
+      <SPAN class="oryx-onexitactions"></SPAN>
+      <SPAN class="oryx-isasync">false</SPAN>
+      <SPAN class="oryx-taskname"></SPAN>
+      <SPAN class="oryx-serviceoperation"></SPAN>
+      <SPAN class="oryx-serviceinterface"></SPAN>
+      <SPAN class="oryx-serviceimplementation">Java</SPAN>
+      <SPAN class="oryx-actors"></SPAN>
+      <SPAN class="oryx-groupid"></SPAN>
+      <SPAN class="oryx-subject"></SPAN>
+      <SPAN class="oryx-description"></SPAN>
+      <SPAN class="oryx-content"></SPAN>
+      <SPAN class="oryx-reassignment"></SPAN>
+      <SPAN class="oryx-notifications"></SPAN>
+      <SPAN class="oryx-locale"></SPAN>
+      <SPAN class="oryx-createdby"></SPAN>
+      <SPAN class="oryx-skippable">true</SPAN>
+      <SPAN class="oryx-priority"></SPAN>
+      <SPAN class="oryx-multipleinstance">false</SPAN>
+      <SPAN class="oryx-multipleinstancecollectioninput"></SPAN>
+      <SPAN class="oryx-multipleinstancecollectionoutput"></SPAN>
+      <SPAN class="oryx-multipleinstancedatainput"></SPAN>
+      <SPAN class="oryx-multipleinstancedataoutput"></SPAN>
+      <SPAN class="oryx-multipleinstancecompletioncondition"></SPAN>
+      <SPAN class="oryx-min">5</SPAN>
+      <SPAN class="oryx-max">10</SPAN>
+      <SPAN class="oryx-standarddeviation">1</SPAN>
+      <SPAN class="oryx-mean">0</SPAN>
+      <SPAN class="oryx-distributiontype">uniform</SPAN>
+      <SPAN class="oryx-quantity">1</SPAN>
+      <SPAN class="oryx-workinghours">8</SPAN>
+      <SPAN class="oryx-unitcost">0</SPAN>
+      <SPAN class="oryx-bounds">218,126.48295593261719,318,206.4829559326172</SPAN>
+      <A rel="raziel-outgoing" href="#_D80BCB07-9288-435F-B797-90ACDBFA7299"/>
+      <A rel="raziel-parent" href="#Definition"/>
+    </DIV>
+    <DIV id="_D779AB5B-A44F-4276-B617-463AAAEBA11B" class="undefined">
+      <SPAN class="oryx-type">http://b3mn.org/stencilset/bpmn2.0#EndNoneEvent</SPAN>
+      <SPAN class="oryx-name">End</SPAN>
+      <SPAN class="oryx-documentation"></SPAN>
+      <SPAN class="oryx-isselectable">true</SPAN>
+      <SPAN class="oryx-invisid"></SPAN>
+      <SPAN class="oryx-eventdefinitions"></SPAN>
+      <SPAN class="oryx-datainputassociations"></SPAN>
+      <SPAN class="oryx-datainput"></SPAN>
+      <SPAN class="oryx-min">5</SPAN>
+      <SPAN class="oryx-max">10</SPAN>
+      <SPAN class="oryx-standarddeviation">1</SPAN>
+      <SPAN class="oryx-mean">0</SPAN>
+      <SPAN class="oryx-distributiontype">uniform</SPAN>
+      <SPAN class="oryx-bgcolor">#ff6347</SPAN>
+      <SPAN class="oryx-bordercolor">#000000</SPAN>
+      <SPAN class="oryx-fontcolor">#000000</SPAN>
+      <SPAN class="oryx-fontsize"></SPAN>
+      <SPAN class="oryx-origbgcolor">#ff6347</SPAN>
+      <SPAN class="oryx-origbordercolor">#000000</SPAN>
+      <SPAN class="oryx-bounds">506,155.4829559326172,534,183.4829559326172</SPAN>
+      <A rel="raziel-parent" href="#Definition"/>
+    </DIV>
+    <DIV id="_7A951DDE-4593-4007-8AB5-575234074CA2" class="undefined">
+      <SPAN class="oryx-type">http://b3mn.org/stencilset/bpmn2.0#SequenceFlow</SPAN>
+      <SPAN class="oryx-name"></SPAN>
+      <SPAN class="oryx-documentation"></SPAN>
+      <SPAN class="oryx-isselectable">true</SPAN>
+      <SPAN class="oryx-invisid">0.8089736700057983</SPAN>
+      <SPAN class="oryx-conditiontype">None</SPAN>
+      <SPAN class="oryx-conditionexpression"></SPAN>
+      <SPAN class="oryx-conditionexpressionlanguage">java</SPAN>
+      <SPAN class="oryx-priority"></SPAN>
+      <SPAN class="oryx-probability">100</SPAN>
+      <SPAN class="oryx-isimmediate">false</SPAN>
+      <SPAN class="oryx-showdiamondmarker"></SPAN>
+      <SPAN class="oryx-bgcolor">#000000</SPAN>
+      <SPAN class="oryx-origbgcolor">#000000</SPAN>
+      <SPAN class="oryx-bordercolor">#000000</SPAN>
+      <SPAN class="oryx-origbordercolor">#000000</SPAN>
+      <SPAN class="oryx-fontcolor">#000000</SPAN>
+      <SPAN class="oryx-fontsize"></SPAN>
+      <SPAN class="oryx-bounds">150.54175014455637,171.65295851931816,217.13012485544365,178.42046224369759</SPAN>
+      <A rel="raziel-outgoing" href="#_708E2A74-C513-485F-BBAA-B390ECBA4A6F"/>
+      <A rel="raziel-parent" href="#Definition"/>
+      <SPAN class="oryx-dockers">15 15 50 40 #</SPAN>
+      <A rel="raziel-target" href="#_708E2A74-C513-485F-BBAA-B390ECBA4A6F"/>
+    </DIV>
+    <DIV id="_D80BCB07-9288-435F-B797-90ACDBFA7299" class="undefined">
+      <SPAN class="oryx-type">http://b3mn.org/stencilset/bpmn2.0#SequenceFlow</SPAN>
+      <SPAN class="oryx-name"></SPAN>
+      <SPAN class="oryx-documentation"></SPAN>
+      <SPAN class="oryx-isselectable">true</SPAN>
+      <SPAN class="oryx-invisid">0.5591221167705953</SPAN>
+      <SPAN class="oryx-conditiontype">None</SPAN>
+      <SPAN class="oryx-conditionexpression"></SPAN>
+      <SPAN class="oryx-conditionexpressionlanguage">java</SPAN>
+      <SPAN class="oryx-priority"></SPAN>
+      <SPAN class="oryx-probability">100</SPAN>
+      <SPAN class="oryx-isimmediate">false</SPAN>
+      <SPAN class="oryx-showdiamondmarker"></SPAN>
+      <SPAN class="oryx-bgcolor">#000000</SPAN>
+      <SPAN class="oryx-origbgcolor">#000000</SPAN>
+      <SPAN class="oryx-bordercolor">#000000</SPAN>
+      <SPAN class="oryx-origbordercolor">#000000</SPAN>
+      <SPAN class="oryx-fontcolor">#000000</SPAN>
+      <SPAN class="oryx-fontsize"></SPAN>
+      <SPAN class="oryx-bounds">318.2186791458532,167.0807973510202,505.2188208541468,169.30698951421417</SPAN>
+      <A rel="raziel-outgoing" href="#_D779AB5B-A44F-4276-B617-463AAAEBA11B"/>
+      <A rel="raziel-parent" href="#Definition"/>
+      <SPAN class="oryx-dockers">50 40 14 14 #</SPAN>
+      <A rel="raziel-target" href="#_D779AB5B-A44F-4276-B617-463AAAEBA11B"/>
+    </DIV>
+  </body>
+</html>

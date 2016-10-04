@@ -1,0 +1,291 @@
+- Next
+*******
+
+    - Sequence flows stuff
+        - Let unconnected
+        - Drop from palette
+        - command undo's
+        
+    - Lienzo stuff
+            
+    - Known issues
+        
+        - Canvas loading related issues
+            - loading box -> does not appear when loading a diagram or adding a shape from palette ( it should appear )
+            - load & draw diagram - too much loading time ( but not so much in production mode... )
+    
+        - Navigator 
+            - clean when no session or session closed
+            - Reduce size for preview
+            - Context2D proxy ( Mark ) 
+        
+        - Toolbox
+            - Moving parent diagram -> toolboxes bad coordinates
+            - Remove toolbox icons when shape deleted from canvas
+            - Icons are wires shapes and when dragging the main shape the docking fires
+            
+        - Palette
+            - add connection toolbox command -> click on diagram as target node -> exception thrown 
+            - bounds indexer - graph vs canvas & fixings ( builders & drag proxies )
+            - onclick -> add node in same parent, no need to drag...
+        
+        - CDI scopes
+            - Review cdi scopes for model & graph factories, adatpers, etc - reduce #instances on heap
+                - Controls & Event handlers -> Lorg_wirez_core_client_canvas_controls_toolbox_command_node_org_1wirez_1core_1client_1canvas_1controls_1toolbox_1command_1node_1NewNodeCommand$$_1_1$$org_1wirez_1core_1client_1components_1palette_1Palette$ItemMouseDownCallback$$_1_1$$instance$$org_1wirez_1core_1client_1canvas_1controls_1toolbox_1command_1node_1NewNodeCommand$$onItemMouseDown_1_1IIIV$Type_2_classLit_0_g$"
+                - Definition
+                    - Adapters
+                    - Factories
+                - etc
+- Lienzo
+********
+
+    - Fix wires issues
+        - WiresLayoutContainer - Refactor this stuff, resizing does not works good
+            - Examples
+                - Resize -> http://screencast.com/t/TjRkYpMvt
+                - Align -> http://screencast.com/t/62lCjZGYDq7i
+        - WiresManager 
+            - addToIndex not working for "unconnected" connectors
+            - do not add to index by default, let the developer choose
+        - Wires Events
+            - More events and provide the native events and contexts as well...
+            - Drag event -> cannot get the DragContext
+            - In general -> return the handler registration as well in order to remove handlers when no necessary.
+        - Remove WiresMananger member from WiresShape/Connector classes
+        
+        
+        
+        - Mediators broke Connectors & shape toolbox, if any
+            - Both zoom ( zoom + move shape ) and pam ( pam + redraw ) brokes connectors
+                    -> all I know is if i set the scale or rotate manually on the viewport
+                               the connectors are not in the correct place
+                               panel.getViewport().setTransform( new Transform().scale(1.5, 1.5).translate(-75, -75));
+                               that breaks the connector
+                               which means it'll also break alignment
+                               yeah alignment is off too
+                               and so is drag, when you release. it jumps
+                               there must be a way to get a viewport x/y offset
+                               rather than calculate it every single time
+                    -> see mediators_issues.txt
+
+         - Externalize ControlHandles to be able to provide our own externally
+         - Externalize docking visualization to be able to provide our own externally
+         
+         - Connectors. lines, grid
+            - http://www.mobtowers.com/html5-canvas-crisp-lines-every-time/
+            
+        - WiresConnector
+            - Decorators can be null
+            - animate rotations both clockwise ( svg only supports single wise )
+            - Do not move if parent shapes are dragged ( the source / target shapes are moved as the parent, but not the connectors )
+            - do not work fine with mediators ( pan / zoom )
+            - Cannot be "unconnected" - "No source magnet found.. Defense programming" message from lienzo??
+
+    - Performance issues on class Geometry
+    - External configs -> Connectors / docking hotspot size
+    - When dragging parent shapes, the connectors on the children are not drag
+    - Shape order ( flows, parent/child nodes, etc )
+    - review wires containment. 
+        - Eg: lanes -> if dragging lane title inside the lane, the lane gets removed from the parent diagram and then it sometimes gets on top and nothing can be moved inside it.
+        
+    - Wires refactors
+        - Exctract logics for containment & connection ( highlight parents, show magnets, etc) from drag event handlers
+        
+    - Others
+        - Text orientation
+    
+    - Mobile
+        - Pan & zoom mediators for mobile touch events
+        - Other touch handlers required for desginer
+        
+- Client
+*********
+
+    - General
+        - Help widgets & tooltips/popovers
+        - Improve Error handling
+        - refactor use of CDI qualifiers ( managers & services ) -> CDI @Priority 
+        - Show/Hide grid toolbar button
+        - cpu perf on adding shapes / minipalette drags
+        - Drawing annotations on the diagram
+        - Refactor for GraphUtils.updateBounds
+        - Workflow Templates/patterns 
+            - https://surdilovic.wordpress.com/2012/11/15/workflow-patterns-support-in-jbpm-designer/
+            - http://resources.bizagi.com/docs/Workflow%20Patterns%20using%20BizAgi%20Process%20Modeler.pdf
+        - copy/cut/paste
+        - group
+
+    - Grid
+        - https://docs.google.com/document/d/1gCmxYGBFxHeqVoPLC6n5YhA0AyoejiDIzIjTz3-SJpM/edit
+
+    - Export diagram to PNG -
+            - See -> http://weworkweplay.com/play/saving-html5-canvas-as-image/
+            - Add button for downloading
+
+    - Forms
+        - Validation error messages -> https://docs.google.com/document/d/1UPx4smbKUsbyzL84LoEGlCyI5u89nPNs4cd2I0x4-WM/edit#heading=h.s01718cfssg4
+
+    - Themes
+        - https://github.com/droolsjbpm/jbpm-designer/blob/master/jbpm-designer-client/src/main/resources/org/jbpm/designer/public/defaults/themes.json
+
+    - Preview widget - Mark's PR about replication
+        
+    - Layout
+        - Hooks for simple horizontal layout for now
+        - Optional / enforced
+        - Configurable to fire for given events ( drag, resize, etc )
+
+    - Shape Factories
+            - ShapeFactories from Shape Set ( annotated on @ShapeSet )
+            - ShapeManager#getFactory -> use shapeSetId as argument
+            
+    - Usability
+        - dragging constrained just for diagram bounds?
+
+    - Controls
+        - Toolbox
+            - Icon titles/tooltips
+        - SelectionControl
+            - Select multiple
+    - CanvasHandler
+        - Move draw logic into a command and refactor CH interface?
+        
+    - Load diagram screen
+        - Pagination
+
+    - Notifcations widget
+        - Design
+        - Pagination
+        - Row colors ( different notification types )
+        
+    - Canvas Toolbar    
+        - Toolbar undo & clearSelection should be initially disabled
+
+    - Toolbox 
+        - bounding box for whole shape bounds as well
+        - Disable/enable commands
+        - Titles / tooltips
+
+    - Layouts
+        - auto layout of child shapes for a contiainer
+        - see https://github.com/droolsjbpm/jbpm-designer/tree/master/jbpm-designer-client/src/main/resources/org/jbpm/designer/public/js/Plugins/Layouter
+        - see https://github.com/droolsjbpm/jbpm-designer/blob/master/jbpm-designer-client/src/main/resources/org/jbpm/designer/public/js/Plugins/bpmn.js
+        - layout rules
+        - automatic built-in bpmn layout ( manstis )
+        
+- API
+*****
+
+    - model
+        - Definition Impls -> finish implementation & generate from ifaces and the adapter as well
+        - Performance
+            - private constructors
+            - review inmutability (final fields) -> bindable needs pub no-arg const! How 2 deal with finals?
+            - if making fields static -> marhsalls as null... ( eg: DefSet#labels )
+            - builders
+                - mark as @NonPortable
+                - auto generate when using annotated models?
+        - avoid @Portable and @Bindable and generate the Errai.properties for the annotated pojos.
+    
+    - Reverse containment
+        - Eg: Adding a Lane over some other elements
+        - Grouping ( selecting the shapes in an area of the layer )
+        
+    - Definitions "sub-sets"
+        - https://github.com/droolsjbpm/jbpm-designer/tree/master/jbpm-designer-client/src/main/resources/org/jbpm/designer/public/stencilsets/extensions
+        - https://github.com/droolsjbpm/jbpm-designer/blob/master/jbpm-designer-client/src/main/resources/org/jbpm/designer/public/stencilsets/extensions/bpmn2.0jbpmruleflow/bpmn2.0jbpmruleflowsubset.json
+        - only affect to the palette's?
+        - restrict elements & properties
+        
+    - Morphing rules
+        - https://snag.gy/IaH1nm.jpg
+        - https://snag.gy/OL1xsu.jpg
+        - http://imgur.com/DOTZmH6
+        
+    - Graph Processors - declare as @Remote ifaces
+
+    - Commands
+        - UNDO's
+            - ClearGraph
+        - Fix -> both SetConnectionSourceNodeCommand/Target commands are checking rules using same arguments...
+        - ensure only single parent/edge connections between nodes
+         - CommManager
+            - executions async ( use of Caller's ) - use callbacks as expensive ops can be executed on backend asynchronously
+        - Restore the graph to a previous state
+        - REDO's
+
+    - Look-ups
+        - Add cache
+        - Use Caller's on client side
+        - Use Dashbuilder's DataSets?
+        
+Annotation processors
+*********************
+
+    - Check that each annotation is present on expected domain model class
+
+Backend
+*******
+
+    - Missing diagram services ( such as delete )
+        - diagrams sync / commands sync between client & tenant managers on server side
+
+Import tool
+************
+
+  - refactor to current API
+  - typesafe velocity templates? 
+  - TemplateResult 
+    - add skipped results ( pojos + message )
+  - generated files indentation
+
+Performance
+***********
+
+
+    - Memory
+        - Events
+            -. Use uuid's instead of shapes/elements/etc? avoid using shared instances
+        - Commands & Violations
+            - Clonse shapes/elements/etc arguments? avoid using shared instances
+        - Managers & registries
+            - Definition
+        
+    - Processing
+        - Graph indexer/incremental?
+        - Bounds indexer
+    
+    - Session widgets
+        - Checks session events are handled as expected
+        
+    - TreeExplorer 
+        - redraw only updated element & children, if any.
+
+    - Navigator & card
+        - improve performance by only processing and adding into the DOM tree the current card side.
+        
+    - Load diagram
+        - Slow - Heap & cpu performance check
+
+    - Custom Map impl for storing DefSet stuff ( valid to use on bindable adapters, indexes, etc )
+    
+    - Client
+        - CanvasHandler & handleZIndex
+            - Really need of ShapeView#ZIndex? or exist a problem on traverse processor while drawing ( bad order )?
+        
+House keeping & others
+**********************
+    
+    - recompiling canvas controls forces to restart server always? ( csadilek )
+    - Unit testing
+    - Distros
+        - remove beans.xml exclusion for org.wirez.client... should not be there. 
+    - Remove GraphBoundsIndexBuilder and use Layer#findShapeAt ( check Builder control & GraphBoundsIndexer & LienzoLayerUtils )
+    - BPMN marshalling / unmarshalling
+        - Remove code from "legacy" package and use the jbpm-designer-backend artifact as a required dependency.
+            - Exclude drools datamodeller transitive artifact -> It produces an errai compilation error
+            - Try to exclude as much as possible the transitive dependencies
+            - Currently some CDI issues appears when adding it...
+     - Connections
+        - Do not call head/tailConnectionAccepted until drag eng!
+    - i18n

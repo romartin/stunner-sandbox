@@ -1,0 +1,91 @@
+{
+  "containmentRules": [
+    {
+      "role": "BPMNDiagram",
+      "contains": [
+        "all"
+      ]
+    },
+    {
+      "role": "EventSubprocess",
+      "contains": [
+        "eventSubprocessElement",
+        "sequence_start",
+        "sequence_end"
+      ]
+    },
+    {
+      "role": "Pool",
+      "contains": [
+        "Lane"
+      ]
+    },
+    {
+      "role": "Lane",
+      "contains": [
+        "all"
+      ]
+    },
+    {
+      "role": "Subprocess",
+      "contains": [
+        "sequence_start",
+        "sequence_end",
+        "from_task_event",
+        "to_task_event",
+        "EventSubprocess",
+        "CollapsedEventSubprocess",
+        "TextAnnotation",
+        "from_participant"
+      ]
+    },
+    {
+      "role": "AdHocSubprocess",
+      "contains": [
+        "sequence_start",
+        "sequence_end",
+        "from_task_event",
+        "to_task_event",
+        "EventSubprocess",
+        "CollapsedEventSubprocess",
+        "TextAnnotation",
+        "from_participant"
+      ]
+    },
+    {
+      "role": "MultipleInstanceSubprocess",
+      "contains": [
+        "sequence_start",
+        "sequence_end",
+        "from_task_event",
+        "to_task_event",
+        "EventSubprocess",
+        "CollapsedEventSubprocess",
+        "TextAnnotation",
+        "from_participant"
+      ]
+    },
+    {
+      "role": "MessageContainer",
+      "contains": [
+        "Message"
+      ]
+    },
+    {
+      "role": "ChoreographyElement",
+      "contains": [
+        "ChoreographyParticipant"
+      ]
+    },
+    {
+      "role": "ChoreographySubprocessExpanded",
+      "contains": [
+        "ChoreographyElement",
+        "choreography_sequence_start",
+        "choreography_sequence_end",
+        "Message",
+        "TextAnnotation"
+      ]
+    }
+  ]
+}

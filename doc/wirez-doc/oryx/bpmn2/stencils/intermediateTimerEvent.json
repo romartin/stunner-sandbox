@@ -1,0 +1,247 @@
+{
+  "type": "node",
+  "id": "IntermediateTimerEvent",
+  "title": "Timer Intermediate Event",
+  "groups": [
+    "Catching Intermediate Events"
+  ],
+  "description": "Process execution is delayed until a certain point in time is reached or a particular duration is over.",
+  "description_ja": "プロセスの実行は、特定の時刻に達するか、一定の時間が経過するまで遅延します。",
+  "view": "intermediateevent/timer.svg",
+  "icon": "catching/timer.png",
+  "propertyPackages": [
+    "baseAttributes",
+    "interrupting",
+    "boundaryevent",
+    "bgColor"
+  ],
+  "roles": [
+    "all",
+    "sequence_start",
+    "sequence_end",
+    "to_task_event",
+    "from_task_event",
+    "fromtoall",
+    "choreography_sequence_start",
+    "choreography_sequence_end",
+    "FromEventbasedGateway",
+    "IntermediateEventOnSubprocessBoundary",
+    "IntermediateEventOnActivityBoundary",
+    "EventOnChoreographyActivityBoundary",
+    "IntermediateEventsMorph"
+  ],
+  "properties": [
+    {
+      "id": "bgcolor",
+      "type": "Color",
+      "title": "BackgroundColor",
+      "value": "#f5deb3",
+      "description": "",
+      "readonly": false,
+      "optional": false,
+      "refToView": "fill_el",
+      "fill": true,
+      "stroke": false
+    },
+    {
+      "id": "origbgcolor",
+      "type": "Color",
+      "title": "Original Background Color",
+      "value": "#f5deb3",
+      "description": "",
+      "readonly": false,
+      "optional": true,
+      "hidden": true,
+      "visible": false
+    },
+    {
+      "id": "bordercolor",
+      "type": "Color",
+      "title": "BorderColor",
+      "value": "#a0522d",
+      "description": "",
+      "readonly": false,
+      "optional": false,
+      "refToView": [
+        "edge",
+        "fill_border",
+        "bg_frame",
+        "frame",
+        "frame2",
+        "frame3",
+        "frame4",
+        "frame5",
+        "frame6",
+        "frame7",
+        "frame8",
+        "frame9",
+        "frame10",
+        "frame11",
+        "frame12",
+        "frame13",
+        "frame14",
+        "frame15",
+        "frame16",
+        "frame17",
+        "frame18",
+        "frame19",
+        "frame20",
+        "frame21",
+        "frame22",
+        "frame23",
+        "frame24",
+        "frame25",
+        "frame26",
+        "border"
+      ],
+      "fill": false,
+      "stroke": true
+    },
+    {
+      "id": "origbordercolor",
+      "type": "Color",
+      "title": "Original Border Color",
+      "value": "#a0522d",
+      "description": "",
+      "readonly": false,
+      "optional": true,
+      "hidden": true,
+      "visible": false
+    },
+    {
+      "id": "fontcolor",
+      "type": "Color",
+      "title": "Font Color",
+      "value": "#000000",
+      "description": "Font color",
+      "description_ja": "フォントの色",
+      "readonly": false,
+      "optional": false,
+      "refToView": [
+        "text_name"
+      ],
+      "fill": true,
+      "stroke": false
+    },
+    /**{
+                "id":"trigger",
+                "type":"String",
+                "title":"Trigger",
+                "value":"Timer",
+                "description":"",
+                "readonly":true,
+                "optional":false,
+                "refToView":"",
+                "length":""
+            },**/
+    /**{
+                "id":"timedate",
+                "type":"String",
+                "title":"Time Date",
+                "value":"",
+                "description":"",
+                "readonly":false,
+                "optional":true,
+                "refToView":"",
+                "length":""
+            },**/
+    {
+      "id": "timeduration",
+      "type": "Text",
+      "title": "Time Duration",
+      "value": "",
+      "description": "",
+      "readonly": false,
+      "optional": true,
+      "refToView": "",
+      "length": ""
+    },
+    {
+      "id": "timecycle",
+      "type": "Text",
+      "title": "Time Cycle",
+      "value": "",
+      "description": "",
+      "readonly": false,
+      "optional": true,
+      "refToView": "",
+      "length": ""
+    },
+    {
+      "id": "timecyclelanguage",
+      "type": "Choice",
+      "title": "Time Cycle Language",
+      "value": "",
+      "description": "",
+      "readonly": false,
+      "optional": true,
+      "items": [
+        {
+          "id": "nolang",
+          "title": "None",
+          "value": "none"
+        },
+        {
+          "id": "cron",
+          "title": "Cron",
+          "value": "cron"
+        }
+      ]
+    },
+    {
+      "id": "waittime",
+      "type": "Float",
+      "title": "Wait Time",
+      "value": "0",
+      "description": "",
+      "description_ja": "",
+      "readonly": false,
+      "optional": true,
+      "simulation": true,
+      "min": "0"
+    },
+    {
+      "id": "timeunit",
+      "type": "Choice",
+      "title": "Time Unit",
+      "value": "",
+      "description": "Time unit options (seconds, minutes, hours)",
+      "description_ja": "Time unit options (seconds, minutes, hours)",
+      "readonly": false,
+      "optional": true,
+      "simulation": true,
+      "items": [
+        {
+          "id": "c1",
+          "title": "milliseconds",
+          "value": "ms"
+        },
+        {
+          "id": "c2",
+          "title": "seconds",
+          "value": "s"
+        },
+        {
+          "id": "c3",
+          "title": "minutes",
+          "value": "min"
+        },
+        {
+          "id": "c4",
+          "title": "hours",
+          "value": "hour"
+        },
+        {
+          "id": "c5",
+          "title": "days",
+          "value": "day"
+        },
+        {
+          "id": "c6",
+          "title": "years",
+          "value": "year"
+        }
+      ]
+    }
+  ]
+}

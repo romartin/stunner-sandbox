@@ -1,0 +1,389 @@
+<roger600_> around?
+<conan> hi
+<conan> y
+<roger600_> :)
+<roger600_> first of all sorry for this little delay on the pojos... last week i couldn't spend time on this :( 
+<roger600_> anyway, doing my best again :)
+<roger600_> what do you think about this
+<roger600_> https://github.com/romartin/wirez/blob/06ec5134ea74e0ca047e9bdad039a812a96d0d2a/wirez-sets/wirez-bpmn/wirez-bpmn-api/src/main/java/org/wirez/bpmn/api/BPMNDefinitionSet.java
+<roger600_> https://github.com/romartin/wirez/blob/06ec5134ea74e0ca047e9bdad039a812a96d0d2a/wirez-sets/wirez-bpmn/wirez-bpmn-api/src/main/java/org/wirez/bpmn/api/BPMNDiagram.java
+<roger600_> https://github.com/romartin/wirez/blob/06ec5134ea74e0ca047e9bdad039a812a96d0d2a/wirez-sets/wirez-bpmn/wirez-bpmn-api/src/main/java/org/wirez/bpmn/api/property/Package.java
+<roger600_> is more or less what expected?
+<roger600_> then I have (for now... will refactor it a little bit) this https://github.com/romartin/wirez/blob/06ec5134ea74e0ca047e9bdad039a812a96d0d2a/wirez-core/wirez-core-backend/src/main/java/org/wirez/core/backend/BackendDefinitionManager
+<roger600_> to process the runtime annotations and send to the client what needed
+<conan> where are the properties of a typical node?
+<roger600_> here
+<roger600_> https://github.com/romartin/wirez/blob/dc12cb2ff0e69c7a006c45d74fa0b2fa7371e4f1/wirez-core/wirez-core-api/src/main/java/org/wirez/core/api/graph/Element.java
+<roger600_> let me explain very quick
+<conan> you are still using Set<Property>
+<conan>  ?
+<roger600_> when i want to create an element of the graph (node, edge, etc) from client side
+<roger600_> i call the backend for it
+<roger600_> and on backend side, i process the annotations and just link the properties found in this node properties
+<roger600_> so
+<roger600_> you can use it for dynanimc / "soft" use -> node.getProperties().get...
+<roger600_> and
+<roger600_> you can access the definition  pojo as well
+<roger600_> node.getcontent().getNameProperty
+<conan> do you have an example of that pojo?
+<roger600_> which one?
+<conan> of an impmented bpmn2 node
+<roger600_> probalby i'm wrong eh! so jsut asking :)
+<roger600_> this one -> https://github.com/romartin/wirez/blob/06ec5134ea74e0ca047e9bdad039a812a96d0d2a/wirez-sets/wirez-bpmn/wirez-bpmn-api/src/main/java/org/wirez/bpmn/api/BPMNDiagram.java
+<roger600_> this is a bpmn diagram -> that corresponds to a graph
+<roger600_> same for nodes and edges
+<conan> I want to see a node :)
+<conan> an implemented bpmn2 node
+<roger600_> not yet, give me 20min :)
+<conan> ok
+<conan> it'll be easier to to tell then
+<conan> but at a glance it looks ok
+<roger600_> ok
+<conan> or atleast it looks like it's neough to move forward
+<roger600_> yes
+<roger600_> i think so
+<roger600_> one comment
+<conan> we may end up doing a lot more refactoring in the future
+<roger600_> sure...
+<roger600_> i know
+<roger600_> this is why i'm not worring about the concrete impls
+<roger600_> will change for sure
+<roger600_> but yes for the overall api
+<roger600_> btw
+<roger600_> the refactor took me more time that expected because 
+<conan> as long as all propertie sare accessible, as standard pojos
+<conan> then we are good
+<roger600_> yes
+<conan> now people may need to cast the bpmn2 node
+<conan> but that's ok
+<roger600_> well that's another question
+<roger600_> i do not consider the definition (stencil) as a node or edge... i mean, they do not implement those interfaces
+<roger600_> probbaly it's not right but this is what i understand
+<roger600_> a node is a node, the difference is the content
+<conan> a stencil 
+<conan> is the content of the node
+<roger600_> yes!
+<roger600_> okkk
+<roger600_> nice
+<roger600_> that's it
+<roger600_> so
+<conan> and someimtes the container
+<roger600_> this is why the node itself is not a pojo, 
+<conan> i.e. a simline
+<roger600_> but it contains the stencil
+<roger600_> that it is
+<roger600_> right¿
+<conan> ((GateWay)node.getContent()).getMyRealProperty()
+<roger600_> yes
+<roger600_> and i have added this
+<roger600_> look
+<roger600_> Set<Property> properties = node.getProperties()
+<roger600_> and this set
+<roger600_> Set
+<roger600_> contains the pojo properties
+<roger600_> so on client side
+<roger600_> you can dynamically get properties etc
+<roger600_> this node.getProperties is build on backend
+<roger600_> i check the stencil annots at runtime, get the values for the annotated methods, and add those values in the node.getProperties
+<conan> btw
+<conan> https://docs.oracle.com/javase/7/docs/api/java/beans/PropertyDescriptor.html
+<roger600_> for the case of methods that returns a property
+<roger600_> do you think is it right?
+<conan> not entirely sure how well GWT works with that
+<roger600_> this way i'm just doing a single backend call
+<conan> it's just a Property 
+<roger600_> ah
+<roger600_> let me check
+<roger600_> not following you :)
+<conan> ignore anyway
+<conan> it's tied to AWT
+<roger600_> no!
+<roger600_> np
+<roger600_> :)
+<roger600_> you can try.. :)
+<roger600_> ahh
+<roger600_> ok
+<roger600_> i see
+<roger600_> well i have interfaces for it
+<roger600_> so I have for example a HasValue<T>
+<conan> np
+<roger600_> so i can cast the pojo on runtime
+<conan> keep with what you haev for now
+<roger600_> if (pojo instanceof HasValue )
+<roger600_> pojo.gerValue
+<roger600_> pojo.setValue
+<roger600_> is it fine?
+<roger600_> so the stencil is a pojo that contains properties, which are pojos that can be HasValue
+<conan> ok
+<roger600_> HasValues (for collections)
+<roger600_> etc
+<roger600_> ok
+<conan> also for re-use
+<roger600_> okk
+<conan> you'll create subsets of properties
+<conan> like General
+<roger600_> yes!
+<roger600_> it's called property sets
+<conan> which would have ID, Description etc
+<roger600_> works for you?
+<roger600_> i have support too for those
+<roger600_> look
+<roger600_> https://github.com/romartin/wirez/blob/2f1b5ccd074ed8860ced121bc7644c7fde835041/wirez-core/wirez-core-api/src/main/java/org/wirez/core/api/definition/property/PropertySet.java
+<conan> ((GateWay)node.getContent()).getGeneral().getId()
+<roger600_> still not refactored as a pojo!
+<roger600_> but will do now
+<roger600_> yes
+<roger600_> that's it
+<conan> as we can only use inheritence once
+<conan> and I think maybe we should use composiiton anway
+<roger600_> of ((GateWay)node.getContent()).getGeneral().getNameProperty().getValue
+<conan> because in theory that ocmposition
+<conan> may provide the layout hints
+<conan> um why getValue()
+<conan> that's not projo access
+<conan> thats "soft" access
+<roger600_> well
+<roger600_> this
+<roger600_> ( (HasValue) ((GateWay)node.getContent()).getGeneral().getNameProperty()).getValue
+<conan> that's not a pojo though
+<roger600_> yes
+<conan> that's a refelction helper
+<roger600_> ok
+<roger600_> agreed
+<roger600_> okkk
+<roger600_> np
+<roger600_> right
+<conan> I'm not saying e can't have that
+<conan> it can be useful for reflection and dynamic stuff
+<roger600_> for soft stuff
+<roger600_> yess
+<roger600_> ok
+<conan> but pere's forms
+<roger600_> great
+<conan> works on pojos directly
+<roger600_> on same way :)
+<roger600_> ok
+<conan> the properties must work as pojos
+<roger600_> ok
+<roger600_> yes
+<roger600_> they are, but i'm forcing to implement an interface for the values, will not force it
+<roger600_> so annotated methods
+<roger600_> i'm really near
+<roger600_> last question
+<roger600_> look this - >https://github.com/romartin/wirez/blob/06ec5134ea74e0ca047e9bdad039a812a96d0d2a/wirez-sets/wirez-bpmn/wirez-bpmn-api/src/main/java/org/wirez/bpmn/api/BPMNDiagram.java
+<roger600_> this a BPMN2 stencil
+<roger600_> but i'm forcing it to implement Definition interface
+<roger600_> because
+<roger600_> i prefer it in order to use cdi discovery
+<roger600_> do you like it?
+<roger600_> and in addittion
+<roger600_> i can get some string methods as getId or getTitile, that can be i18n
+<roger600_> so better not annotated
+<roger600_> is it?
+<roger600_> do you like?
+<roger600_> i think cdi discovery is better for us than using annotation discovery at runtime.... but only my opinion
+<conan> ok
+<conan> bit too abstract for me at this moment
+<conan> it'll be easier
+<conan> once I see it come together
+<roger600_> ok
+<roger600_> you mean more nodes, property sets , etc ?
+<roger600_> will do now
+<roger600_> the runtime processors works, so it's just creating classes.... 
+<roger600_> let's sync again tomorrow with this, just let me give you a more complete example 
+<roger600_> another topic
+<roger600_> users management
+<conan> yes
+<conan> but also once it's integrarated into designer
+<conan> and forms
+<roger600_> pere told me to talk at finals of this week
+<roger600_> he sould be working on this...
+<roger600_> will ask him tomorrow np
+<roger600_> about users management...
+<conan> yup
+<roger600_> we have discovered some issues in the wb
+<roger600_> for example
+<conan> I hard about the restart issue
+<conan> on EAP
+<roger600_> yes
+<roger600_> hehe
+<roger600_> you are always updated :)
+<conan> hopeflly they can tell us about a hook
+<roger600_> we are working on it with christian
+<roger600_> i think it's just a bug
+<conan> ok
+<roger600_> but as said.... sorry for this but i'm really loosing lot of time with this stuff :( each little fix implies lots of testing and computer hanged for at list one hour (compile distros..) :(
+<roger600_> i hope finishing it soon
+<conan> ok
+<roger600_> at be focused with designer at 100% soon
+<roger600_> :)
+<roger600_> anyway
+<conan> np
+<conan> I need to chase qmx
+<roger600_> thx for the patience :)
+<conan> to see if he's finished those toolbox's
+<roger600_> still?¿?
+<roger600_> he told me
+<roger600_> that was finishded
+<roger600_> and now working on svg resize
+<roger600_> i had no news today about him
+<conan> the svg resize
+<conan> was for toolbox's
+<roger600_> well right
+<roger600_> ok
+<conan> so that he could put an SVG image in there
+<conan> he finsihed that yesterday
+<roger600_> so what is doing now? 
+<roger600_> more toolbox stuff?
+<roger600_> testing?
+<conan> no idea :)
+<roger600_> haha :)
+<conan> I need to ask
+<conan> because I need him working on shape docking
+<roger600_> honestly
+<roger600_> i think
+<roger600_> he is more focused on his personal stuff than ours
+<roger600_> he was commenting me things about irc rely servers
+<roger600_> configuring...
+<roger600_> not sure
+<conan> hmm
+<conan> yeah
+<conan> https://github.com/qmx?tab=activity
+<roger600_> but i can't understand how it can take 2 or 3 months to build a toolbox
+<roger600_> and i don't llike to criticize people....
+<roger600_> but if he don¡t do the work, we are always late and so busy
+<roger600_> let me  check github :)
+<conan> yeah
+<conan> well it's not quite that long
+<conan> he had a week before xmas
+<conan> and and about 2.5 weeks after xmas
+<conan> but stll yeah
+<roger600_> that's trye
+<conan> not fast
+<roger600_> yeah
+<roger600_> not fast :)
+<roger600_> ok
+<roger600_> forget it
+<conan> i'm just putting it down to the interuption of xmas
+<roger600_> probably i feel to much alone :)
+<roger600_> okk
+<roger600_> i had a long conversation with walter about lienzo 
+<roger600_> he wants to create the entities using lienzo.... are you updated on this?
+<conan> yes
+<roger600_> ah ok
+<conan> but he needs to hold off
+<conan> because we should build these as stencils
+<conan> it means special stencils
+<conan> that support sub elements
+<roger600_> yeahh
+<roger600_> ok
+<roger600_> sounds good
+<conan> so he needs to wait
+<conan> because too much is in flux right now
+<conan> I think he'd waste a lot of time
+<conan> if he attempted this now
+<conan> https://www.draw.io
+<conan> look at Entity Relation
+<conan> see how you can edit the proeprties
+<roger600_> let me see
+<conan> it won't be too hard to do
+<conan> see how each row has it's own size and content
+<conan> hmm actually in draw.io
+<conan> you can drag the row out
+<conan> so it's really just a composite of shapes
+<conan> that snap together
+<roger600_>  yes
+<conan> not sure we want it that flexible....
+<roger600_> all the palettes are just composites of shapes
+<conan> but yeah it's just a stencil stencil for us
+<roger600_> it seems not providing valudations
+<roger600_> rules
+<roger600_> yeah
+<roger600_> ok
+<roger600_> nice
+<roger600_> ok will ping you tomrrow again
+<conan> ok
+<roger600_> hopefully with a good pojos example 
+<conan> I think it can be done
+<conan> with little change of what we have
+<roger600_> sure
+<conan> it's just a more complex WiresShape
+<conan> that's all
+<roger600_> yessss
+<roger600_> it's possible :)
+<conan> in some ways
+<conan> you already have the ability to add text
+<roger600_> just time
+<roger600_> yes
+<conan> that is related to position
+<roger600_> but only textboxes if you realize
+<conan> this could maybe be done extended to that
+<roger600_> on draw.io
+<conan> so that you can have a region
+<conan> with flow
+<conan> so we might be able to generalise it
+<conan> check QMX's other stuff
+<roger600_> okkk
+<roger600_> yes
+<conan> it doesn't seem to much
+<roger600_> where? in github you mean?
+<conan> he's ust changing release numbers
+<conan> very minor changes
+<conan> hopefully this is personal time
+<conan> less than an hour a day
+<conan> ye
+<conan> https://github.com/qmx?tab=activity
+<conan> if he has personal stuff outside of that
+<conan> I've no dea
+<conan> idea
+<roger600_> me neither 
+<roger600_> yeahhh it seems to work....
+<conan> it'l be easier to give a fair judment as time progresses
+<roger600_> yes
+<roger600_> my fault
+<roger600_> i'm too impatient
+<roger600_> i need things fast...
+<roger600_> and tiho is waiting for us???
+<conan> not quite
+<conan> almost
+<roger600_> okok good 
+<roger600_> is what makes me a little pressure :)
+<conan> he needs to work with pere
+<conan> on auto form layouts
+<conan> to get the layout types we need to support
+<conan> he'll have to develop that
+<conan> and eventually he'll need pojos
+<roger600_> okk
+<roger600_> thx for the update
+<roger600_> as commented with pere, the idea of annotated forms.... implies that the concrete annotated form definition cannot be updated at runtime, right?
+<roger600_> so we will provide default forms
+<roger600_> and users can create their owns,right?
+<conan> the anotation is a layout hint
+<roger600_> ahh
+<roger600_> ok
+<conan> so you could then open it in the form designer
+<roger600_> the definition wil be stored on the vfs anyway?
+<conan> and change it
+<roger600_> ok
+<conan> but ideally we want to avoid custom stuff
+<conan> if ew can
+<conan> yes
+<roger600_> pere did not told me so!
+<roger600_> will check with hiim tomorrow
+<roger600_> he probably still had no the complete picture, will check with him tomorrow np
+<conan> not yet
+<conan> I'm waiting for kris
+<conan> to allow me ot instruct tiho
+<roger600_> no... i was talking about the forms annotated
+<roger600_> the told me that they will be inmutable 
+<roger600_> and not
+<roger600_> so he told me that the forms provided by annotations will be considered as default
+<roger600_> and cannot be modiifed
+<roger600_> but as said, we talked one week ago... probably he had not the copmlete picture
+<conan> that would probably be fine
+<conan> that the ycan't be changed
+<conan> if the generation is as flexible as we need
+<conan> the nthat would be good enough
+<roger600_> yes
+<roger600_> np for me neither
+<roger600_> okk

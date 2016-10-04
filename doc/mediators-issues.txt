@@ -1,0 +1,37 @@
+
+node.getAbsoluteLocation
+it's applying a transform
+my guess is we don't need this transform
+my feeling is we only want to iterate up parents
+if we replae all the getAbsolteTransform with our own helper method
+a static method
+that does that
+so replace all shape.getAbsolteLocation() with a static helper method getAbsoluteLocation( shape ).
+and all it does is iterate up parent adding the x and y's together
+
+just trying something here locally
+can confirm it works
+I did htis locally
+@Override
+public Point2D getAbsoluteLocation()
+{
+double y = 0;
+double x = 0;
+Node node = this;
+while ( node != null ) {
+x += node.m_attr.getX();
+y += node.m_attr.getY();
+node = node.getParent();
+}
+//
+// final Point2D p = new Point2D(0, 0);
+//
+// getAbsoluteTransform().transform(p, p);
+
+return new Point2D(x, y);
+}
+clearly we can't do that
+so my static method idea will localise hwo we get the absolte point2d
+and we can just do above in it
+ok?
+so that's one more thing fixed :)

@@ -1,0 +1,22 @@
+- annotations
+    - Move CanXXX (rules) & Definition annotations to base class? -> refactor adapters...
+- Morphing Definitions
+    - Policy -> morph all properties? morph all from same base type? use annotations to specify property morph policies?
+- Support
+    - Gateways
+- Issues
+    - keep graph element's UUID?
+    - BPMN unit test class
+        - mock morphAdapters or provide some runtime test scope for it.... as TaskMorphAdapter will be generated
+        - OryxMappingsManager -> do not hardcode inheritance morph types....
+    - Toolbox
+        - toolbox morph command -> only show if exist morph targets
+        - one button for each target morph base
+    - on morph.. keep colors? ( eg: start none event > end none event )
+
+- MorphCanvasNodeCommand
+    - Check rules here?
+
+- Icons -> refactor statics & dynamics for using morphing?
+
+- Use cache on morph adapters?

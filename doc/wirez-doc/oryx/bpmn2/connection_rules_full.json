@@ -1,0 +1,184 @@
+{
+  "connectionRules": [
+    {
+      "role":"SequenceFlow",
+      "connects": [
+        {
+          "from":"sequence_start",
+          "to":["sequence_end"]
+        },
+        {
+          "from":"Exclusive_Eventbased_Gateway",
+          "to":["FromEventbasedGateway"]
+        },
+        {
+          "from" : "EventbasedGateway",
+          "to" : ["FromEventbasedGateway"]
+        }
+      ]
+    },
+    {
+      "role":"MessageFlow",
+      "connects": [
+        {
+          "from":"messageflow_start",
+          "to":["messageflow_end"]
+        }
+      ]
+    },
+    {
+      "role":"IntermediateEventOnActivityBoundary",
+      "connects": [
+        {
+          "from":"Task",
+          "to":["IntermediateEventOnActivityBoundary"]
+        },
+        {
+          "from":"UserTask",
+          "to":["IntermediateEventOnActivityBoundary"]
+        },
+        {
+          "from":"SendTask",
+          "to":["IntermediateEventOnActivityBoundary"]
+        },
+        {
+          "from":"ReceiveTask",
+          "to":["IntermediateEventOnActivityBoundary"]
+        },
+        {
+          "from":"ManualTask",
+          "to":["IntermediateEventOnActivityBoundary"]
+        },
+        {
+          "from":"ServiceTask",
+          "to":["IntermediateEventOnActivityBoundary"]
+        },
+        {
+          "from":"Business RuleTask",
+          "to":["IntermediateEventOnActivityBoundary"]
+        },
+        $workitemDefs:{k|
+          $bopen$
+          "from":"$workitemDefs.(k).name$",
+          "to":["IntermediateEventOnActivityBoundary"]
+          $bclose$
+        }; separator=","$
+      ]
+    },
+    {
+      "role":"IntermediateEventOnSubprocessBoundary",
+      "connects": [
+        {
+          "from":"CollapsedSubprocess",
+          "to":["IntermediateEventOnSubprocessBoundary"]
+        },
+        {
+          "from":"Subprocess",
+          "to":["IntermediateEventOnSubprocessBoundary"]
+        },
+        {
+          "from":"AdHocSubprocess",
+          "to":["IntermediateEventOnSubprocessBoundary"]
+        },
+        {
+          "from":"ReusableSubprocess",
+          "to":["IntermediateEventOnSubprocessBoundary"]
+        }
+      ]
+    },
+    {
+      "role" : "Directed_Association",
+      "connects" : [
+        {
+          "from" : "from_task_event",
+          "to" : ["DataObject"]
+        },
+        {
+          "from" : "from_task_event",
+          "to" : ["DataStore"]
+        },
+        {
+          "from" : "from_task_event",
+          "to" : ["ITSystem"]
+        },
+        {
+          "from" : "DataObject",
+          "to" : ["to_task_event"]
+        },
+        {
+          "from" : "DataStore",
+          "to" : ["to_task_event"]
+        },
+        {
+          "from" : "ITSystem",
+          "to" : ["to_task_event"]
+        },
+        {
+          "from" : "IntermediateCompensationEventCatching",
+          "to" : ["to_task_event"]
+        }
+      ]
+    },
+    {
+      "role" : "Association_Undirected",
+      "connects" : [
+        {
+          "from" : "SequenceFlow",
+          "to" : ["DataObject"]
+        },
+        {
+          "from" : "DataObject",
+          "to" : ["SequenceFlow"]
+        },
+        {
+          "from" : "DataObject",
+          "to" : ["MessageFlow"]
+        },
+        {
+          "from" : "MessageFlow",
+          "to" : ["DataObject"]
+        },
+        {
+          "from" : "ITSystem",
+          "to" : ["to_task_event"]
+        },
+        {
+          "from" : "from_task_event",
+          "to" : ["ITSystem"]
+        },
+        {
+          "from" : "DataStore",
+          "to" : ["to_task_event"]
+        },
+        {
+          "from" : "from_task_event",
+          "to" : ["DataStore"]
+        },
+        {
+          "from" : "fromtoall",
+          "to" : ["TextAnnotation"]
+        },
+        {
+          "from" : "TextAnnotation",
+          "to" : "fromtoall"
+        },
+        {
+          "from" : "Message",
+          "to" : ["MessageFlow"]
+        },
+        {
+          "from" : "MessageFlow",
+          "to" : ["Message"]
+        },
+        {
+          "from" : "ActivitiesMorph",
+          "to" : ["to_participant"]
+        },
+        {
+          "from" : "to_participant",
+          "to" : ["ActivitiesMorph"]
+        }
+      ]
+    }
+  ]
+}

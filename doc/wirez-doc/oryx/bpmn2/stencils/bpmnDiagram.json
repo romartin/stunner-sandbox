@@ -1,0 +1,49 @@
+{
+  "type": "node",
+  "id": "BPMNDiagram",
+  "title": "BPMN-Diagram",
+  "groups": [
+    "Diagram"
+  ],
+  "description": "A BPMN 2.0 Diagram.",
+  "description_ja": "BPMN 2.0ダイアグラム。",
+  "view": "diagram.svg",
+  "icon": "diagram.png",
+  "mayBeRoot": true,
+  "hide": true,
+  "propertyPackages": [
+    "diagram"
+  ],
+  "roles": [
+    "canContainArtifacts"
+  ],
+  "properties": [
+    {
+      "id": "name",
+      "type": "String",
+      "title": "Name",
+      "value": "BPMN2-SampleProcess",
+      "description": "The descriptive name of the BPMN element.",
+      "description_ja": "BPMN要素のわかりやすい名前。",
+      "readonly": false,
+      "optional": true,
+      "length": "",
+      "wrapLines": true,
+      "refToView": "text_name",
+      "popular": true
+    },
+    {
+      "id": "documentation",
+      "type": "Text",
+      "title": "Documentation",
+      "value": "",
+      "description": "This attribute is used to annotate the BPMN element, such as descriptions and other documentation.",
+      "description_ja": "この属性は、説明やドキュメントなど、BPMN要素の注釈に使用されます。",
+      "readonly": false,
+      "optional": true,
+      "length": "",
+      "wrapLines": true,
+      "popular": true
+    }
+  ]
+}

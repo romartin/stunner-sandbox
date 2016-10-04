@@ -1,0 +1,39 @@
+{
+  "morphingRules": [
+    {
+      "role": "ActivitiesMorph",
+      "baseMorphs": ["Task"],
+      "preserveBounds" : true
+    },
+    {
+      "role": "GatewaysMorph",
+      "baseMorphs": ["Exclusive_Databased_Gateway"]
+    },
+    {
+      "role": "StartEventsMorph",
+      "baseMorphs": ["StartNoneEvent"],
+      "showInShapeMenu":false
+    },
+    {
+      "role": "EndEventsMorph",
+      "baseMorphs": ["EndNoneEvent"]
+    },
+    {
+      "role": "TextAnnotationMorph",
+      "baseMorphs": ["TextAnnotation"],
+      "preserveBounds" : true
+    },
+    {
+      "role": "DataObjectMorph",
+      "baseMorphs": ["DataObject"]
+    },
+    {
+      "role": "ConnectingObjectsMorph",
+      "baseMorphs": ["SequenceFlow"]
+    },
+    {
+      "role": "AssociationMorph",
+      "baseMorphs": [""]
+    }
+  ]
+}

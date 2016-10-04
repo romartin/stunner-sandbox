@@ -1,0 +1,593 @@
+{
+  "type" : 			"node",
+  "id": 				"Task",
+  "title" : 			"None",
+  "groups" : 			["Tasks"],
+  "description" : 	"A task is a unit of work - the job to be performed.",
+  "description_ja" : "タスクとは作業（実行すべきジョブ）の単位です。",
+  "_view_file" : 			"activity/task.svg",
+  "view" : 			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?> <svg    xmlns=\"http://www.w3.org/2000/svg\"    xmlns:svg=\"http://www.w3.org/2000/svg\"    xmlns:oryx=\"http://www.b3mn.org/oryx\"    xmlns:xlink=\"http://www.w3.org/1999/xlink\"     width=\"102\"    height=\"82\"    version=\"1.0\">   <defs></defs>   <oryx:magnets>   	<oryx:magnet oryx:cx=\"1\" oryx:cy=\"20\" oryx:anchors=\"left\" />   	<oryx:magnet oryx:cx=\"1\" oryx:cy=\"40\" oryx:anchors=\"left\" />   	<oryx:magnet oryx:cx=\"1\" oryx:cy=\"60\" oryx:anchors=\"left\" />   	   	<oryx:magnet oryx:cx=\"25\" oryx:cy=\"79\" oryx:anchors=\"bottom\" />   	<oryx:magnet oryx:cx=\"50\" oryx:cy=\"79\" oryx:anchors=\"bottom\" />   	<oryx:magnet oryx:cx=\"75\" oryx:cy=\"79\" oryx:anchors=\"bottom\" />   	   	<oryx:magnet oryx:cx=\"99\" oryx:cy=\"20\" oryx:anchors=\"right\" />   	<oryx:magnet oryx:cx=\"99\" oryx:cy=\"40\" oryx:anchors=\"right\" />   	<oryx:magnet oryx:cx=\"99\" oryx:cy=\"60\" oryx:anchors=\"right\" />   	   	<oryx:magnet oryx:cx=\"25\" oryx:cy=\"1\" oryx:anchors=\"top\" />   	<oryx:magnet oryx:cx=\"50\" oryx:cy=\"1\" oryx:anchors=\"top\" />   	<oryx:magnet oryx:cx=\"75\" oryx:cy=\"1\" oryx:anchors=\"top\" />   	   	<oryx:magnet oryx:cx=\"50\" oryx:cy=\"40\" oryx:default=\"yes\" />   </oryx:magnets>   <g pointer-events=\"fill\" oryx:minimumSize=\"50 40\">   	<defs> 		<radialGradient id=\"background\" cx=\"10%\" cy=\"10%\" r=\"100%\" fx=\"10%\" fy=\"10%\"> 			<stop offset=\"0%\" stop-color=\"#ffffff\" stop-opacity=\"1\"/> 			<stop id=\"fill_el\" offset=\"100%\" stop-color=\"#ffffcc\" stop-opacity=\"1\"/> 		</radialGradient> 		<radialGradient id=\"borderbackground\" cx=\"10%\" cy=\"10%\" r=\"100%\" fx=\"10%\" fy=\"10%\"> 			<stop offset=\"0%\" stop-color=\"#ffffff\" stop-opacity=\"1\"/> 			<stop id=\"fill_border\" offset=\"100%\" stop-color=\"#ffffff\" stop-opacity=\"1\"/> 		</radialGradient> 	</defs> 	 	<rect id=\"text_frame\" oryx:anchors=\"bottom top right left\" x=\"1\" y=\"1\" width=\"94\" height=\"79\" rx=\"10\" ry=\"10\" stroke=\"none\" stroke-width=\"0\" fill=\"none\" /> 	<rect id=\"bg_frame\" oryx:resize=\"vertical horizontal\" x=\"0\" y=\"0\" width=\"100\" height=\"80\" rx=\"10\" ry=\"10\" stroke=\"black\" stroke-width=\"1\" fill=\"url(#background) #ffffcc\" /> 		<text  			font-size=\"12\"  			id=\"text_name\"  			x=\"50\"  			y=\"40\"  			oryx:align=\"middle center\" 			oryx:fittoelem=\"text_frame\" 			stroke=\"black\" text-anchor=\"middle\"> 		</text>     <g id=\"manualTask\" transform=\"scale(0.7,0.7) translate(8,8)\">     	<path oryx:anchors=\"top left\" id=\"frame\"  style=\"opacity:1;fill:none;fill-opacity:1;stroke-width:1\"  			d=\"M0.5,3.751l4.083-3.25c0,0,11.166,0.083,12.083,0.083s-2.417,2.917-1.5,2.917 				s11.667,0,12.584,0c1.166,1.708-0.168,3.167-0.834,3.667s0.875,1.917-1,4.417c-0.75,0.25,0.75,1.875-1.333,3.333 				c-1.167,0.583,0.583,1.542-1.25,2.833c-1.167,0-20.833,0.083-20.833,0.083l-2-1.333V3.751z\" stroke=\"black\"/> 		<path id=\"frame2\" oryx:anchors=\"top left\" style=\"opacity:1;fill:none;stroke-width:2\" d=\"M 13.5 7 L 27 7\" stroke=\"black\"/> 		<path id=\"frame3\" oryx:anchors=\"top left\" style=\"opacity:1;fill:none;stroke-width:2\" d=\"M 13.5 11 L 26 11\" stroke=\"black\"/> 		<path id=\"frame4\" oryx:anchors=\"top left\" style=\"opacity:1;fill:none;stroke-width:1.5\" d=\"M 14 14.5 L 25 14.5\" stroke=\"black\"/> 		<path id=\"frame5\" oryx:anchors=\"top left\" style=\"opacity:1;fill:none;stroke-width:1.5\" d=\"M 8.2 3.1 L 15 3.1\" stroke=\"black\"/> 	</g> 	 	<g id=\"businessRuleTask\" transform=\"scale(0.7,0.7) translate(8,8)\"> 		<rect id=\"frame6\" oryx:anchors=\"top left\" x=\"0\" y=\"0\" width=\"22\" height=\"4\" style=\"opacity:1;fill:#B3B1B3;fill-opacity:1;\" stroke=\"black\"/> 		<rect id=\"frame7\" oryx:anchors=\"top left\" x=\"0\" y=\"4\" style=\"opacity:1;fill:none;\" width=\"22\" height=\"12\" stroke=\"black\"/> 		<path id=\"frame8\" oryx:anchors=\"top left\" style=\"opacity:1;fill:none;\" d=\"M 0 10 L 22 10\" stroke=\"black\"/> 		<path id=\"frame9\" oryx:anchors=\"top left\" style=\"opacity:1; fill:none;\" d=\"M 7 4 L 7 16\" stroke=\"black\"/> 	</g> 	 	<g id=\"scriptTask\" transform=\"scale(0.7,0.7) translate(8,8)\"> 		<path oryx:anchors=\"top left\" id=\"frame10\" style=\"opacity:1;fill:none;\" stroke=\"black\"   		d=\"M6.402,0.5h14.5c0,0-5.833,2.833-5.833,5.583s4.417,6,4.417,9.167 			s-4.167,5.083-4.167,5.083H0.235c0,0,5-2.667,5-5s-4.583-6.75-4.583-9.25S6.402,0.5,6.402,0.5z\"/> 		<path oryx:anchors=\"top left\" id=\"frame11\" style=\"opacity:1;fill:none;stroke-width:1.5\" d=\"M 3.5 4.5 L 13.5 4.5\" stroke=\"black\"/> 		<path oryx:anchors=\"top left\" id=\"frame12\" style=\"opacity:1;fill:none;stroke-width:1.5\" d=\"M 3.8 8.5 L 13.8 8.5\" stroke=\"black\"/> 		<path oryx:anchors=\"top left\"  id=\"frame13\" style=\"opacity:1;fill:none;stroke-width:1.5\" d=\"M 6.3 12.5 L 16.3 12.5\" stroke=\"black\"/> 		<path oryx:anchors=\"top left\" id=\"frame14\" style=\"opacity:1;fill:none;stroke-width:1.5\" d=\"M 6.5 16.5 L 16.5 16.5\" stroke=\"black\"/> 	</g> 	 	<g id=\"userTask\" transform=\"scale(0.7,0.7) translate(8,8)\"> 		<path id=\"frame15\" oryx:anchors=\"top left\" style=\"opacity:1;fill:#F4F6F7\" stroke=\"black\" 		 d=\"M0.585,24.167h24.083v-7.833c0,0-2.333-3.917-7.083-5.167h-9.25 			c-4.417,1.333-7.833,5.75-7.833,5.75L0.585,24.167z\"/> 		<path id=\"frame16\" oryx:anchors=\"top left\" style=\"opacity:1;fill:none\" d=\"M 6 20 L 6 24\" stroke=\"black\"/> 		<path id=\"frame17\" oryx:anchors=\"top left\" style=\"opacity:1;fill:none\" d=\"M 20 20 L 20 24\" stroke=\"black\"/> 		<circle id=\"frame18\" oryx:anchors=\"top left\" fill=\"black\" cx=\"13.002\" cy=\"5.916\" r=\"5.417\" stroke=\"black\"/> 		<path id=\"frame19\" oryx:anchors=\"top left\" style=\"opacity:1;fill:#F0EFF0;\" stroke=\"black\" 		d=\"M8.043,7.083c0,0,2.814-2.426,5.376-1.807s4.624-0.693,4.624-0.693 			c0.25,1.688,0.042,3.75-1.458,5.584c0,0,1.083,0.75,1.083,1.5s0.125,1.875-1,3s-5.5,1.25-6.75,0S8.668,12.834,8.668,12 			s0.583-1.25,1.25-1.917C8.835,9.5,7.419,7.708,8.043,7.083z\"/> 	</g> 	 	<g id=\"serviceTask\" transform=\"scale(0.7,0.7) translate(8,8)\"> 		<polygon oryx:anchors=\"top left\" id=\"frame20\" style=\"opacity:1;fill:#ffffff\" stroke=\"black\" points=\"15.392,5.064 17.954,2.502 20.347,4.895 17.786,7.455  			18.729,9.732 22.353,9.732 22.353,13.115 18.731,13.115 17.788,15.392 20.351,17.955 17.958,20.347 15.397,17.786 13.12,18.729  			13.12,22.353 9.737,22.353 9.737,18.731 7.46,17.788 4.897,20.35 2.506,17.958 5.066,15.397 4.124,13.12 0.5,13.12 0.5,9.737  			4.121,9.737 5.065,7.461 2.503,4.898 4.895,2.506 7.455,5.066 9.732,4.125 9.732,0.5 13.116,0.5 13.116,4.121 \"/> 		<circle oryx:anchors=\"top left\" id=\"frame21\" style=\"opacity:1;fill:none\" stroke=\"black\" cx=\"11.427\" cy=\"11.426\" r=\"3.714\"/> 		<polygon oryx:anchors=\"top left\" id=\"frame22\" style=\"opacity:1;fill:#ffffff\" stroke=\"black\" points=\"21.392,11.064 23.954,8.502 26.347,10.895 23.786,13.455  			24.729,15.732 28.353,15.732 28.353,19.115 24.731,19.115 23.788,21.392 26.351,23.955 23.958,26.347 21.397,23.786 19.12,24.729  			19.12,28.353 15.737,28.353 15.737,24.731 13.46,23.788 10.897,26.35 8.506,23.958 11.066,21.397 10.124,19.12 6.5,19.12  			6.5,15.737 10.121,15.737 11.065,13.461 8.503,10.898 10.895,8.506 13.455,11.066 15.732,10.125 15.732,6.5 19.116,6.5  			19.116,10.121 \"/> 		<circle oryx:anchors=\"top left\" id=\"frame23\" style=\"opacity:1;fill:none;\" stroke=\"black\" cx=\"17.427\" cy=\"17.426\" r=\"3.714\"/> 	</g> 	 	<g id=\"sendTask\"> 		<path id=\"stframe24\" oryx:anchors=\"left top\" stroke=\"#FFFFFF\" fill=\"black\" stroke-width=\"1\" d=\"M8,11 L8,21 L24,21 L24,11 L16,17z\"/> 		<path id=\"stframe25\" oryx:anchors=\"left top\" stroke=\"#FFFFFF\" fill=\"black\" stroke-width=\"1\" d=\"M7,10 L16,17 L25 10z\"/> 	</g> 	 	<g id=\"receiveTask\"> 		<path id=\"frame26\" oryx:anchors=\"left top\" stroke=\"black\" fill=\"none\" stroke-width=\"1\" d=\"M8,11 L8,21 L24,21 L24,11z M8,11 L16,17 L24,11\" /> 	</g> 	 	<g id=\"none\"></g>  	<g id=\"sequential\">         <path oryx:anchors=\"bottom\" fill=\"none\" stroke=\"#000000\" stroke-width=\"2\" d=\"M46,76h10M46,72h10 M46,68h10\"/>     </g>   </g> </svg> ",
+  "icon" : 			"activity/task.png",
+  "propertyPackages" :[
+    "baseAttributes",
+    "flowElement",
+    "activity",
+    "task",
+    "properties",
+    "iospecification"
+  ],
+  "roles" : 			[
+    "all",
+    "sequence_start",
+    "sequence_end",
+    "from_task_event",
+    "to_task_event",
+    "FromEventbasedGateway",
+    "messageflow_start",
+    "messageflow_end",
+    "fromtoall",
+    "ActivitiesMorph"
+  ],
+  "properties": [
+    {
+      "id":"bgcolor",
+      "type":"Color",
+      "title":"Background Color",
+      "value":"$colortheme.("Tasks").bgColor$",
+      "description":"",
+      "readonly":false,
+      "optional":false,
+      "refToView": "fill_el",
+      "fill":true,
+      "stroke":false,
+      "display" : true
+    },
+    {
+      "id":"origbgcolor",
+      "type":"Color",
+      "title":"Original Background Color",
+      "value":"$colortheme.("Tasks").bgColor$",
+      "description":"",
+      "readonly":false,
+      "optional":true,
+      "hidden":true,
+      "visible":false
+    },
+    {
+      "id":"bordercolor",
+      "type":"Color",
+      "title":"Border Color",
+      "value":"$colortheme.("Tasks").borderColor$",
+      "description":"",
+      "readonly":false,
+      "optional":false,
+      "refToView": ["edge", "fill_border", "bg_frame", "frame", "frame2", "frame3", "frame4", "frame5", "frame6", "frame7", "frame8", "frame9", "frame10", "frame11", "frame12", "frame13", "frame14", "frame15", "frame16", "frame17", "frame18", "frame19", "frame20", "frame21", "frame22", "frame23", "frame24", "frame25", "frame26", "border"],
+      "fill":false,
+      "stroke":true,
+      "display" : true
+    },
+    {
+      "id":"nomorph",
+      "type":"String",
+      "title":"nomorph",
+      "value":"true",
+      "hidden":true,
+      "visible":false
+    },
+    {
+      "id":"origbordercolor",
+      "type":"Color",
+      "title":"Original Border Color",
+      "value":"$colortheme.("Tasks").borderColor$",
+      "description":"",
+      "readonly":false,
+      "optional":true,
+      "hidden":true,
+      "visible":false
+    },
+    {
+      "id":"fontcolor",
+      "type":"Color",
+      "title":"Font Color",
+      "value":"$colortheme.("Tasks").fontColor$",
+      "description":"Font color",
+      "description_ja":"フォントの色",
+      "readonly":false,
+      "optional":false,
+      "refToView": ["text_name"],
+      "fill":true,
+      "stroke":false,
+      "display" : true
+    },
+    {
+      "id":"ruleFlowGroup",
+      "type":"RuleflowGroup",
+      "title":"Ruleflow Group",
+      "value":"",
+      "description":"ruleFlowGroup",
+      "description_ja":"ruleFlowGroup",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|Business Rule"
+    },
+    {
+      "id":"onEntryActions",
+      "type":"Expression",
+      "title":"On Entry Actions",
+      "value":"",
+      "description":"on entry actions",
+      "description_ja":"アクション開始時",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|Send|Receive|User|Manual|Service|Script|Business Rule",
+      "extra":true
+    },
+    {
+      "id":"onExitActions",
+      "type":"Expression",
+      "title":"On Exit Actions",
+      "value":"",
+      "description":"on exit actions",
+      "description_ja":"アクション終了時",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|Send|Receive|User|Manual|Service|Script|Business Rule",
+      "extra":true
+    },
+    {
+      "id":"isasync",
+      "type":"Choice",
+      "title":"Is Async",
+      "value":"false",
+      "default": "false",
+      "description":"Determines if activity should be executed asynchronously",
+      "description_ja":"",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|Send|Receive|User|Manual|Service|Script|Business Rule",
+      "extra":true,
+      "items":[
+        {
+          "id":"c1",
+          "title":"true",
+          "value":"true"
+        },
+        {
+          "id":"c2",
+          "title":"false",
+          "value":"false"
+        }
+      ]
+    },
+    {
+      "id":"taskname",
+      "type":"String",
+      "title":"Task Name",
+      "value":"",
+      "description":"Task Name",
+      "description_ja":"タスク名",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|User"
+    },
+    {
+      "id":"serviceoperation",
+      "type":"String",
+      "title":"Service Operation",
+      "value":"",
+      "description":"Service Operation",
+      "description_ja":"サービスオペレーション",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|Service"
+    },
+    {
+      "id":"serviceinterface",
+      "type":"String",
+      "title":"Service Interface",
+      "value":"",
+      "description":"Service Interface",
+      "description_ja":"サービスインターフェース",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|Service"
+    },
+    {
+      "id":"serviceimplementation",
+      "type":"Choice",
+      "title":"Service Implementation",
+      "value":"Java",
+      "description":"Specifies the service implementation type",
+      "description_ja":"サービス実装のタイプを指定",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|Service",
+      "items": [
+        {
+          "id": "c1",
+          "title":"Java",
+          "value":"Java"
+        },
+        {
+          "id": "c2",
+          "title": "Webservice",
+          "value": "##WebService"
+        }
+      ]
+    },
+    {
+      "id":"actors",
+      "type":"String",
+      "title":"Actors",
+      "value":"",
+      "description":"Comma-separated list of actors",
+      "description_ja":"アクターのカンマ区切りのリスト",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|User"
+    },
+    {
+      "id":"groupid",
+      "type":"String",
+      "title":"Groups",
+      "value":"",
+      "description":"he group id that is responsible for executing the human task",
+      "description_ja":"ヒューマンタスクを担当するグループID",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|User"
+    },
+    {
+      "id":"subject",
+      "type":"Text",
+      "title":"Subject",
+      "value":"",
+      "description":"Subject",
+      "description_ja":"コメント",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|User",
+      "extra":true
+    },
+    {
+      "id":"description",
+      "type":"String",
+      "title":"Description",
+      "value":"",
+      "description":"Description",
+      "description_ja":"",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|User",
+      "extra":true
+    },
+    {
+      "id":"content",
+      "type":"String",
+      "title":"Content",
+      "value":"",
+      "description":"The data associated with this task",
+      "description_ja":"このタスクに関連付けられているデータ",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|User",
+      "extra":true
+    },
+    {
+      "id":"reassignment",
+      "type":"Reassignment",
+      "title":"Reassignment",
+      "value":"",
+      "description":"Task reassignments",
+      "description_ja":"タスク再割り当て",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|User",
+      "extra":true
+    },
+    {
+      "id":"notifications",
+      "type":"Notifications",
+      "title":"Notifications",
+      "value":"",
+      "description":"Task notifications",
+      "description_ja":"タスク通知",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|User",
+      "extra":true
+    },
+    {
+      "id":"locale",
+      "type":"String",
+      "title":"Locale",
+      "value":"",
+      "description":"The task i18n locale",
+      "description_ja":"タスクロケール",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|User",
+      "extra":true
+    },
+    {
+      "id":"createdby",
+      "type":"String",
+      "title":"Created by",
+      "value":"",
+      "description":"User name of Task creator",
+      "description_ja":"タスクの作成者",
+      "readonly":false,
+      "optional":true,
+      "extra":true,
+      "fortasktypes":"None|User"
+    },
+    {
+      "id":"skippable",
+      "type":"Choice",
+      "title":"Skippable",
+      "value":"true",
+      "description":"Specifies whether the human task can be skipped",
+      "description_ja":"ヒューマンタスクをスキップできるかどうかを指定します",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|User",
+      "extra":true,
+      "items": [
+        {
+          "id": "c1",
+          "title":"true",
+          "value":"true"
+        },
+        {
+          "id": "c2",
+          "title": "false",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "id":"priority",
+      "type":"String",
+      "title":"Priority",
+      "value":"",
+      "description":"An integer indicating the priority of the human task",
+      "description_ja":"ヒューマンタスクの優先度を示す整数",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|User",
+      "extra":true
+    },
+    {
+      "id":"multipleinstance",
+      "type":"Choice",
+      "title":"Multiple Instance",
+      "value":"false",
+      "description":"Specifies whether the task is a multiple instance task.",
+      "description_ja":"タスクが複数インスタンスタスクかどうかを指定",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|Send|Receive|User|Manual|Service",
+      "extra":true,
+      "items": [
+        {
+          "id": "c1",
+          "title":"true",
+          "value":"true",
+          "refToView":"sequential"
+        },
+        {
+          "id": "c2",
+          "title": "false",
+          "value": "false",
+          "refToView":"none"
+        }
+      ]
+    },
+    {
+      "id":"multipleinstancecollectioninput",
+      "type":"Dynamicchoice",
+      "title":"MI collection input",
+      "value":"",
+      "description":"Sets the multiple instances collection input.",
+      "description_ja":"複数インスタンスコレクション入力を指定",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|Send|Receive|User|Manual|Service",
+      "ifproptrue":"multipleinstance",
+      "items": [
+        {
+          "id": "c1",
+          "title":"vardefs",
+          "value":"\$.properties.vardefs",
+          "needsprop": "multipleinstancedatainput"
+        },
+        {
+          "id": "c2",
+          "title": "globals",
+          "value": "\$.properties.globals",
+          "needsprop": "multipleinstancedatainput"
+        }
+      ]
+    },
+    {
+      "id":"multipleinstancecollectionoutput",
+      "type":"Dynamicchoice",
+      "title":"MI collection output",
+      "value":"",
+      "description":"Sets the multiple instances collection output.",
+      "description_ja":"複数インスタンスコレクション出力を指定",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|Send|Receive|User|Manual|Service",
+      "ifproptrue":"multipleinstance",
+      "items": [
+        {
+          "id": "c1",
+          "title":"vardefs",
+          "value":"\$.properties.vardefs",
+          "needsprop": "multipleinstancedataoutput"
+        },
+        {
+          "id": "c2",
+          "title": "globals",
+          "value": "\$.properties.globals",
+          "needsprop": "multipleinstancedataoutput"
+        }
+      ]
+    },
+    {
+      "id":"multipleinstancedatainput",
+      "type":"Dynamicdatainput",
+      "title":"MI data input",
+      "value":"",
+      "description":"Sets a data input for MI.",
+      "description_ja":"複数インスタンスへのデータ入力を指定",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|Send|Receive|User|Manual|Service",
+      "ifproptrue":"multipleinstance"
+    },
+    {
+      "id":"multipleinstancedataoutput",
+      "type":"Dynamicdatoutput",
+      "title":"MI data output",
+      "value":"",
+      "description":"Sets a data output for MI.",
+      "description_ja":"複数インスタンスへのデータ出力を指定",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|Send|Receive|User|Manual|Service",
+      "ifproptrue":"multipleinstance"
+    },
+    {
+      "id":"multipleinstancecompletioncondition",
+      "type":"Expression",
+      "title":"MI completion condition",
+      "value":"",
+      "description":"Sets a completion condition for MI.",
+      "description_ja":"複数インスタンスへのデータ出力を指定",
+      "readonly":false,
+      "optional":true,
+      "fortasktypes":"None|Send|Receive|User|Manual|Service",
+      "ifproptrue":"multipleinstance"
+    },
+    {
+      "id":"min",
+      "type":"Float",
+      "title":"Processing time (min)",
+      "value":"5",
+      "description":"",
+      "description_ja":"",
+      "readonly":false,
+      "optional":true,
+      "simulation" : true,
+      "fordistribution":"uniform",
+      "min" : "0"
+    },
+    {
+      "id":"max",
+      "type":"Float",
+      "title":"Processing time (max)",
+      "value":"10",
+      "description":"",
+      "description_ja":"",
+      "readonly":false,
+      "optional":true,
+      "simulation" : true,
+      "fordistribution":"uniform",
+      "min" : "0"
+    },
+    {
+      "id":"standarddeviation",
+      "type":"Float",
+      "title":"Standard Deviation",
+      "value":"1",
+      "description":"",
+      "description_ja":"",
+      "readonly":false,
+      "optional":true,
+      "simulation" : true,
+      "fordistribution":"normal",
+      "min" : "1"
+    },
+    {
+      "id":"mean",
+      "type":"Float",
+      "title":"Processing time (mean)",
+      "value":"0",
+      "description":"",
+      "description_ja":"",
+      "readonly":false,
+      "optional":true,
+      "simulation" : true,
+      "fordistribution":"normal|poisson",
+      "min" : "0"
+    },
+    {
+      "id":"distributiontype",
+      "type":"Choice",
+      "title":"Distribution Type",
+      "value":"uniform",
+      "description":"",
+      "description_ja":"",
+      "readonly":false,
+      "optional":true,
+      "simulation" : true,
+      "items": [
+        {
+          "id": "c1",
+          "title":"normal",
+          "value":"normal"
+        },
+        {
+          "id": "c2",
+          "title": "uniform",
+          "value": "uniform"
+        },
+        {
+          "id": "c4",
+          "title": "poisson",
+          "value": "poisson"
+        }
+      ]
+    },
+    {
+      "id":"quantity",
+      "type":"Float",
+      "title":"Staff availability",
+      "value":"1",
+      "description":"",
+      "description_ja":"",
+      "readonly":false,
+      "optional":true,
+      "simulation" : true,
+      "fortasktypes":"None|User",
+      "min": "0"
+    },
+    {
+      "id":"workinghours",
+      "type":"Float",
+      "title":"Working Hours",
+      "value":"8",
+      "description":"",
+      "description_ja":"",
+      "readonly":false,
+      "optional":true,
+      "simulation" : true,
+      "fortasktypes":"None|User",
+      "min": "0"
+    },
+    {
+      "id":"unitcost",
+      "type":"Float",
+      "title":"Cost per time unit",
+      "value":"0",
+      "description":"",
+      "description_ja":"",
+      "readonly":false,
+      "optional":true,
+      "simulation" : true,
+      "min" : "0"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+Morph Directe
+**************
+
+@Morph( to = { SubProcess.class } )
+public class NoneTask {
+
+}
+
+
+
+
+
+Morph Property
+****************
+
+@Morph( base = BaseTask.class )
+public class NoneTask {
+
+}
+
+@MorphBase( default = NoneTask.class,
+            to = { SubprocessBase.class } )
+public class BaseTask {
+
+    @Property
+    @Morph( bindings = { TaskTypeMorphPropertyBinding.class } )
+    protected final TaskType taskType;
+
+    private class TaskTypeMorphPropertyBinding implements MorphPropertyBinding<TaskType.TaskTypes> {
+
+        @Override
+        public Map<TaskType.TaskTypes, Class<?>> getMorphTargets( final TaskType.TaskTypes value ) {
+            return new HashMap<TaskType.TaskTypes, Class<?>>( 4 ) {{
+                put( TaskType.TaskTypes.NONE, NoneTask.class );
+                put( TaskType.TaskTypes.USER, UserTask.class );
+                put( TaskType.TaskTypes.SCRIPT, ScriptTask.class );
+                put( TaskType.TaskTypes.BUSINESS_RULE, BusinessRuleTask.class );
+            }};
+        }
+    }
+
+}

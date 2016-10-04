@@ -1,0 +1,10 @@
+<bpmn2:parallelGateway id="_7AEE5B6A-68A3-47E9-8B9A-BF1DA42D5872" drools:selectable="true" color:background-color="#f0e68c" color:border-color="#a67f00" color:color="#000000" name=" " gatewayDirection="Diverging">
+  <bpmn2:extensionElements>
+    <drools:metaData name="elementname">
+      <drools:metaValue><![CDATA[ ]]></drools:metaValue>
+    </drools:metaData>
+  </bpmn2:extensionElements>
+  <bpmn2:incoming>_2D745241-AC6E-448F-A14E-F109C3905873</bpmn2:incoming>
+  <bpmn2:outgoing>_B09334B4-29CA-414A-A071-B57C08D3CBBE</bpmn2:outgoing>
+  <bpmn2:outgoing>_F9F81024-E5D9-4540-9E43-11B29F6920B0</bpmn2:outgoing>
+</bpmn2:parallelGateway>

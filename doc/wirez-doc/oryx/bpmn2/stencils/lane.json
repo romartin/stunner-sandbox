@@ -1,0 +1,218 @@
+{
+  "type": "node",
+  "id": "Lane",
+  "title": "Lane",
+  "groups": [
+    "Swimlanes"
+  ],
+  "description": "Pools and Lanes represent responsibilities for activities in a process. A pool or a lane can be an organization, a role, or a system. Lanes sub-divide pools or other lanes hierarchically.",
+  "description_ja": "プールとレーンは、プロセス内のアクティビティの責任を表します。プールまたはレーンには、組織、ロール、またはシステムを割り当てることができます。レーンはプールまたは他のレーンを階層的に分割します。",
+  "view": "swimlane/lane.svg",
+  "icon": "swimlane/lane.png",
+  "propertyPackages": [
+    "baseAttributes"
+  ],
+  "properties": [
+    {
+      "id": "showcaption",
+      "type": "Boolean",
+      "title": "ShowCaption",
+      "value": "true",
+      "description": "",
+      "readonly": true,
+      "optional": false,
+      "refToView": [
+        "caption",
+        "captionDisableAntialiasing"
+      ],
+      "fill": true,
+      "visible": false,
+      "stroke": false,
+      "hidden": true
+    },
+    {
+      "id": "bgcolor",
+      "type": "Color",
+      "title": "BackgroundColor",
+      "value": "#ffffff",
+      "description": "",
+      "readonly": false,
+      "optional": false,
+      "refToView": "fill_el",
+      "fill": true,
+      "stroke": false
+    },
+    {
+      "id": "origbgcolor",
+      "type": "Color",
+      "title": "Original Background Color",
+      "value": "#ffffff",
+      "description": "",
+      "readonly": false,
+      "optional": true,
+      "hidden": true,
+      "visible": false
+    },
+    {
+      "id": "bordercolor",
+      "type": "Color",
+      "title": "BorderColor",
+      "value": "#000000",
+      "description": "",
+      "readonly": false,
+      "optional": false,
+      "refToView": [
+        "edge",
+        "fill_border",
+        "bg_frame",
+        "frame",
+        "frame2",
+        "frame3",
+        "frame4",
+        "frame5",
+        "frame6",
+        "frame7",
+        "frame8",
+        "frame9",
+        "frame10",
+        "frame11",
+        "frame12",
+        "frame13",
+        "frame14",
+        "frame15",
+        "frame16",
+        "frame17",
+        "frame18",
+        "frame19",
+        "frame20",
+        "frame21",
+        "frame22",
+        "frame23",
+        "frame24",
+        "frame25",
+        "frame26",
+        "border"
+      ],
+      "fill": false,
+      "stroke": true
+    },
+    {
+      "id": "origbordercolor",
+      "type": "Color",
+      "title": "Original Border Color",
+      "value": "#000000",
+      "description": "",
+      "readonly": false,
+      "optional": true,
+      "hidden": true,
+      "visible": false
+    },
+    {
+      "id": "fontcolor",
+      "type": "Color",
+      "title": "Font Color",
+      "value": "#000000",
+      "description": "Font color",
+      "description_ja": "フォントの色",
+      "readonly": false,
+      "optional": false,
+      "refToView": [
+        "text_name"
+      ],
+      "fill": true,
+      "stroke": false
+    },
+    {
+      "id": "fontsize",
+      "type": "Choice",
+      "title": "Font Size",
+      "value": "",
+      "description": "The Font Size",
+      "description_ja": "フォントのサイズ",
+      "readonly": false,
+      "optional": false,
+      "refToView": "text_name",
+      "items": [
+        {
+          "id": "c1",
+          "title": "8",
+          "value": "8"
+        },
+        {
+          "id": "c2",
+          "title": "9",
+          "value": "9"
+        },
+        {
+          "id": "c3",
+          "title": "10",
+          "value": "10"
+        },
+        {
+          "id": "c4",
+          "title": "11",
+          "value": "11"
+        },
+        {
+          "id": "c5",
+          "title": "12",
+          "value": "12"
+        },
+        {
+          "id": "c6",
+          "title": "14",
+          "value": "14"
+        },
+        {
+          "id": "c7",
+          "title": "18",
+          "value": "18"
+        },
+        {
+          "id": "c8",
+          "title": "20",
+          "value": "20"
+        },
+        {
+          "id": "c9",
+          "title": "24",
+          "value": "24"
+        },
+        {
+          "id": "c10",
+          "title": "36",
+          "value": "36"
+        },
+        {
+          "id": "c11",
+          "title": "48",
+          "value": "48"
+        },
+        {
+          "id": "c12",
+          "title": "72",
+          "value": "72"
+        }
+      ]
+    }
+  ],
+  "roles": [
+    "all",
+    "PoolChild",
+    "fromtoall",
+    "canContainArtifacts"
+  ],
+  "layout": [
+    {
+      "type": "layout.bpmn11.lane"
+    },
+    {
+      "type": "layout.container.minBounds",
+      "options": {
+        "ignoreChildsWithId": [
+          "http://b3mn.org/stencilset/bpmn2.0#Lane"
+        ]
+      }
+    }
+  ]
+}

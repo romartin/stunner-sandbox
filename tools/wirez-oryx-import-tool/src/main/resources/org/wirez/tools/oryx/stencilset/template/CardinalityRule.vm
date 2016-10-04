@@ -1,0 +1,9 @@
+@Occurrences(
+    role = "$role",
+    min = $min,
+    value = {
+        #foreach ($e in $edges)
+        @EdgeOccurrences(type = $e.type, edge = "$e.edge", max = $e.max)
+        #end
+    }
+)

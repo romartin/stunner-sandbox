@@ -1,0 +1,86 @@
+{
+  "nodeStore": {
+    "nodes": {
+      "CDA60115-7055-49DF-AC63-51FC8A80A04D": {
+        "inEdges": [],
+        "outEdges": [
+          {}
+        ],
+        "definition": {},
+        "bounds": {
+          "lr": {
+            "x": 417.0,
+            "y": 428.0
+          },
+          "ul": {
+            "x": 152.0,
+            "y": 165.0
+          }
+        },
+        "uuid": "CDA60115-7055-49DF-AC63-51FC8A80A04D",
+        "properties": {
+          "bgColor": "#00CC00",
+          "borderSize": 1,
+          "borderColor": "#000000",
+          "name": "My rectangle",
+          "fontcolor": "#000000",
+          "bgGradientEnd": "",
+          "fontSize": 8,
+          "bgGradientStart": "",
+          "fontBorderSize": 1
+        },
+        "labels": []
+      },
+      "B14DF5BB-FBE0-421A-B2D9-BC562CA531D3": {
+        "inEdges": [
+          {}
+        ],
+        "outEdges": [],
+        "definition": {},
+        "bounds": {
+          "lr": {
+            "x": 283.0,
+            "y": 235.0
+          },
+          "ul": {
+            "x": 233.0,
+            "y": 185.0
+          }
+        },
+        "uuid": "B14DF5BB-FBE0-421A-B2D9-BC562CA531D3",
+        "properties": {
+          "bgColor": "#0000CC",
+          "borderSize": 1,
+          "borderColor": "#000000",
+          "name": "My circle",
+          "radius": 25,
+          "fontcolor": "#000000",
+          "bgGradientEnd": "",
+          "fontSize": 8,
+          "bgGradientStart": "",
+          "fontBorderSize": 1
+        },
+        "labels": []
+      }
+    }
+  },
+  "edgeStore": {
+    "edges": {}
+  },
+  "definition": {},
+  "bounds": {
+    "lr": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "ul": {
+      "x": 0.0,
+      "y": 0.0
+    }
+  },
+  "uuid": "CC7E3248-4F6B-4F6F-9C53-1C1F723A2637",
+  "properties": {
+    "name": "My diagram"
+  },
+  "labels": []
+}

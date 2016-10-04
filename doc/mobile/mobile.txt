@@ -1,0 +1,5 @@
+
+- TODOS
+    - DragProxies using touch events instead of mouse events 
+    - Support for multiple touch points
+    - Wirez Perspective -> reduce screens size to fit mobile device

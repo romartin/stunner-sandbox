@@ -1,0 +1,410 @@
+<conan> roger600  ping
+<roger600> conan, pong
+<conan> roger600 just discussing hte properties panels.
+<roger600> conan, yep
+<roger600> conan, with?
+<conan> joe, alex, christian
+<conan> anywya genmymodel doesn't ahve impl properties
+<conan> it has only basic properties, bare minimum
+<roger600> conan, yes i know
+<conan> so it's impossible to get an executable impl from this
+<roger600> conan, they are quite basic 
+<conan> now it seems most designers have a flat list.
+<conan> however the oracle one is better
+<conan> https://docs.oracle.com/cd/E18941_01/tutorials/jdtut_11r2_44/images/pi_taskflowcall.gif
+<conan> it is a list, but it has arrangements
+<conan> so it's a bit more slick and readable
+<conan> http://docs.oracle.com/cd/E36909_01/doc.1111/e15176/img/intr_stud_prop_inspect_bpmpd.gif
+<conan> roger600  so what I think we should do is take a mata data driven approach to this property panels
+<conan> we cannot author all of these buy hand
+<roger600> conan,ok
+<conan> instead we should probably create a meta model, that suports the various needed configurations of things.
+<conan> and generaate them from that
+<conan> it might be possible to extend the existing properties ediint for this - although might take a big rewrite. but I think it needs to be updated to align with new forms anyway.
+<roger600> conan, for me it's fine!
+<conan> roger600 one Q i'm left is
+<conan> where do we store all of this UI generated information
+<conan> do we make a separate DSL
+<conan> which isn't refactorable
+<conan> or do we try and do something annotation driven
+<conan> is there a pojo model for all of the nodes?
+<roger600> conan, well all nodes and edges have properties
+<roger600> conan, these properties are for storing all this stuff
+<conan> that's not really what I meant
+<conan> are properties fields
+<conan> and can we annotate them
+<roger600> conan,  ah yes
+<conan> if you are doing new Property(String, Value)
+<roger600> conan,  np
+<conan> that cannot be anotated
+<roger600> conan, yes
+<roger600> conan, well
+<roger600> conan, no
+<roger600> conan, properties are build from a factory
+<roger600> conan, so theoretically we can do some magic there
+<conan> I thought this was quite intersting
+<conan> http://www.eunomia-process.com/user_manual/site/Main_functions/Edit_Diagram/EventGraphicalProperties.png
+<conan> it's likd a grid to configure an event node
+<roger600> conan, ok got it
+<roger600> conan, let me see
+<conan> owhile the right click to transform is useful for quick stuff.
+<conan> I think that window is very intuitive for noobies
+<roger600> conan, what's that???
+<roger600> conan, dynamic nodes?
+<conan> it's from http://www.eunomia-process.com
+<conan> that's how you configure the type of event node in that product
+<roger600> conan, wow it's powerfull..
+<roger600> conan, but then it should make sense to configure the rules dynamically too
+<roger600> conan, if we build some import/export for stencils, this can be next step np ;)
+<conan> roger600  click the video on the home page,at the 2.38s in
+<conan> roger600  so the way this woudl work i think
+<conan> qmx  ^
+<conan> the pallete is for quick selection
+<conan> the transform for quick transform
+<conan> but in the transform drop out if you click "..." it opens that dialogue
+<conan> for osmething more visual
+<roger600> conan, yeahh, the idea is really fine, but the tool desing is quite ugly... isn't it?
+<roger600> conan, we can achieve that
+<roger600> conan, it's playing with visual properties too (genmymodel and oryx does not allow it)
+<roger600> conan,  so it's just adding the properties that i'm handling on the "basic set" ( colors, borders, fonts,...)
+<roger600> conan, we can add same properties for bpmn palette too
+<roger600> conan, no coding, it's inherited from base classes
+<roger600> conan, so we can achieve this easily....
+<roger600> conan, i think
+<roger600> conan, and abou the properties, not sure if we can use annotations approach....why not doing it as now? as manstis started? 
+<roger600> conan, just some property adaptor interfaces
+<roger600> conan, proeprties are of a given type
+<roger600> conan,  we can build default adaptor classes for each type....
+<roger600> conan, i'm doing it as it is, i have for each property type and adaptor that transforms into the pojo for the property editor
+<roger600> conan, but as said, the current properties editor is quite limited...
+<conan> roger600  if the property is not a field
+<conan> we cannot annotate it
+<roger600> conan, it isn't 
+<conan> ok because I think that is something we might have to revisit
+<roger600> conan, ok
+<conan> I don't think you want every property of a node
+<conan> as a key/value pair in a hashmap
+<roger600> conan, nope
+<conan> which is what it is now
+<conan> right?
+<roger600> conan, no
+<roger600> conan, you only can update properties using commands
+<roger600> conan, and the commands
+<conan> what i mean is 
+<conan> what are those properties
+<roger600> conan, check if the value is empty or equals to the default value
+<conan> if they are not fields
+<conan> they are key/values in a map
+<roger600> conan, if does not add it into the map
+<roger600> conan, let me start from beginning
+<conan> so every property is a key/value pair in a map
+<roger600> conan, properties are definitions of a stencil
+<roger600> conan, but are transferred into the map
+<roger600> conan, node or edge's map
+<roger600> conan, if nedded or updateed
+<roger600> conan, so if no default value
+<conan> roger600  i really cna't help but think this is very 00s
+<conan> it's 2015
+<roger600> conan, hehe 
+<conan> we should be using fields and annotations
+<roger600> conan, ok np
+<roger600> conan, let me explain it
+<conan> it's not an issue for now
+<roger600> conan, each graph element knows it stencil, so the properties
+<roger600> conan, so i can acces the definitions and properties 
+<roger600> conan, if not in the map, in the stencil definition
+<roger600> conan, that was my aporoach
+<conan> show me a github link
+<roger600> conan, but absolutely open to new ones!!
+<roger600> conan, sure
+<conan> because i sitll don't see why most properties
+<conan> cannot be fields
+<conan> even on the stencil
+<conan> or I should expand that a bit further
+<conan> we probably do need "soft" stencils, that are purely data driven - for more dynamic stuff.
+<conan> but we should also be able to provide static, type safe stencils, that are as much pojo as possible.
+<roger600> conan, look - that's the stencil -> https://github.com/romartin/wirez/blob/master/wirez-core/wirez-core-api/src/main/java/org/wirez/core/api/definition/Definition.java
+<roger600> and it's conent - https://github.com/romartin/wirez/blob/master/wirez-core/wirez-core-api/src/main/java/org/wirez/core/api/definition/Content.java
+<roger600> conan, we can translate as fields
+<conan> so this is fine for "soft" things
+<roger600> conan, and let a collection to add more dynamically
+<roger600> conan, yess
+<conan> but you'll lose ALL type safety
+<conan> of properties
+<roger600> conan, yes
+<roger600> conan, ok
+<conan> and all refactoring
+<conan> I personally really don't like
+<conan> Set<PropertySet> getPropertySets();
+<conan> it's fine for a data driven thing
+<roger600> conan, ok
+<conan> if users are dynamically adding pallete extensions at runtime - and maybe we have to support that too.
+<roger600> conan, ok
+<roger600> conan, sure
+<roger600> conan, and for more statically how would you plan it?
+<conan> but we should be able to provide pojo stati type safe impl. all properties are fields.
+<roger600> conan, ok
+<conan> well think about it
+<conan> you can do it as a sketch
+<conan> can you encode all BPMN2 nodes 
+<roger600> conan, and how do i know all the properties (fields) that the stencil provides at runtime? it's all typed code then? 
+<conan> jsut pure properties
+<conan> as classes and fields
+<conan> can use nested classes for compositions
+<conan> two ways
+<roger600> conan, but for the editors? for example?
+<conan> 1) annotation driven for discovery
+<roger600> conan, properties, etc
+<roger600> conan, custom?
+<conan> 2) reflection for everything else
+<conan> or a combination of the two
+<roger600> conan, ah ok
+<conan> for everything else
+<roger600> conan, ok
+<conan> roger600 if you are clever
+<roger600> conan, is it different doing it on lcient side that on typical backend side?
+<conan> you can build your own introspector with adapters
+<conan> that can work of different providers
+<conan> be it pojo
+<conan> or json
+<conan> or what ever
+<conan> you just ask it the introspector "list properties"
+<conan> and getProperty
+<conan> get what I mean?
+<roger600> yes
+<roger600> sure
+<roger600> ok got it
+<conan> so the stencil and node system is abstracted from the encodification of the thing
+<conan> that means you probably can't use JDK reflection directly
+<conan> you'll create your own helpers
+<conan> one impl for hte helpers might be reflection based
+<conan> another might look just like your Content
+<conan> get what I mean?
+<roger600> conan, yess
+<conan> so that means your Content might be useful still
+<roger600> conan, sure
+<conan> for "soft" stuff
+<roger600> conan, that's it ok
+<conan> but I like the idea of stencil sets we use heavil and refactor and fix
+<conan> being static type safe and refactory tools
+<roger600> conan, it's adding more typed safe code now np
+<roger600> conan, sure
+<conan> that have type earch
+<roger600> conan, fine for me! sounds interesting to do 
+<roger600> conan, okk
+<conan> not all of it is single value properties though
+<conan> so there is different type of content
+<roger600> conan, yes
+<conan> the content that is used in the diagram itself
+<roger600> conan, yes
+<conan> and content that describes how the diagram behaves
+<conan> the "rules"
+<roger600> conan, the property interface does not have any getvalue method as for this
+<conan> I'd need to remind myself of the rules stuff
+<roger600> conan, values can be collections, can be constrained
+<roger600> conan, can be elements on the graph
+<conan> I think right now that is hashmap key/value based too
+<conan> you popylate it with different rules
+<conan> I forget the exact details
+<roger600> conan, rules are not in the key/map
+<conan> not sure if that can be improved, made more type safe or not.
+<conan> a Set then
+<roger600> conan, well let's start with the properties and stencils :)
+<conan> ok
+<conan> as i remember thinking, could the rules be encoded as annotations
+<roger600> conan, currently no
+<conan> @CanContain( [GateWay.class, X.class] )
+<roger600> conan, as properties
+<conan> that sorto f thing
+<roger600> conan, mm
+<conan> we'd need to review the rules
+<roger600> conan, i see 
+<conan> but if you look at the bean validator
+<conan> you can encode most "rules" as annotations
+<conan> that's really what this is
+<conan> it's the validation of bean
+<roger600> conan, it makes sense 
+<roger600> conan, yes
+<roger600> conan, each stencil right?
+<conan> bean validator has cardinality rules for instance
+<roger600> conan, can define the type safed rules
+<conan> we can make new beans for containment
+<conan> sorry new annotations for containement
+<roger600> conan, yes
+<conan> roger600  now here is the downside I think two reasons why michael did it his way
+<conan> was he said he wsa trying ot keep it as close to oryx
+<conan> to make transfer of rules easier
+<conan> i.e. copying the json file
+<conan> and also GWT doesn't have reflection
+<roger600> conan, yes sure
+<conan> and the current reflection helpers we have, do not include info on annotaitons.
+<roger600> conan, that's my concern about reflection that i was asking before
+<roger600> conan, it's client side
+<conan> the good new is
+<roger600> conan, i have never done it and not sure about it
+<conan> we need to fix this
+<conan> not just for this
+<conan> but we need bean validator informatino of models
+<conan> in the clients
+<conan> so as side project of this
+<roger600> conan, well gwt does that
+<roger600> conan, so possible it is
+<conan> we might need someone to look into improving our data model oracle
+<roger600> conan, when using gwt editors
+<roger600> conan, but they use the deferred binding
+<conan> need to discuss that with christian and manstis
+<roger600> conan, they generate the codde
+<roger600> conan, to achieve that
+<roger600> conan, ok
+<conan> roger600  however what you can do for now.
+<conan> is remember I said you'll need a soft model anyway
+<conan> as this is hte thing you execute on
+<roger600> conan, ok
+<conan> when you reflect on something it has to be turned into a object model that you execute on
+<conan> right?
+<roger600> conan, right
+<conan> so there is no reason why you cannot do that on teh server side
+<conan> so you build and populate your paletes and stencils on the server
+<conan> it's the results sent to the clients
+<roger600> conan, yess
+<roger600> conan, it's a good option
+<conan> your "rules"  might be encoded in annotations
+<conan> but they still need to be transformed into an engine that runs against objects
+<roger600> conan, the other one is using the deferred binding, but i have never use it
+<conan> you aren't going to parse the antnoations repeatedly
+<roger600> conan, ok
+<conan> get waht I mean?
+<roger600> conan, sure
+<roger600> conan, yes
+<conan> this would allow you to create a runtime representation in the client
+<conan> that has everyhing you need
+<roger600> conan, on client side will be always the object model
+<conan> that is separated from the encoding
+<conan> which I think is important
+<roger600> conan, and we generate all this model on backend
+<roger600> conan, sounds good
+<conan> how we encode things may and will change over time
+<conan> that's probalby the best way of thinking about it
+<conan> don't tie your client to an specific encoding
+<roger600> conan, well it's errai
+<roger600> conan, isn't it? 
+<roger600> conan, i'm not worring to much about it, just let errai use the json serialization
+<roger600> conan, is not enough? what do you mean?
+<conan> yes
+<conan> well no
+<conan> I'm not talking about how it goes from the server to the client
+<conan> encoding I mean what youstore in disk
+<roger600> conan, ahh ok
+<conan> the original storage format
+<conan> what we author
+<roger600> conan, this have to be built from scratch now, the backend part
+<conan> one thing we don't hve right now, which is a shame - and we need to do it. for the platform I think.
+<roger600> conan, so we can discuss it
+<conan> is develop a class and property literal system
+<conan> we've been working on something
+<conan> that is actually independant onf the object storage
+<conan> so it coud be a map
+<conan> a file
+<conan> or a pojo
+<roger600> conan, like a graph :)
+<roger600> conan, ok
+<conan> just means this iteratino you might need to do your own concepts here
+<roger600> conan, but we don't have it?
+<conan> bt that we might unifying those in the platform later
+<conan> not right now
+<conan> just POC stuff
+<conan> that will probably more distract you than anything else
+<conan> so just do what you need fory our own purposes
+<conan> can improve later
+<roger600> conan, well i have lot of wokr yes
+<roger600> conan, well but it's important...
+<roger600> conan, the storage encoding that you mean
+<roger600> conan, if we start with a format.... will have to migrate later...
+<roger600> conan, so any suggestions are welcome
+<conan> roger600  just start out by saying
+<conan> how do I encode all my bpmn2 nodes as pojos
+<conan> sketch that out first
+<conan> keep building up the required properties
+<conan> then think
+<roger600> conan, it's just the current "soft" model i have  serializatied in json for example
+<conan> how do I reflect that information
+<roger600> conan, it's like a pojo
+<conan> to build a representation that I need to use that pojo within the UI
+<conan> roger600 or this first iteration just hard code it against hte pojo
+<conan> up to you
+<roger600> conan, that was my idea... :)
+<conan> might be best o keep it smaller code
+<roger600> conan, ok
+<conan> and if/when we have the need for soft stuff
+<conan> we can add that later
+<roger600> conan, you go too fast :) 
+<roger600> conan, yes 
+<conan> but what I find is
+<conan> the more you move away from pojos
+<conan> and annotations
+<conan> the mode you try and build alternative things
+<conan> the messier the code
+<conan> and the less it takes advantage of the tooling 
+<conan> roger600 you might want to categories differnt properties
+<conan> this might actually help with the properties UI generation
+<conan> rather than one big fat list of fields
+<conan> espeically as many fields will be shared among objects
+<conan> like name, title, description.
+<conan> so instead you put those into a class
+<roger600> conan, honestly i think so too now, as in uf, initially i found too many static code but when working with it i realized that it's really useful
+<conan> like General
+<conan> and now you hae a General field on your node
+<roger600> conan, okk
+<roger600> conan, yes makes sense
+<conan> roger600  if you look at what pere's doing with forms
+<conan> we pushed him to static literal stuff there
+<conan> and while it makes some things harder
+<conan> the result is probably easier to undersatnd and maintain
+<roger600> conan, sure
+<conan> rather than storing stuff in json or .txt files
+<conan> party ebcasue it's tooling friendly too
+<conan> partly
+<conan> it's not without it's downsides though
+<conan> like i said one the requirements later will be dynamic nodes and palletes
+<conan> at runtime
+<conan> although chrisitian and max have a way to compile GWT at runtime, and that might work around that.....
+<conan> obivosly "soft" stuff that is generic and uses PropertySet is easy
+<conan> to add new nodes at runtime
+<roger600> conan, okkk
+<conan> so yes we make some things harder
+<roger600> conan, i will keep it yes! 
+<conan> but dynamic stuff gets a lot more difficult
+<conan> roger600  so lets first see if you can get a pojo model
+<roger600> conan, but makes sense moving to a more static coding
+<roger600> conan, sure
+<roger600> conan, np
+<conan> roger600  then lets see if we can move the rules to anotations
+<conan> and annotate our pojos :)
+<roger600> conan, what is the best example to see?
+<roger600> conan, uf? form modeler?
+<conan> roger600  of what?
+<conan> example of what?
+<conan> just look at bean validator examples
+<roger600> conan, some pojo model annotated like that one you want in wires
+<conan> I think pere is using annotations now
+<conan> to more drive his forms
+<roger600> conan, ok
+<roger600> conan, give me just a couple of days
+<roger600> conan, np
+<roger600> conan, :)
+<conan> http://docs.oracle.com/javaee/6/tutorial/doc/gircz.html
+<conan> you know the bean validator spec?
+<roger600> conan, yes
+<roger600> conan, a little bit
+<roger600> conan, i worked with it for form validations
+<conan> ok
+<roger600> conan, on both client/backend sdie on dash
+<conan> I could be wrong
+<conan> and maybe not all the rule can be done as annotations
+<conan> but it would be intersting to investigate
+<roger600> conan, sure np!
+<conan> if we can
+<roger600> conan, i think it fits
+<conan> I think it would be a very maintainable implmentation
+<roger600> conan, okk
+<roger600> conan, sounds good

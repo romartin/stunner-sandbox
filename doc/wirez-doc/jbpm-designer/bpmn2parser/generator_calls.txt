@@ -1,0 +1,101 @@
+
+// Process
+generator.writeStartObject();
+generator.writeObjectField("resourceId", def.getId());
+
+// Children
+generator.writeArrayFieldStart("childShapes");
+
+    // Start Event
+    generator.writeStartObject();
+    generator.writeObjectField("resourceId", flowElement.getId());
+    
+    marshallProperties(properties, generator);
+        generator.writeObjectFieldStart("properties");
+        for (Entry<String, Object> entry : properties.entrySet()) {
+            generator.writeObjectField(entry.getKey(), String.valueOf(entry.getValue()));
+        }
+        generator.writeEndObject();
+    
+    generator.writeObjectFieldStart("stencil");
+    generator.writeObjectField("id", stencil);
+    generator.writeEndObject();
+    
+    generator.writeArrayFieldStart("childShapes");
+    generator.writeEndArray();
+    generator.writeArrayFieldStart("outgoing");
+    for (SequenceFlow outgoing: node.getOutgoing()) {
+        generator.writeStartObject();
+        generator.writeObjectField("resourceId", outgoing.getId());
+        generator.writeEndObject();
+    }
+
+    ....
+
+    generator.writeObjectFieldStart("bounds");
+    generator.writeObjectFieldStart("lowerRight");
+    generator.writeObjectField("x", bounds.getX() + bounds.getWidth() - xOffset);
+    generator.writeObjectField("y", bounds.getY() + bounds.getHeight() - yOffset);
+    generator.writeEndObject();
+    generator.writeObjectFieldStart("upperLeft");
+    generator.writeObjectField("x", bounds.getX() - xOffset);
+    generator.writeObjectField("y", bounds.getY() - yOffset);
+    
+    
+    generator.writeArrayFieldStart("dockers");
+    generator.writeStartObject();
+    generator.writeObjectField("x", infoPartsToUseParts[0]);
+    generator.writeObjectField("y", infoPartsToUseParts[1]);
+    generator.writeEndObject();
+    
+    -- 
+    
+    // Start Event END
+    generator.writeEndObject();
+
+
+    // User1 Task 
+    
+    
+    // End Event
+
+
+// Children END
+generator.writeEndArray();
+
+// Stencilset & extensions
+generator.writeObjectFieldStart("stencilset");
+generator.writeArrayFieldStart("ssextensions");
+generator.writeEndObject();
+
+
+// Close
+generator.writeEndObject();
+generator.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+generator.writeObjectFieldStart("stencil");
+
+generator.writeArrayFieldStart("outgoing");
+
+
+generator.writeObjectFieldStart("properties");
+    for (Entry<String, Object> entry : properties.entrySet()) {
+        generator.writeObjectField(entry.getKey(), String.valueOf(entry.getValue()));
+    }
+generator.writeEndObject();
+
+

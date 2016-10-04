@@ -1,0 +1,22 @@
+{
+  "cardinalityRules": [
+    {
+      "role": "Startevents_all",
+      "incomingEdges": [
+        {
+          "role": "SequenceFlow",
+          "maximum": 0
+        }
+      ]
+    },
+    {
+      "role": "Endevents_all",
+      "outgoingEdges": [
+        {
+          "role": "SequenceFlow",
+          "maximum": 0
+        }
+      ]
+    }
+  ]
+}

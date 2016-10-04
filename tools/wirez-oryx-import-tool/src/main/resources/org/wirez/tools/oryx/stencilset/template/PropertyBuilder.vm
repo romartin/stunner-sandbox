@@ -1,0 +1,64 @@
+/*
+* Copyright 2016 Red Hat, Inc. and/or its affiliates.
+*  
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*  
+*    http://www.apache.org/licenses/LICENSE-2.0
+*  
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
+package $thePackage;
+
+import org.wirez.bpmn.api.BPMNProperty;
+import org.wirez.core.api.factory.PropertyBuilder;
+#foreach ($p in $properties)
+import $p.pkg.$p.className;
+#end
+
+import javax.enterprise.context.ApplicationScoped;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+@ApplicationScoped
+public class $className implements PropertyBuilder<BPMNProperty> {
+
+    private static final Set<String> SUPPORTED_PROP_IDS = new LinkedHashSet<String>( $properties.size()  {{
+        #foreach ($p in $properties)
+            add($p.className .ID);
+        #end
+    }};
+
+    public $className() {
+    }
+
+    @Override
+    public boolean accepts(final String id) {
+        return SUPPORTED_PROP_IDS.contains(id);
+    }
+
+    @Override
+    public BPMNProperty build(final String id) {
+
+        #foreach ($p in $properties)
+            if ($p.className .ID.equals(id)) {
+                return build$p.id ();
+            }
+        #end
+    
+        throw new RuntimeException("Instance expected to be build here.");
+    }
+
+    #foreach ($p in $properties)
+        public $p.className build$p.id () {
+            return new $p.className ();
+        }
+    #end
+
+}

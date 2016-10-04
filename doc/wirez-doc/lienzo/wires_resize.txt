@@ -1,0 +1,132 @@
+Mark - Lienzo RESIZE + TEXT on wires
+**************************************
+
+<conan> hiy8a
+<conan> just checking how lienzo is going?
+<roger600> hiya!
+<roger600> making some progress :)
+<roger600> i have added mor properties, handlers (such as resize, etc) 
+<roger600> on the lienzo size added some features such as text on wires
+<conan> ok on the shape?
+<conan> or the lines?
+<roger600> shapes
+<conan> ok
+<conan> I was working on hte lines
+<conan> then stopped
+<conan> as that requires some lienzo work
+<roger600> yes!
+<roger600> texts was easier :)
+<conan> to calculate line line lengths
+<conan> yes
+<roger600> exactly
+<conan> not sure what you did for text
+<conan> but my idea there was to just support adding of any lienzo shape with relative positioning
+<conan> so you can put it top left
+<conan> bottom right
+<roger600> depending on the multipath bounding box
+<conan> centre
+<roger600> at center of it
+<conan> bottom centre
+<roger600> yes
+<roger600> i want to add more positions
+<conan> but it could be text or an icon
+<roger600> yeah ok
+<conan> o in my api
+<conan>  ijust delegated that to group.add()
+<conan> I think instead we need something like
+<conan> addChild( child, position )
+<roger600> hmmm
+<roger600> yes
+<roger600> makes sense
+<roger600> i added a new method...
+<conan> then an enumeration for each of the positions
+<roger600> setText
+<roger600> but will refactor
+<conan> there should be a padding, for anything that is edge aligned
+<conan> edge padding
+<roger600> i was doing it quickly just to be able to use if for wires
+<conan> yeah if  was going ot add text, to say the centre
+<conan> it would be
+<roger600> okkk
+<conan> add/setChild( text, Position.CENTER )
+<conan> possible set for now
+<conan> we don't want to have to deal with more than one shape in a given position
+<roger600> okk
+<roger600> sounds good
+<conan> roger600  btw you might want to od the resize event
+<conan> and submit it as a PR to dean
+<conan> i think without this, things are going to get messy
+<conan> https://github.com/ahome-it/lienzo-core/wiki/Wires
+<conan> Maybe have a generalised start/action/end Handler interface, with a "type". Where type is drag, resize etc.
+<roger600> yes!
+<roger600> i have added the resize feature for wires
+<roger600> and it's not working fine
+<roger600> as the resze in lienzo is not working fine wiht magnets
+<roger600> so still missing this point on lienzo side
+<roger600> yes i can fix it np
+<roger600> but my concern is about
+<roger600> what we should commit to lienzo core....
+<roger600> i mean
+<roger600> genmymodel
+<roger600> if they are using lienzo
+<roger600> they might have their own version, irght?
+<roger600> they have all the miissing features and fixes that we need on lienzo
+<conan> ok firstly there is the generic resize handler/listener
+<conan> you got a github link
+<conan> to show what you did?
+<conan> the generalised aspect
+<conan> should go into lienzo now
+<conan> as we need dean to approve that
+<conan> but yes i'm tempted to do all our wires stuff 
+<conan> in our own fork
+<conan> for a little while
+<roger600> yes me either :)
+<roger600> i was just thinking on add a modulje on top of lienzo
+<roger600> adding there our new stuff
+<roger600> and we will see what we can integrate into lienzo core 
+<roger600> i don't have a link to github to show you the lienzo features right now, they are just working on wirez, not on my lienzo test webapp
+<roger600> but i can do it in order to show to dean a quick example
+<conan> ok
+<conan> mostly because I suspect you don't undersatnd what I mean
+<conan> by make something generic that works like drag, but takes the "type" as an argument
+<conan> as it needs to be integrated in the lienzo event handlers core
+<roger600> which argument type?
+<roger600> not following you right now yes sorry
+<roger600> for resize you mean?
+<roger600> so adding a drag handler for a given type?
+<conan> yes
+<conan> i'll be easiest
+<conan> once I can see your code
+<conan> and I'll try and talk you through it
+<roger600> ok
+<conan> but i'd suggest maybe do that now
+<roger600> good
+<roger600> okkk
+<conan> because I'd like to get that into lienzo core
+<roger600> np
+<conan> if dean will accept it
+<roger600> ok np
+<conan> it's not wires related
+<roger600> yes
+<roger600> resize applies to multipaths only
+<roger600> right?
+<conan> for now
+<roger600> ok
+<roger600> another quiestion
+<roger600> for now there are always 4 resize control points, right? alwasys 4
+<roger600> no matter what the multipath should be
+<conan> I htink so
+<conan> you could potentially have more
+<conan> because instead of doing a corner
+<conan> you could do a side
+<conan> some systems have that
+<conan> so you end up with 8
+<roger600> ok
+<roger600> yes
+<roger600> ok just asking
+<conan> you know actually leave the idea of a genic lienzo resize thing
+<conan> stick with what you have for now
+<conan> so just keep going in the way you were
+<roger600> ok
+<conan> until I've had time to fully review things
+<roger600> ok

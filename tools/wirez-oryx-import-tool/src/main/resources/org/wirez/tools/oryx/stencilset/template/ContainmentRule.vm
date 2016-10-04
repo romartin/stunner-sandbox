@@ -1,0 +1,10 @@
+@CanContain( roles = {
+    #set( $counter = 0 )
+    #foreach ($r in $roles)
+        "$r"
+        #if ( $counter < ( $roles.size() - 1 ) )
+        ,
+        #end
+        #set( $counter = $counter + 1 )
+    #end
+} )
